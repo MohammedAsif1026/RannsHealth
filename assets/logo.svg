@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 100" fill="none" class="infognana-logo-svg">
+  <!-- Geometric Icon Mark -->
+  <g class="logo-mark">
+    <!-- Top-Left Dark Charcoal Block -->
+    <rect x="0" y="0" width="22" height="18" fill="#4B5563" rx="1"/>
+    <!-- Top-Right Red Block -->
+    <rect x="26" y="0" width="52" height="26" fill="#E11D2A" rx="1"/>
+    <!-- Middle-Left Red Block -->
+    <rect x="0" y="22" width="22" height="42" fill="#E11D2A" rx="1"/>
+    <!-- Center-Right Red Shape -->
+    <rect x="26" y="46" width="30" height="18" fill="#E11D2A" rx="1"/>
+    <rect x="56" y="46" width="22" height="48" fill="#E11D2A" rx="1"/>
+    <!-- Bottom-Left Red Block -->
+    <rect x="0" y="68" width="52" height="26" fill="#E11D2A" rx="1"/>
+  </g>
+
+  <!-- Wordmark INFOGNANA -->
+  <text x="96" y="58" font-family="'Plus Jakarta Sans', 'Inter', sans-serif" font-size="58" font-weight="800" fill="#FFFFFF" letter-spacing="0.04em">INFOGNANA</text>
+
+  <!-- Submark SOLUTIONS -->
+  <text x="96" y="86" font-family="'Plus Jakarta Sans', 'Inter', sans-serif" font-size="20" font-weight="600" fill="#94A3B8" letter-spacing="0.08em">SOLUTIONS</text>
+
+  <!-- Red Horizontal Accent Bar -->
+  <rect x="232" y="74" width="300" height="14" fill="#E11D2A" rx="1"/>
+</svg>

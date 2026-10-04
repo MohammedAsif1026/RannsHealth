@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Organization Types | Healthcare RCM Solutions | RannsHealth</title>
+  <meta name="description" content="Tailored revenue cycle management solutions for Physician Practices, Hospitals & Health Systems, and Community Health Centers by RannsHealth.">
+  <meta name="theme-color" content="#050914">
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css?v=2.2">
+  <link rel="stylesheet" href="css/base.css?v=2.2">
+  <link rel="stylesheet" href="css/components.css?v=2.2">
+  <link rel="stylesheet" href="css/animations.css?v=2.2">
+</head>
+
+<body>
+
+  <!-- ======================================================================
+       NAVIGATION & STICKY HEADER
+       ====================================================================== -->
+  <header class="header-nav" id="mainHeader">
+    <div class="container nav-container">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="RannsHealth — Powered by Rannsolve Home">
+        <img src="assets/rannshealth-logo.png" alt="RannsHealth — Powered by Rannsolve" class="brand-logo-img">
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" aria-label="Primary Navigation">
+        <a href="index.html#rcm-lifecycle" class="nav-link">RCM Lifecycle</a>
+        <div class="nav-item-dropdown" id="aiLabsDropdown">
+          <button type="button" class="nav-link nav-dropdown-trigger" id="aiLabsTrigger" aria-expanded="false" aria-haspopup="true" aria-controls="aiLabsMenu">
+            <span>AI Labs</span>
+            <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="nav-dropdown-menu" id="aiLabsMenu" role="menu" aria-labelledby="aiLabsTrigger">
+            <a href="rannscde.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">rannsCDE</span>
+            </a>
+            <a href="rannsccr.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">rannsCCR</span>
+            </a>
+            <a href="rannscpa.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">rannsCPA</span>
+            </a>
+            <a href="rcm-calculator.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">RCM Calculator</span>
+            </a>
+          </div>
+        </div>
+        <div class="nav-item-dropdown" id="specialtiesDropdown">
+          <button type="button" class="nav-link nav-dropdown-trigger active" id="specialtiesTrigger" aria-expanded="false" aria-haspopup="true" aria-controls="specialtiesMenu">
+            <span>Specialties</span>
+            <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="nav-dropdown-menu" id="specialtiesMenu" role="menu" aria-labelledby="specialtiesTrigger">
+            <a href="organization-types.html" class="nav-dropdown-item active" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">Organization Types</span>
+            </a>
+            <a href="medical-specialties.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">Medical Specialties</span>
+            </a>
+            <a href="behavioral-health.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">Behavioral Health</span>
+            </a>
+          </div>
+        </div>
+        <a href="index.html#transformation" class="nav-link">Outcomes</a>
+        <a href="index.html#dashboard" class="nav-link">Dashboard</a>
+        <a href="index.html#denials" class="nav-link">Denial Recovery</a>
+        <a href="index.html#services" class="nav-link">Services</a>
+        <a href="index.html#security" class="nav-link">Security & Compliance</a>
+      </nav>
+
+      <!-- Action CTAs -->
+      <div class="nav-actions">
+        <button type="button" class="btn btn-primary btn-sm open-consultation-modal-btn">Request a Consultation</button>
+        <button type="button" class="nav-mobile-toggle" aria-label="Toggle Mobile Menu" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="product-page-main">
+    <div class="container">
+      <!-- Breadcrumb & Hero Header -->
+      <div class="product-hero-header">
+        <div class="eyebrow-badge badge-cyan product-hero-badge">
+          <span class="badge-dot"></span>
+          Specialties · Healthcare Organization Types
+        </div>
+        <h1 class="product-page-title">
+          Revenue Cycle Operations Tailored by Organization Type
+        </h1>
+        <p class="product-page-subtitle">
+          From independent physician groups to multi-facility health systems and community clinics, RannsHealth aligns automated claims intelligence and specialized billing operations with each organization's unique operational scale.
+        </p>
+        <div class="product-hero-actions">
+          <button type="button" class="btn btn-primary open-consultation-modal-btn">
+            <span class="btn-glow-stream" aria-hidden="true"></span>
+            <span>Request Organization Consultation</span>
+            <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+          <a href="index.html" class="btn btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            <span>Back to Home</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero Visual Banner Image -->
+      <div class="specialty-hero-banner">
+        <img src="assets/specialties-org-types.jpg" alt="Connected Healthcare Organization Ecosystem - Physician Practices, Hospitals, and Community Health Centers" class="specialty-hero-img">
+        <div class="specialty-hero-overlay">
+          <div>
+            <div style="font-size: 0.8rem; font-weight: 700; color: var(--color-cyan); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px;">
+              Connected Delivery Architecture
+            </div>
+            <h2 style="font-size: 1.45rem; font-weight: 700; color: #FFFFFF; margin: 0;">
+              Precision RCM Scaled for Every Healthcare Setting
+            </h2>
+          </div>
+        </div>
+      </div>
+
+      <!-- Organization Types Deck (3 Major Types) -->
+      <div class="org-types-deck">
+        <!-- 1. Physician Practices -->
+        <article class="org-type-card reveal-on-scroll" id="physician-practices">
+          <div class="org-card-header">
+            <div class="org-card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <div>
+              <h2 class="org-card-title">Physician Practices</h2>
+              <div class="org-card-tag">Independent Practices · Single & Multi-Specialty Medical Groups · Ambulatory Clinics</div>
+            </div>
+          </div>
+
+          <p class="legal-text">
+            Independent and group physician practices operate in high-pace clinical environments where rapid cash acceleration, low administrative overhead, and dependable billing turnaround are paramount. We support physician practices with agile front-end verification, charge integrity audits, and dedicated A/R resolution.
+          </p>
+
+          <div class="org-features-grid">
+            <div class="org-feature-item">
+              <div class="org-feature-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-cyan)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Rapid Pre-Service Eligibility</span>
+              </div>
+              <div class="org-feature-desc">Real-time insurance coverage validation and co-pay calculation prior to patient arrival to minimize front-end denials.</div>
+            </div>
+            <div class="org-feature-item">
+              <div class="org-feature-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-cyan)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Charge Capture Integrity</span>
+              </div>
+              <div class="org-feature-desc">Systematic encounter reconciliation against provider schedules to identify missing charges and uncoded procedures.</div>
+            </div>
+            <div class="org-feature-item">
+              <div class="org-feature-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-cyan)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Fast Clean Claim Filing</span>
+              </div>
+              <div class="org-feature-desc">Automated claim scrubbing against national and local payer edits, accelerating remittance turnaround and reducing rework.</div>
+            </div>
+            <div class="org-feature-item">
+              <div class="org-feature-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-cyan)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Patient Balance Engagement</span>
+              </div>
+              <div class="org-feature-desc">Clear, transparent patient statements and structured payment workflows to improve self-pay collections.</div>
+            </div>
+          </div>
+
+          <!-- Workflow Infographic -->
+          <div class="workflow-infographic">
+            <div style="font-size: 0.8rem; font-weight: 700; color: var(--color-cyan); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px;">
+              Physician Practice Billing Lifecycle Flow
+            </div>
+            <div class="workflow-steps">
+              <div class="workflow-step">
+                <span class="workflow-step-num">1</span>
+                <div class="workflow-step-title">Intake & Verification</div>
+                <div class="workflow-step-desc">Automated benefit checks and prior authorization validation.</div>
+              </div>
+              <div class="workflow-step">
+                <span class="workflow-step-num">2</span>
+                <div class="workflow-step-title">Coding & Scrubbing</div>
+                <div class="workflow-step-desc">CPT/ICD-10 review with sub-second rules validation.</div>
+              </div>
+              <div class="workflow-step">
+                <span class="workflow-step-num">3</span>
+                <div class="workflow-step-title">Clearinghouse Transmit</div>
+                <div class="workflow-step-desc">EDI 837 batching and immediate payer acceptance tracking.</div>
+              </div>
+              <div class="workflow-step">
+                <span class="workflow-step-num">4</span>
+                <div class="workflow-step-title">ERA Posting & Follow-up</div>
+                <div class="workflow-step-desc">Automated 835 posting with proactive denial management.</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Hospitals & Health Systems -->
+        <article class="org-type-card reveal-on-scroll" id="hospitals-health-systems">
+          <div class="org-card-header">
+            <div class="org-card-icon" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(0, 240, 255, 0.2) 100%);">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 21h18"></path>
+                <path d="M5 21V7l8-4v18"></path>
+                <path d="M19 21V11l-6-4"></path>
+                <line x1="9" y1="9" x2="9" y2="9.01"></line>
+                <line x1="9" y1="13" x2="9" y2="13.01"></line>
+                <line x1="9" y1="17" x2="9" y2="17.01"></line>
+              </svg>
+            </div>
+            <div>
+              <h2 class="org-card-title">Hospitals & Health Systems</h2>
+              <div class="org-card-tag">Acute Care Facilities · Integrated Delivery Networks (IDNs) · Academic Medical Centers</div>
+            </div>
+          </div>
+
+          <p class="legal-text">
+            Enterprise health systems manage complex multi-departmental revenue cycles characterized by inpatient DRG groupers, outpatient prospective payments (OPPS), charge master (CDM) governance, and cross-facility EHR integrations. RannsHealth delivers enterprise-grade scalability, denial recovery intelligence, and chart review automation.
+          </p>
+
+          <div class="org-features-grid">
+            <div class="org-feature-item">
+              <div class="org-feature-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-cyan)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Complex Inpatient & Outpatient Billing</span>
+              </div>
+              <div class="org-feature-desc">Comprehensive support for UB-04 / CMS-1450 forms, revenue code mappings, and DRG validation.</div>
+            </div>
+            <div class="org-feature-item">
+              <div class="org-feature-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-cyan)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Enterprise Denial Root-Cause Routing</span>
+              </div>
+              <div class="org-feature-desc">Algorithmic categorization of payer denials across clinical necessity, timely filing, and medical record requests.</div>
+            </div>
+            <div class="org-feature-item">
+              <div class="org-feature-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-cyan)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Cross-Platform EHR Harmonization</span>
+              </div>
+              <div class="org-feature-desc">Seamless interface bridges between enterprise EHRs (Epic, Cerner, MEDITECH) and billing clearinghouses.</div>
+            </div>
+            <div class="org-feature-item">
+              <div class="org-feature-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-cyan)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>AI Chart Review & Extraction</span>
+              </div>
+              <div class="org-feature-desc">Integration with rannsCCR and rannsCDE to rapidly parse high-volume operative notes, discharge summaries, and inpatient charts.</div>
+            </div>
+          </div>
+
+          <!-- Workflow Infographic -->
+          <div class="workflow-infographic">
+            <div style="font-size: 0.8rem; font-weight: 700; color: var(--color-cyan); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px;">
+              Enterprise Health System Pipeline Flow
+            </div>
+            <div class="workflow-steps">
+              <div class="workflow-step">
+                <span class="workflow-step-num">1</span>
+                <div class="workflow-step-title">Patient Access & Pre-Auth</div>
+                <div class="workflow-step-desc">Inpatient admission authorization and financial clearance.</div>
+              </div>
+              <div class="workflow-step">
+                <span class="workflow-step-num">2</span>
+                <div class="workflow-step-title">HIM & Clinical Coding</div>
+                <div class="workflow-step-desc">Concurrent chart review, CDI queries, and DRG optimization.</div>
+              </div>
+              <div class="workflow-step">
+                <span class="workflow-step-num">3</span>
+                <div class="workflow-step-title">Multi-Facility Adjudication</div>
+                <div class="workflow-step-desc">Enterprise claim scrubbing and institutional EDI distribution.</div>
+              </div>
+              <div class="workflow-step">
+                <span class="workflow-step-num">4</span>
+                <div class="workflow-step-title">Variance & Zero-Balance Audit</div>
+                <div class="workflow-step-desc">Contractual underpayment recovery and aging A/R resolution.</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. Community Health Centers -->
+        <article class="org-type-card reveal-on-scroll" id="community-health-centers">
+          <div class="org-card-header">
+            <div class="org-card-icon" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(0, 240, 255, 0.2) 100%);">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+            </div>
+            <div>
+              <h2 class="org-card-title">Community Health Centers</h2>
+              <div class="org-card-tag">FQHCs (Federally Qualified Health Centers) · FQHC Look-Alikes · Rural Health Clinics (RHCs)</div>
+            </div>
+          </div>
+
+          <p class="legal-text">
+            Community health centers and FQHCs fulfill an essential public mission requiring specialized billing rules, including Prospective Payment System (PPS) encounter rates, sliding fee discount schedules, Title X grant accounting, and annual Uniform Data System (UDS) reporting requirements.
+          </p>
+
+          <div class="org-features-grid">
+            <div class="org-feature-item">
+              <div class="org-feature-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-cyan)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>PPS & APM Encounter Billing</span>
+              </div>
+              <div class="org-feature-desc">Accurate capture of all-inclusive rate (AIR) codes, T-codes, and qualifying encounter criteria across Medicaid and Medicare.</div>
+            </div>
+            <div class="org-feature-item">
+              <div class="org-feature-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-cyan)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Sliding-Fee Schedule Administration</span>
+              </div>
+              <div class="org-feature-desc">Workflows aligned with federal poverty guideline (FPL) tiers, documentation verification, and nominal fee collection.</div>
+            </div>
+            <div class="org-feature-item">
+              <div class="org-feature-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-cyan)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Medicaid Managed Care Wrap-Around</span>
+              </div>
+              <div class="org-feature-desc">Tracking and reconciliation of state Medicaid wrap-around supplemental payments to prevent under-realization.</div>
+            </div>
+            <div class="org-feature-item">
+              <div class="org-feature-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-cyan)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>UDS & Grant Data Support</span>
+              </div>
+              <div class="org-feature-desc">Reporting structures designed to facilitate annual Uniform Data System (UDS) Table 5 and Table 6 encounter submissions.</div>
+            </div>
+          </div>
+
+          <!-- Workflow Infographic -->
+          <div class="workflow-infographic">
+            <div style="font-size: 0.8rem; font-weight: 700; color: var(--color-cyan); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px;">
+              Community Health Center Reimbursement Flow
+            </div>
+            <div class="workflow-steps">
+              <div class="workflow-step">
+                <span class="workflow-step-num">1</span>
+                <div class="workflow-step-title">FPL & Eligibility Review</div>
+                <div class="workflow-step-desc">Income documentation and sliding scale tier assignment.</div>
+              </div>
+              <div class="workflow-step">
+                <span class="workflow-step-num">2</span>
+                <div class="workflow-step-title">Qualifying Encounter Coding</div>
+                <div class="workflow-step-desc">Verification of billable medical, dental, or behavioral visits.</div>
+              </div>
+              <div class="workflow-step">
+                <span class="workflow-step-num">3</span>
+                <div class="workflow-step-title">PPS Claim Submission</div>
+                <div class="workflow-step-desc">Filing of specific G-codes/T-codes to Medicaid and Medicare.</div>
+              </div>
+              <div class="workflow-step">
+                <span class="workflow-step-num">4</span>
+                <div class="workflow-step-title">Wrap-Around Reconciliation</div>
+                <div class="workflow-step-desc">Auditing managed care payments and state supplemental claims.</div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Bottom Consultation CTA Banner -->
+      <div style="background: linear-gradient(135deg, rgba(8, 14, 32, 0.9) 0%, rgba(14, 24, 52, 0.85) 100%); border: 1px solid var(--border-glass); border-radius: var(--radius-xl); padding: clamp(28px, 5vw, 48px); text-align: center; margin-bottom: var(--space-12);">
+        <h3 style="color: #FFFFFF; font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 800; margin-bottom: 12px;">
+          Ready to Modernize Your Organization's Revenue Cycle?
+        </h3>
+        <p style="color: var(--text-secondary); max-width: 650px; margin: 0 auto 24px; font-size: 0.95rem; line-height: 1.6;">
+          Speak with our RCM operational architects to assess your billing clean rate, denial patterns, and automation readiness.
+        </p>
+        <button type="button" class="btn btn-primary btn-lg open-consultation-modal-btn">
+          <span class="btn-glow-stream" aria-hidden="true"></span>
+          <span>Schedule an Organization Consultation</span>
+          <svg class="btn-icon-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- ======================================================================
+       ENTERPRISE FOOTER
+       ====================================================================== -->
+  <footer class="site-footer">
+    <!-- Subtle Flowing-Light Effect (Blurred Violet, Indigo, and Cyan Ribbons) -->
+    <div class="footer-flowing-light" aria-hidden="true">
+      <div class="flow-ribbon flow-ribbon-1"></div>
+      <div class="flow-ribbon flow-ribbon-2"></div>
+      <div class="flow-ribbon flow-ribbon-3"></div>
+    </div>
+
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand & Bio -->
+        <div class="footer-brand-col">
+          <a href="index.html" class="brand-logo" aria-label="RannsHealth — Powered by Rannsolve Home">
+            <img src="assets/rannshealth-logo.png" alt="RannsHealth — Powered by Rannsolve" class="brand-logo-img-footer">
+          </a>
+          <p class="footer-copy">
+            Enterprise healthcare revenue cycle management, denial recovery intelligence, and AI-powered cognitive chart
+            review for health systems and physician groups.
+          </p>
+        </div>
+
+        <!-- Col 2: Solutions -->
+        <div>
+          <div class="footer-col-title">Solutions</div>
+          <div class="footer-links-list">
+            <a href="rannsccr.html" class="footer-link">rannsCCR AI Chart Reader</a>
+            <a href="rannscde.html" class="footer-link">rannsCDE Document Extraction</a>
+            <a href="rannscpa.html" class="footer-link">rannsCPA Prior Auth Engine</a>
+            <a href="rcm-calculator.html" class="footer-link">RCM Calculator</a>
+            <a href="index.html#rcm-lifecycle" class="footer-link">End-to-End RCM</a>
+          </div>
+        </div>
+
+        <!-- Col 3: Company & Trust -->
+        <div>
+          <div class="footer-col-title">Enterprise</div>
+          <div class="footer-links-list">
+            <a href="security-architecture.html" class="footer-link">Security Architecture</a>
+            <a href="index.html#transformation" class="footer-link">Client Outcomes</a>
+            <a href="#" class="footer-link open-consultation-modal-btn">Request a Demo</a>
+            <a href="index.html#security" class="footer-link">HIPAA & SOC 2 Capabilities</a>
+          </div>
+        </div>
+
+        <!-- Col 4: Contact & Locations -->
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <div class="footer-links-list" style="font-size: 0.85rem; color: #94A3B8; line-height: 1.6;">
+            <div>Email: <a href="mailto:solutions@infognana.com" style="color: var(--color-cyan);">solutions@infognana.com</a></div>
+            <div>Phone: +1 (800) 555-INFO</div>
+            <div style="margin-top: 8px;">Global Operations Center & Healthcare Delivery Centers</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 INFOGNANA SOLUTIONS. All rights reserved. Built for Healthcare Excellence.
+        </div>
+        <div style="display: flex; gap: 20px;">
+          <a href="privacy-policy.html" class="footer-link">Privacy Policy</a>
+          <a href="terms-of-service.html" class="footer-link">Terms of Service</a>
+          <a href="security-architecture.html" class="footer-link">Security Architecture</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Consultation Modal Component -->
+  <div class="modal-overlay" id="consultationModalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button type="button" class="modal-close-btn" id="closeConsultationModalBtn" aria-label="Close Modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <form id="consultationBookingForm">
+        <div style="margin-bottom: 24px;">
+          <div class="eyebrow-badge badge-cyan" style="margin-bottom: 8px;">
+            <span class="badge-dot"></span>
+            Organization RCM Advisory
+          </div>
+          <h3 id="modalTitle" style="color: #FFFFFF; font-size: 1.5rem; font-weight: 700; margin-bottom: 6px;">
+            Schedule Organization Consultation
+          </h3>
+          <p style="font-size: 0.85rem; color: #94A3B8;">
+            Connect with a Senior RCM Architect to evaluate billing workflows tailored to your provider organization type.
+          </p>
+        </div>
+
+        <div class="form-group">
+          <label for="formFullName" class="form-label">Full Name *</label>
+          <input type="text" id="formFullName" class="form-input" placeholder="e.g. Dr. Sarah Jenkins, MD" required>
+        </div>
+
+        <div class="form-group">
+          <label for="formWorkEmail" class="form-label">Work Email *</label>
+          <input type="email" id="formWorkEmail" class="form-input" placeholder="sjenkins@healthsystem.org" required>
+        </div>
+
+        <div class="form-group">
+          <label for="formOrgType" class="form-label">Organization Type *</label>
+          <select id="formOrgType" class="form-select" required>
+            <option value="Physician Practices">Physician Practice / Medical Group</option>
+            <option value="Hospitals & Health Systems">Hospital & Health System</option>
+            <option value="Community Health Centers">Community Health Center (FQHC / RHC)</option>
+            <option value="Specialty Clinic">Specialty Clinic</option>
+            <option value="Medical Billing Company">Medical Billing Company</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary modal-submit-btn" style="width: 100%; margin-top: 12px;">
+          <span class="btn-glow-stream" aria-hidden="true"></span>
+          <span class="btn-text">Submit Consultation Request</span>
+          <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+
+        <div class="modal-privacy-notice">
+          🔒 Confidential. RannsHealth adheres to strict HIPAA non-disclosure protocols.
+        </div>
+      </form>
+
+      <div id="modalConfirmationView" style="display: none;"></div>
+    </div>
+  </div>
+
+  <!-- JavaScript Application -->
+  <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

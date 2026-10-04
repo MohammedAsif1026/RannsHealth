@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medical Specialties | Revenue Cycle & Clinical Coding | RannsHealth</title>
+  <meta name="description" content="Specialized healthcare revenue cycle and medical billing for Urology, Orthopedics, Ophthalmology, Oncology, Gastroenterology, Radiology, Laboratory, Podiatry, and Dermatology.">
+  <meta name="theme-color" content="#050914">
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css?v=2.2">
+  <link rel="stylesheet" href="css/base.css?v=2.2">
+  <link rel="stylesheet" href="css/components.css?v=2.2">
+  <link rel="stylesheet" href="css/animations.css?v=2.2">
+</head>
+
+<body>
+
+  <!-- ======================================================================
+       NAVIGATION & STICKY HEADER
+       ====================================================================== -->
+  <header class="header-nav" id="mainHeader">
+    <div class="container nav-container">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="RannsHealth — Powered by Rannsolve Home">
+        <img src="assets/rannshealth-logo.png" alt="RannsHealth — Powered by Rannsolve" class="brand-logo-img">
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" aria-label="Primary Navigation">
+        <a href="index.html#rcm-lifecycle" class="nav-link">RCM Lifecycle</a>
+        <div class="nav-item-dropdown" id="aiLabsDropdown">
+          <button type="button" class="nav-link nav-dropdown-trigger" id="aiLabsTrigger" aria-expanded="false" aria-haspopup="true" aria-controls="aiLabsMenu">
+            <span>AI Labs</span>
+            <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="nav-dropdown-menu" id="aiLabsMenu" role="menu" aria-labelledby="aiLabsTrigger">
+            <a href="rannscde.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">rannsCDE</span>
+            </a>
+            <a href="rannsccr.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">rannsCCR</span>
+            </a>
+            <a href="rannscpa.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">rannsCPA</span>
+            </a>
+            <a href="rcm-calculator.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">RCM Calculator</span>
+            </a>
+          </div>
+        </div>
+        <div class="nav-item-dropdown" id="specialtiesDropdown">
+          <button type="button" class="nav-link nav-dropdown-trigger active" id="specialtiesTrigger" aria-expanded="false" aria-haspopup="true" aria-controls="specialtiesMenu">
+            <span>Specialties</span>
+            <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="nav-dropdown-menu" id="specialtiesMenu" role="menu" aria-labelledby="specialtiesTrigger">
+            <a href="organization-types.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">Organization Types</span>
+            </a>
+            <a href="medical-specialties.html" class="nav-dropdown-item active" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">Medical Specialties</span>
+            </a>
+            <a href="behavioral-health.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">Behavioral Health</span>
+            </a>
+          </div>
+        </div>
+        <a href="index.html#transformation" class="nav-link">Outcomes</a>
+        <a href="index.html#dashboard" class="nav-link">Dashboard</a>
+        <a href="index.html#denials" class="nav-link">Denial Recovery</a>
+        <a href="index.html#services" class="nav-link">Services</a>
+        <a href="index.html#security" class="nav-link">Security & Compliance</a>
+      </nav>
+
+      <!-- Action CTAs -->
+      <div class="nav-actions">
+        <button type="button" class="btn btn-primary btn-sm open-consultation-modal-btn">Request a Consultation</button>
+        <button type="button" class="nav-mobile-toggle" aria-label="Toggle Mobile Menu" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="product-page-main">
+    <div class="container">
+      <!-- Breadcrumb & Hero Header -->
+      <div class="product-hero-header">
+        <div class="eyebrow-badge badge-cyan product-hero-badge">
+          <span class="badge-dot"></span>
+          Specialties · Clinical Domain Expertise
+        </div>
+        <h1 class="product-page-title">
+          Specialty-Specific Revenue Cycle & Medical Coding Integrity
+        </h1>
+        <p class="product-page-subtitle">
+          Navigating unique modifier rules, bundle exemptions, diagnostic criteria, and payer coverage guidelines across nine essential medical disciplines.
+        </p>
+        <div class="product-hero-actions">
+          <button type="button" class="btn btn-primary open-consultation-modal-btn">
+            <span class="btn-glow-stream" aria-hidden="true"></span>
+            <span>Request Specialty Consultation</span>
+            <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+          <a href="index.html" class="btn btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            <span>Back to Home</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero Visual Banner Image -->
+      <div class="specialty-hero-banner">
+        <img src="assets/medical-specialties.jpg" alt="Clinical Analytics & Medical Specialty Intelligence" class="specialty-hero-img">
+        <div class="specialty-hero-overlay">
+          <div>
+            <div style="font-size: 0.8rem; font-weight: 700; color: var(--color-cyan); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px;">
+              Clinical Specialty Hub
+            </div>
+            <h2 style="font-size: 1.45rem; font-weight: 700; color: #FFFFFF; margin: 0;">
+              Precision Coding Engine Aligned to Specialty Practice Workflows
+            </h2>
+          </div>
+        </div>
+      </div>
+
+      <!-- Medical Specialties Grid (9 Disciplines) -->
+      <div class="medical-specialties-grid">
+        <!-- 1. Urology -->
+        <article class="specialty-item-card reveal-on-scroll">
+          <div>
+            <div class="specialty-item-header">
+              <div class="specialty-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+              </div>
+              <h2 class="specialty-name">Urology</h2>
+            </div>
+            <p class="specialty-desc">
+              Manages surgical and endoscopic coding, cystoscopy procedures, global surgery periods, in-office urodynamic diagnostic studies, and prior authorizations for oncologic injectable therapies.
+            </p>
+          </div>
+          <div class="specialty-tags-row">
+            <span class="specialty-tag">Global Surgery (0/10/90)</span>
+            <span class="specialty-tag">J-Code Injectables</span>
+            <span class="specialty-tag">Cystoscopy Edits</span>
+          </div>
+        </article>
+
+        <!-- 2. Orthopedics -->
+        <article class="specialty-item-card reveal-on-scroll delay-100">
+          <div>
+            <div class="specialty-item-header">
+              <div class="specialty-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                </svg>
+              </div>
+              <h2 class="specialty-name">Orthopedics</h2>
+            </div>
+            <p class="specialty-desc">
+              Handles complex joint arthroplasty bundles, fracture care coding, multiple surgical procedure modifiers (-51, -59, -XS), DMEPOS supply billing, and coordination with workers' compensation carriers.
+            </p>
+          </div>
+          <div class="specialty-tags-row">
+            <span class="specialty-tag">Surgical Bundling</span>
+            <span class="specialty-tag">DMEPOS Billing</span>
+            <span class="specialty-tag">Modifier -59 / -X{EPSU}</span>
+          </div>
+        </article>
+
+        <!-- 3. Ophthalmology -->
+        <article class="specialty-item-card reveal-on-scroll delay-200">
+          <div>
+            <div class="specialty-item-header">
+              <div class="specialty-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+              </div>
+              <h2 class="specialty-name">Ophthalmology</h2>
+            </div>
+            <p class="specialty-desc">
+              Navigates bilateral modifier rules (-50, -RT, -LT), intravitreal injection medication billing, cataract surgery global packages, visual field diagnostic testing, and co-management documentation rules.
+            </p>
+          </div>
+          <div class="specialty-tags-row">
+            <span class="specialty-tag">Bilateral Modifiers</span>
+            <span class="specialty-tag">Intravitreal J-Codes</span>
+            <span class="specialty-tag">Eye Codes (92002-92014)</span>
+          </div>
+        </article>
+
+        <!-- 4. Oncology -->
+        <article class="specialty-item-card reveal-on-scroll">
+          <div>
+            <div class="specialty-item-header">
+              <div class="specialty-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="8" x2="12" y2="12"></line>
+                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+              </div>
+              <h2 class="specialty-name">Oncology</h2>
+            </div>
+            <p class="specialty-desc">
+              Addresses chemotherapy administration hierarchy (initial, sequential, concurrent), drug wastage modifier (-JW/-JZ) reporting, clinical trial protocol tracking, and rigorous multi-payer prior authorizations.
+            </p>
+          </div>
+          <div class="specialty-tags-row">
+            <span class="specialty-tag">Infusion Hierarchy</span>
+            <span class="specialty-tag">Modifier -JW / -JZ Wastage</span>
+            <span class="specialty-tag">Clinical Trials (Q0/Q1)</span>
+          </div>
+        </article>
+
+        <!-- 5. Gastroenterology -->
+        <article class="specialty-item-card reveal-on-scroll delay-100">
+          <div>
+            <div class="specialty-item-header">
+              <div class="specialty-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                </svg>
+              </div>
+              <h2 class="specialty-name">Gastroenterology</h2>
+            </div>
+            <p class="specialty-desc">
+              Resolves screening versus diagnostic colonoscopy billing nuances (modifier -PT / -33), multiple endoscopy pricing reduction rules, polyp removal technique distinctions, and pathology co-billing.
+            </p>
+          </div>
+          <div class="specialty-tags-row">
+            <span class="specialty-tag">Modifier -PT / -33</span>
+            <span class="specialty-tag">Multiple Endoscopy Rules</span>
+            <span class="specialty-tag">ASC Facility & Pro-Fee</span>
+          </div>
+        </article>
+
+        <!-- 6. Radiology -->
+        <article class="specialty-item-card reveal-on-scroll delay-200">
+          <div>
+            <div class="specialty-item-header">
+              <div class="specialty-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+              </div>
+              <h2 class="specialty-name">Radiology</h2>
+            </div>
+            <p class="specialty-desc">
+              Automates professional (-26) versus technical (-TC) component splitting, order-to-procedure matching, interventional radiology catheter placement coding, and clinical decision support mechanism (CDSM) tracking.
+            </p>
+          </div>
+          <div class="specialty-tags-row">
+            <span class="specialty-tag">Component Split (-26/-TC)</span>
+            <span class="specialty-tag">Interventional Coding</span>
+            <span class="specialty-tag">CDSM AUC Consultation</span>
+          </div>
+        </article>
+
+        <!-- 7. Laboratory -->
+        <article class="specialty-item-card reveal-on-scroll">
+          <div>
+            <div class="specialty-item-header">
+              <div class="specialty-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M10 2v7.31L4.69 17.5A2 2 0 0 0 6.38 21h11.24a2 2 0 0 0 1.69-3.5L14 9.31V2"></path>
+                  <line x1="8.5" y1="2" x2="15.5" y2="2"></line>
+                </svg>
+              </div>
+              <h2 class="specialty-name">Laboratory</h2>
+            </div>
+            <p class="specialty-desc">
+              Supports high-volume clinical and anatomic pathology claim submission, organ/disease panel unbundling edits, molecular biomarker CPT/PLA code validation, and CLIA certificate verification across payer networks.
+            </p>
+          </div>
+          <div class="specialty-tags-row">
+            <span class="specialty-tag">Panel Bundling Edits</span>
+            <span class="specialty-tag">PLA & Molecular CPT</span>
+            <span class="specialty-tag">CLIA Compliance</span>
+          </div>
+        </article>
+
+        <!-- 8. Podiatry -->
+        <article class="specialty-item-card reveal-on-scroll delay-100">
+          <div>
+            <div class="specialty-item-header">
+              <div class="specialty-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M12 6v6l4 2"></path>
+                </svg>
+              </div>
+              <h2 class="specialty-name">Podiatry</h2>
+            </div>
+            <p class="specialty-desc">
+              Applies routine foot care medical necessity coverage guidelines, Q-modifier reporting for systemic conditions (-Q7, -Q8, -Q9), diabetic footwear authorization, and surgical nail/bunionectomy intervention billing.
+            </p>
+          </div>
+          <div class="specialty-tags-row">
+            <span class="specialty-tag">Q-Modifiers (-Q7/-Q8/-Q9)</span>
+            <span class="specialty-tag">Routine Foot Care LCD</span>
+            <span class="specialty-tag">Diabetic Shoe Billing</span>
+          </div>
+        </article>
+
+        <!-- 9. Dermatology -->
+        <article class="specialty-item-card reveal-on-scroll delay-200">
+          <div>
+            <div class="specialty-item-header">
+              <div class="specialty-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+              </div>
+              <h2 class="specialty-name">Dermatology</h2>
+            </div>
+            <p class="specialty-desc">
+              Accurately differentiates benign vs. malignant lesion excision measurements, Mohs micrographic surgery stage/tissue block coding, biopsy encounter separation (modifier -25), and cosmetic vs. medical necessity determinations.
+            </p>
+          </div>
+          <div class="specialty-tags-row">
+            <span class="specialty-tag">Mohs Surgery Stages</span>
+            <span class="specialty-tag">Excision Margin Measurement</span>
+            <span class="specialty-tag">Biopsy vs E/M (-25)</span>
+          </div>
+        </article>
+      </div>
+
+      <!-- Infographic: Specialty RCM Engine Flow -->
+      <div class="workflow-infographic" style="margin-bottom: var(--space-16); padding: 32px 28px;">
+        <div style="text-align: center; max-width: 650px; margin: 0 auto 28px;">
+          <div style="font-size: 0.8rem; font-weight: 700; color: var(--color-cyan); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px;">
+            Specialty Rules Architecture
+          </div>
+          <h2 style="font-size: 1.5rem; font-weight: 800; color: #FFFFFF; margin-bottom: 8px;">
+            How Specialty Documentation Translates into Clean Adjudication
+          </h2>
+          <p style="font-size: 0.88rem; color: #94A3B8; line-height: 1.5;">
+            Our automated scrubbing layers test every claim against clinical specialty guidelines prior to clearinghouse transmission.
+          </p>
+        </div>
+
+        <div class="workflow-steps">
+          <div class="workflow-step">
+            <span class="workflow-step-num">1</span>
+            <div class="workflow-step-title">Encounter Ingestion</div>
+            <div class="workflow-step-desc">Operative notes, pathology reports, and encounter charges parsed via EHR bridge or rannsCDE.</div>
+          </div>
+          <div class="workflow-step">
+            <span class="workflow-step-num">2</span>
+            <div class="workflow-step-title">Specialty Rules Engine</div>
+            <div class="workflow-step-desc">Cross-referenced against specialty LCD/NCD coverage policies and bundling exclusions.</div>
+          </div>
+          <div class="workflow-step">
+            <span class="workflow-step-num">3</span>
+            <div class="workflow-step-title">Modifier & Dosage Scrub</div>
+            <div class="workflow-step-desc">Validation of procedure modifiers, anatomical sites, units, and drug wastage indicators.</div>
+          </div>
+          <div class="workflow-step">
+            <span class="workflow-step-num">4</span>
+            <div class="workflow-step-title">Clearinghouse & Adjudication</div>
+            <div class="workflow-step-desc">Submission of clean EDI 837 batches with sub-second acknowledgment tracking.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Consultation CTA Banner -->
+      <div style="background: linear-gradient(135deg, rgba(8, 14, 32, 0.9) 0%, rgba(14, 24, 52, 0.85) 100%); border: 1px solid var(--border-glass); border-radius: var(--radius-xl); padding: clamp(28px, 5vw, 48px); text-align: center; margin-bottom: var(--space-12);">
+        <h3 style="color: #FFFFFF; font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 800; margin-bottom: 12px;">
+          Elevate Your Specialty Practice Billing Performance
+        </h3>
+        <p style="color: var(--text-secondary); max-width: 650px; margin: 0 auto 24px; font-size: 0.95rem; line-height: 1.6;">
+          Schedule a diagnostic review with our medical specialty billing experts to examine modifier utilization, denial trends, and coding accuracy.
+        </p>
+        <button type="button" class="btn btn-primary btn-lg open-consultation-modal-btn">
+          <span class="btn-glow-stream" aria-hidden="true"></span>
+          <span>Request a Specialty Consultation</span>
+          <svg class="btn-icon-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- ======================================================================
+       ENTERPRISE FOOTER
+       ====================================================================== -->
+  <footer class="site-footer">
+    <!-- Subtle Flowing-Light Effect (Blurred Violet, Indigo, and Cyan Ribbons) -->
+    <div class="footer-flowing-light" aria-hidden="true">
+      <div class="flow-ribbon flow-ribbon-1"></div>
+      <div class="flow-ribbon flow-ribbon-2"></div>
+      <div class="flow-ribbon flow-ribbon-3"></div>
+    </div>
+
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand & Bio -->
+        <div class="footer-brand-col">
+          <a href="index.html" class="brand-logo" aria-label="RannsHealth — Powered by Rannsolve Home">
+            <img src="assets/rannshealth-logo.png" alt="RannsHealth — Powered by Rannsolve" class="brand-logo-img-footer">
+          </a>
+          <p class="footer-copy">
+            Enterprise healthcare revenue cycle management, denial recovery intelligence, and AI-powered cognitive chart
+            review for health systems and physician groups.
+          </p>
+        </div>
+
+        <!-- Col 2: Solutions -->
+        <div>
+          <div class="footer-col-title">Solutions</div>
+          <div class="footer-links-list">
+            <a href="rannsccr.html" class="footer-link">rannsCCR AI Chart Reader</a>
+            <a href="rannscde.html" class="footer-link">rannsCDE Document Extraction</a>
+            <a href="rannscpa.html" class="footer-link">rannsCPA Prior Auth Engine</a>
+            <a href="rcm-calculator.html" class="footer-link">RCM Calculator</a>
+            <a href="index.html#rcm-lifecycle" class="footer-link">End-to-End RCM</a>
+          </div>
+        </div>
+
+        <!-- Col 3: Company & Trust -->
+        <div>
+          <div class="footer-col-title">Enterprise</div>
+          <div class="footer-links-list">
+            <a href="security-architecture.html" class="footer-link">Security Architecture</a>
+            <a href="index.html#transformation" class="footer-link">Client Outcomes</a>
+            <a href="#" class="footer-link open-consultation-modal-btn">Request a Demo</a>
+            <a href="index.html#security" class="footer-link">HIPAA & SOC 2 Capabilities</a>
+          </div>
+        </div>
+
+        <!-- Col 4: Contact & Locations -->
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <div class="footer-links-list" style="font-size: 0.85rem; color: #94A3B8; line-height: 1.6;">
+            <div>Email: <a href="mailto:solutions@infognana.com" style="color: var(--color-cyan);">solutions@infognana.com</a></div>
+            <div>Phone: +1 (800) 555-INFO</div>
+            <div style="margin-top: 8px;">Global Operations Center & Healthcare Delivery Centers</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 INFOGNANA SOLUTIONS. All rights reserved. Built for Healthcare Excellence.
+        </div>
+        <div style="display: flex; gap: 20px;">
+          <a href="privacy-policy.html" class="footer-link">Privacy Policy</a>
+          <a href="terms-of-service.html" class="footer-link">Terms of Service</a>
+          <a href="security-architecture.html" class="footer-link">Security Architecture</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Consultation Modal Component -->
+  <div class="modal-overlay" id="consultationModalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button type="button" class="modal-close-btn" id="closeConsultationModalBtn" aria-label="Close Modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <form id="consultationBookingForm">
+        <div style="margin-bottom: 24px;">
+          <div class="eyebrow-badge badge-cyan" style="margin-bottom: 8px;">
+            <span class="badge-dot"></span>
+            Specialty Practice Advisory
+          </div>
+          <h3 id="modalTitle" style="color: #FFFFFF; font-size: 1.5rem; font-weight: 700; margin-bottom: 6px;">
+            Schedule Specialty RCM Consultation
+          </h3>
+          <p style="font-size: 0.85rem; color: #94A3B8;">
+            Connect with a Senior Specialty Coding Specialist to review procedure documentation, modifier usage, and fee schedule realization.
+          </p>
+        </div>
+
+        <div class="form-group">
+          <label for="formFullName" class="form-label">Full Name *</label>
+          <input type="text" id="formFullName" class="form-input" placeholder="e.g. Dr. Sarah Jenkins, MD" required>
+        </div>
+
+        <div class="form-group">
+          <label for="formWorkEmail" class="form-label">Work Email *</label>
+          <input type="email" id="formWorkEmail" class="form-input" placeholder="sjenkins@healthsystem.org" required>
+        </div>
+
+        <div class="form-group">
+          <label for="formOrgType" class="form-label">Primary Specialty Focus *</label>
+          <select id="formOrgType" class="form-select" required>
+            <option value="Urology">Urology</option>
+            <option value="Orthopedics">Orthopedics</option>
+            <option value="Ophthalmology">Ophthalmology</option>
+            <option value="Oncology">Oncology</option>
+            <option value="Gastroenterology">Gastroenterology</option>
+            <option value="Radiology">Radiology</option>
+            <option value="Laboratory">Laboratory / Pathology</option>
+            <option value="Podiatry">Podiatry</option>
+            <option value="Dermatology">Dermatology</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary modal-submit-btn" style="width: 100%; margin-top: 12px;">
+          <span class="btn-glow-stream" aria-hidden="true"></span>
+          <span class="btn-text">Submit Consultation Request</span>
+          <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+
+        <div class="modal-privacy-notice">
+          🔒 Confidential. RannsHealth adheres to strict HIPAA non-disclosure protocols.
+        </div>
+      </form>
+
+      <div id="modalConfirmationView" style="display: none;"></div>
+    </div>
+  </div>
+
+  <!-- JavaScript Application -->
+  <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

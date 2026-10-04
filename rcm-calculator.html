@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RCM Calculator | AI Labs | INFOGNANA SOLUTIONS</title>
+  <meta name="description" content="RCM Calculator - Interactive Revenue Cycle & ROI Modeling Engine by INFOGNANA SOLUTIONS.">
+  <meta name="theme-color" content="#050914">
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css?v=2.2">
+  <link rel="stylesheet" href="css/base.css?v=2.2">
+  <link rel="stylesheet" href="css/components.css?v=2.2">
+  <link rel="stylesheet" href="css/animations.css?v=2.2">
+</head>
+
+<body>
+
+  <!-- ======================================================================
+       1. NAVIGATION & STICKY HEADER
+       ====================================================================== -->
+  <header class="header-nav" id="mainHeader">
+    <div class="container nav-container">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="RannsHealth — Powered by Rannsolve Home">
+        <img src="assets/rannshealth-logo.png" alt="RannsHealth — Powered by Rannsolve" class="brand-logo-img">
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" aria-label="Primary Navigation">
+        <a href="index.html#rcm-lifecycle" class="nav-link">RCM Lifecycle</a>
+        <div class="nav-item-dropdown" id="aiLabsDropdown">
+          <button type="button" class="nav-link nav-dropdown-trigger active" id="aiLabsTrigger" aria-expanded="false" aria-haspopup="true" aria-controls="aiLabsMenu">
+            <span>AI Labs</span>
+            <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="nav-dropdown-menu" id="aiLabsMenu" role="menu" aria-labelledby="aiLabsTrigger">
+            <a href="rannscde.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">rannsCDE</span>
+            </a>
+            <a href="rannsccr.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">rannsCCR</span>
+            </a>
+            <a href="rannscpa.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">rannsCPA</span>
+            </a>
+            <a href="rcm-calculator.html" class="nav-dropdown-item active" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">RCM Calculator</span>
+            </a>
+          </div>
+        </div>
+        <div class="nav-item-dropdown" id="specialtiesDropdown">
+          <button type="button" class="nav-link nav-dropdown-trigger" id="specialtiesTrigger" aria-expanded="false" aria-haspopup="true" aria-controls="specialtiesMenu">
+            <span>Specialties</span>
+            <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="nav-dropdown-menu" id="specialtiesMenu" role="menu" aria-labelledby="specialtiesTrigger">
+            <a href="organization-types.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">Organization Types</span>
+            </a>
+            <a href="medical-specialties.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">Medical Specialties</span>
+            </a>
+            <a href="behavioral-health.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">Behavioral Health</span>
+            </a>
+          </div>
+        </div>
+        <a href="index.html#transformation" class="nav-link">Outcomes</a>
+        <a href="index.html#dashboard" class="nav-link">Dashboard</a>
+        <a href="index.html#denials" class="nav-link">Denial Recovery</a>
+        <a href="index.html#services" class="nav-link">Services</a>
+        <a href="index.html#security" class="nav-link">Security & Compliance</a>
+      </nav>
+
+      <!-- Action CTAs -->
+      <div class="nav-actions">
+        <button type="button" class="btn btn-primary btn-sm open-consultation-modal-btn">Request a Consultation</button>
+        <button type="button" class="nav-mobile-toggle" aria-label="Toggle Mobile Menu" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="product-page-main">
+    <div class="container">
+      <!-- Breadcrumb & Hero Header -->
+      <div class="product-hero-header" style="margin-bottom: var(--space-8);">
+        <div class="eyebrow-badge badge-cyan product-hero-badge">
+          <span class="badge-dot"></span>
+          AI Labs · Financial Modeling
+        </div>
+        <h1 class="product-page-title">Explore your collection opportunity.</h1>
+        <p class="product-page-subtitle">
+          Compare current collections with a target rate. This is a scenario estimate, not a performance guarantee.
+        </p>
+      </div>
+
+      <!-- Main Interactive Calculator Panel (Matching Reference Screenshot 2) -->
+      <div class="rcm-calc-panel">
+        <div class="rcm-calc-eyebrow">RCM CALCULATOR</div>
+        <h2 class="rcm-calc-heading">Explore your collection opportunity.</h2>
+        <p class="rcm-calc-subheading">
+          Compare current collections with a target rate. This is a scenario estimate, not a performance guarantee.
+        </p>
+
+        <!-- Revenue Quick Presets -->
+        <div style="margin-bottom: 24px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+          <span style="font-size: 0.8rem; font-weight: 700; color: #64748B;">Quick Scenarios:</span>
+          <button type="button" class="rcm-preset-chip active" data-revenue="94000" style="padding: 6px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; border: 1px solid #CBD5E1; background: #F1F5F9; color: #0F172A; cursor: pointer;">$94,000 / mo</button>
+          <button type="button" class="rcm-preset-chip" data-revenue="250000" style="padding: 6px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; border: 1px solid #CBD5E1; background: #FFFFFF; color: #475569; cursor: pointer;">$250,000 / mo</button>
+          <button type="button" class="rcm-preset-chip" data-revenue="750000" style="padding: 6px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; border: 1px solid #CBD5E1; background: #FFFFFF; color: #475569; cursor: pointer;">$750,000 / mo</button>
+          <button type="button" class="rcm-preset-chip" data-revenue="2000000" style="padding: 6px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; border: 1px solid #CBD5E1; background: #FFFFFF; color: #475569; cursor: pointer;">$2,000,000 / mo</button>
+        </div>
+
+        <!-- Form and Results 2-Column Grid -->
+        <div class="rcm-calc-grid">
+          <!-- Left Column: Inputs Form -->
+          <form id="rcmCalcForm" class="rcm-calc-form" onsubmit="return false;">
+            <!-- Input 1: Monthly Collectible Revenue -->
+            <div class="rcm-input-block">
+              <div class="rcm-input-header">
+                <label for="rcmMonthlyRevenue" class="rcm-input-label">Monthly collectible revenue ($)</label>
+                <span class="rcm-input-hint">Gross Collectible</span>
+              </div>
+              <input 
+                type="number" 
+                id="rcmMonthlyRevenue" 
+                class="rcm-text-input" 
+                value="94000" 
+                min="0" 
+                step="1000" 
+                placeholder="e.g. 94000"
+                aria-label="Monthly collectible revenue in dollars"
+                required
+              >
+              <input 
+                type="range" 
+                id="rcmRevenueSlider" 
+                class="rcm-slider-control" 
+                min="10000" 
+                max="2000000" 
+                step="5000" 
+                value="94000"
+                aria-label="Adjust Monthly collectible revenue"
+              >
+            </div>
+
+            <!-- Input 2: Current Collection Rate -->
+            <div class="rcm-input-block">
+              <div class="rcm-input-header">
+                <label for="rcmCurrentRate" class="rcm-input-label">Current collection rate (%)</label>
+                <span class="rcm-input-hint">Baseline Realization</span>
+              </div>
+              <input 
+                type="number" 
+                id="rcmCurrentRate" 
+                class="rcm-text-input" 
+                value="85" 
+                min="0" 
+                max="100" 
+                step="0.5" 
+                placeholder="e.g. 85"
+                aria-label="Current collection rate percentage"
+                required
+              >
+              <input 
+                type="range" 
+                id="rcmCurrentRateSlider" 
+                class="rcm-slider-control" 
+                min="50" 
+                max="99" 
+                step="1" 
+                value="85"
+                aria-label="Adjust Current collection rate"
+              >
+            </div>
+
+            <!-- Input 3: Target Collection Rate -->
+            <div class="rcm-input-block">
+              <div class="rcm-input-header">
+                <label for="rcmTargetRate" class="rcm-input-label">Target collection rate (%)</label>
+                <span class="rcm-input-hint">Optimized Target</span>
+              </div>
+              <input 
+                type="number" 
+                id="rcmTargetRate" 
+                class="rcm-text-input" 
+                value="95" 
+                min="0" 
+                max="100" 
+                step="0.5" 
+                placeholder="e.g. 95"
+                aria-label="Target collection rate percentage"
+                required
+              >
+              <input 
+                type="range" 
+                id="rcmTargetRateSlider" 
+                class="rcm-slider-control" 
+                min="50" 
+                max="100" 
+                step="1" 
+                value="95"
+                aria-label="Adjust Target collection rate"
+              >
+            </div>
+
+            <!-- Validation Alert Box -->
+            <div id="rcmValidationAlert" style="display: none; padding: 10px 14px; background: #FEF2F2; border: 1px solid #FECACA; border-radius: 8px; color: #DC2626; font-size: 0.82rem; font-weight: 600;"></div>
+
+            <!-- Action Button -->
+            <button type="button" id="rcmCalcBtn" class="rcm-calc-btn">
+              <span>Calculate Opportunity</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </form>
+
+          <!-- Right Column: Results Card (Light Blue Container from Screenshot 2) -->
+          <div class="rcm-calc-results-card">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="rcm-res-label">ESTIMATED MONTHLY DIFFERENCE</div>
+                <span id="rcmRateDeltaBadge" style="font-size: 0.72rem; font-weight: 700; color: #0284C7; background: #DBEAFE; padding: 3px 8px; border-radius: 4px; font-family: var(--font-mono);">+10.0% Collection Delta</span>
+              </div>
+              <div id="rcmMonthlyDiffVal" class="rcm-res-amount">$9,400</div>
+              <div id="rcmAnnualDiffVal" class="rcm-res-annualized">$112,800 annualized</div>
+            </div>
+
+            <div>
+              <div class="rcm-res-divider"></div>
+              <div class="rcm-res-formula-footnote">
+                Monthly collectible revenue × (target rate − current rate). Costs and timing are excluded.
+              </div>
+
+              <button type="button" class="rcm-res-cta-btn open-consultation-modal-btn" style="width: 100%;">
+                <span>Discuss This Opportunity With An RCM Architect</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mandatory Scenario Estimate Legal Disclaimer -->
+        <div class="rcm-legal-disclaimer-box">
+          <strong>Disclaimer & Methodology:</strong> This interactive calculation is provided for informational and planning purposes as a scenario estimate and does not represent a performance guarantee or contractual warranty. Actual collections and revenue realization depend on payer contracts, patient mix, billing accuracy, and clean claim rates. Operational implementation costs, integration expenses, and transition timing are excluded.
+        </div>
+      </div>
+
+      <!-- Industry Benchmark Cards Section -->
+      <div style="margin-top: var(--space-16);">
+        <div style="text-align: center; margin-bottom: var(--space-10);">
+          <div class="eyebrow-badge badge-cyan" style="margin-bottom: 8px;">
+            <span class="badge-dot"></span>
+            Performance Metrics
+          </div>
+          <h2 style="font-size: 2rem; font-weight: 800; color: #FFFFFF;">
+            Healthcare Revenue Cycle Benchmarks
+          </h2>
+          <p style="font-size: 0.95rem; color: var(--text-secondary); max-width: 600px; margin: 8px auto 0;">
+            How top-performing healthcare organizations and provider groups benchmark key financial indicators:
+          </p>
+        </div>
+
+        <div class="cap-deepdive-grid">
+          <div class="cap-deepdive-card">
+            <div class="cap-deepdive-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <div class="cap-deepdive-title">&lt;32 Days in A/R</div>
+            <div class="cap-deepdive-text">
+              Industry top decile performance accelerates cash flow and minimizes aged claims at risk of write-offs.
+            </div>
+          </div>
+
+          <div class="cap-deepdive-card">
+            <div class="cap-deepdive-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+            <div class="cap-deepdive-title">98%+ Clean Claim Rate</div>
+            <div class="cap-deepdive-text">
+              First-pass claim acceptance eliminates avoidable rework cycles, clearinghouse rejections, and administrative overhead.
+            </div>
+          </div>
+
+          <div class="cap-deepdive-card">
+            <div class="cap-deepdive-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <div class="cap-deepdive-title">&lt;3% Initial Denial Rate</div>
+            <div class="cap-deepdive-text">
+              Proactive eligibility verification, AI prior authorization, and rules engines stop denials before submission.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Consultation Callout -->
+      <div class="final-cta-card" style="margin-top: var(--space-8); text-align: center; padding: 48px 24px; background: rgba(14, 23, 48, 0.75); border: 1px solid rgba(0, 240, 255, 0.25); border-radius: 20px;">
+        <h2 style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF; margin-bottom: 12px;">
+          Turn Realization Opportunities Into Actual Cash
+        </h2>
+        <p style="font-size: 1rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto 24px;">
+          Connect with an INFOGNANA Solutions RCM Specialist to perform a detailed complimentary revenue cycle health audit.
+        </p>
+        <button type="button" class="btn btn-primary open-consultation-modal-btn">
+          <span class="btn-glow-stream" aria-hidden="true"></span>
+          <span>Request a Revenue Cycle Audit</span>
+          <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- ======================================================================
+       ENTERPRISE FOOTER
+       ====================================================================== -->
+  <footer class="site-footer">
+    <!-- Subtle Flowing-Light Effect (Blurred Violet, Indigo, and Cyan Ribbons) -->
+    <div class="footer-flowing-light" aria-hidden="true">
+      <div class="flow-ribbon flow-ribbon-1"></div>
+      <div class="flow-ribbon flow-ribbon-2"></div>
+      <div class="flow-ribbon flow-ribbon-3"></div>
+    </div>
+
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand & Bio -->
+        <div class="footer-brand-col">
+          <a href="index.html" class="brand-logo" aria-label="RannsHealth — Powered by Rannsolve Home">
+            <img src="assets/rannshealth-logo.png" alt="RannsHealth — Powered by Rannsolve" class="brand-logo-img-footer">
+          </a>
+          <p class="footer-copy">
+            Enterprise healthcare revenue cycle management, denial recovery intelligence, and AI-powered cognitive chart
+            review for health systems and physician groups.
+          </p>
+        </div>
+
+        <!-- Col 2: Solutions -->
+        <div>
+          <div class="footer-col-title">Solutions</div>
+          <div class="footer-links-list">
+            <a href="rannsccr.html" class="footer-link">rannsCCR AI Chart Reader</a>
+            <a href="rannscde.html" class="footer-link">rannsCDE Document Extraction</a>
+            <a href="rannscpa.html" class="footer-link">rannsCPA Prior Auth Engine</a>
+            <a href="rcm-calculator.html" class="footer-link">RCM Calculator</a>
+            <a href="index.html#rcm-lifecycle" class="footer-link">End-to-End RCM</a>
+          </div>
+        </div>
+
+        <!-- Col 3: Company & Trust -->
+        <div>
+          <div class="footer-col-title">Enterprise</div>
+          <div class="footer-links-list">
+            <a href="index.html#security" class="footer-link">Security & Compliance</a>
+            <a href="index.html#transformation" class="footer-link">Client Outcomes</a>
+            <a href="#" class="footer-link open-consultation-modal-btn">Request a Demo</a>
+            <a href="index.html#security" class="footer-link">HIPAA & SOC 2 Capabilities</a>
+          </div>
+        </div>
+
+        <!-- Col 4: Contact & Locations -->
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <div class="footer-links-list" style="font-size: 0.85rem; color: #94A3B8; line-height: 1.6;">
+            <div>Email: <a href="mailto:solutions@infognana.com" style="color: var(--color-cyan);">solutions@infognana.com</a></div>
+            <div>Phone: +1 (800) 555-INFO</div>
+            <div style="margin-top: 8px;">Global Operations Center & Healthcare Delivery Centers</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 INFOGNANA SOLUTIONS. All rights reserved. Built for Healthcare Excellence.
+        </div>
+        <div style="display: flex; gap: 20px;">
+          <a href="privacy-policy.html" class="footer-link">Privacy Policy</a>
+          <a href="terms-of-service.html" class="footer-link">Terms of Service</a>
+          <a href="security-architecture.html" class="footer-link">Security Architecture</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       INTERACTIVE CONSULTATION & DEMO BOOKING MODAL
+       ====================================================================== -->
+  <div class="modal-overlay" id="consultationModalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button type="button" class="modal-close-btn" id="closeConsultationModalBtn" aria-label="Close Modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Booking Form -->
+      <form id="consultationBookingForm">
+        <div style="margin-bottom: 24px;">
+          <div class="eyebrow-badge badge-cyan" style="margin-bottom: 8px;">
+            <span class="badge-dot"></span>
+            RCM Advisory
+          </div>
+          <h3 id="modalTitle" style="color: #FFFFFF; font-size: 1.5rem; font-weight: 700; margin-bottom: 6px;">
+            Request a Consultation & ROI Analysis
+          </h3>
+          <p style="font-size: 0.85rem; color: #94A3B8;">
+            Connect with a Senior Healthcare RCM Architect from INFOGNANA SOLUTIONS to evaluate your claims volume and potential revenue uplift.
+          </p>
+        </div>
+
+        <div class="form-group">
+          <label for="formFullName" class="form-label">Full Name *</label>
+          <input type="text" id="formFullName" class="form-input" placeholder="e.g. Dr. Sarah Jenkins, MD" required>
+        </div>
+
+        <div class="form-group">
+          <label for="formWorkEmail" class="form-label">Work Email *</label>
+          <input type="email" id="formWorkEmail" class="form-input" placeholder="sjenkins@healthsystem.org" required>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div class="form-group">
+            <label for="formOrgType" class="form-label">Organization Type *</label>
+            <select id="formOrgType" class="form-select" required>
+              <option value="Hospital & Health System">Hospital & Health System</option>
+              <option value="Large Physician Practice">Large Physician Practice Group</option>
+              <option value="Specialty Clinic (Oncology/Cardio/Ortho)">Specialty Clinic</option>
+              <option value="Medical Billing Company">Medical Billing Company</option>
+              <option value="Ambulatory Surgical Center">Ambulatory Surgical Center</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="formVolume" class="form-label">Monthly Claims Volume</label>
+            <select id="formVolume" class="form-select">
+              <option value="5,000 - 15,000 Claims/Mo">5,000 - 15,000 Claims/Mo</option>
+              <option value="15,000 - 50,000 Claims/Mo" selected>15,000 - 50,000 Claims/Mo</option>
+              <option value="50,000 - 200,000+ Claims/Mo">50,000 - 200,000+ Claims/Mo</option>
+              <option value="Enterprise Multi-Hospital">Enterprise Multi-Hospital</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="formPrimaryGoal" class="form-label">Primary Objective</label>
+          <select id="formPrimaryGoal" class="form-select">
+            <option value="Model ROI & Financial Uplift">Model ROI & Financial Uplift</option>
+            <option value="Deploy rannsCCR AI Chart Review">Deploy rannsCCR AI Chart Review</option>
+            <option value="Reduce Denials & A/R Days">Reduce Denials & Accelerate A/R</option>
+            <option value="Full Revenue Cycle Outsourcing">Full End-to-End RCM Outsourcing</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary modal-submit-btn" style="width: 100%; margin-top: 12px;">
+          <span class="btn-glow-stream" aria-hidden="true"></span>
+          <span class="btn-text">Submit Consultation Request</span>
+          <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+
+        <div class="modal-privacy-notice">
+          🔒 Confidential. INFOGNANA SOLUTIONS adheres to strict HIPAA non-disclosure and privacy protocols.
+        </div>
+      </form>
+
+      <!-- Confirmation State Container -->
+      <div id="modalConfirmationView" style="display: none;"></div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript Application -->
+  <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

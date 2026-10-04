@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RannsHealth Loading Screen Preview</title>
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css?v=2.2">
+  <link rel="stylesheet" href="css/base.css?v=2.2">
+  <link rel="stylesheet" href="css/components.css?v=2.3">
+  <link rel="stylesheet" href="css/animations.css?v=2.2">
+  <style>
+    body {
+      background-color: #050914;
+      color: #fff;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+    .preview-bg-content {
+      padding: 2rem 1rem;
+      max-width: 100%;
+      margin: 0 auto;
+      opacity: 0.7;
+      box-sizing: border-box;
+      overflow-wrap: break-word;
+    }
+  </style>
+</head>
+<body>
+  <!-- Background content to verify that underlying page content is visible behind the loader -->
+  <div class="preview-bg-content">
+    <h1 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #fff;">Underlying Page Content Visible</h1>
+    <p style="font-size: 0.95rem; color: #94A3B8; max-width: 100%;">
+      Zero blank screen: The page content renders behind the translucent deep-navy loader overlay with cyan lighting accents.
+    </p>
+  </div>
+
+  <!-- RannsHealth Loading Screen -->
+  <div id="rannshealthLoader" class="rannshealth-loader" role="status" aria-live="polite" aria-label="Loading RannsHealth">
+    <!-- Ambient Cyan & Teal Light Accents -->
+    <div class="loader-ambient-glow loader-ambient-cyan" aria-hidden="true"></div>
+    <div class="loader-ambient-glow loader-ambient-teal" aria-hidden="true"></div>
+
+    <!-- Background Moving Data Particles Canvas -->
+    <canvas id="loaderParticlesCanvas" class="loader-particles-canvas" aria-hidden="true"></canvas>
+
+    <!-- Central Loader Content -->
+    <div class="loader-content">
+      <!-- RannsHealth Logo with Brief Clean Fade & Ambient Glow Halo -->
+      <div class="loader-logo-wrapper">
+        <div class="loader-logo-card">
+          <img src="assets/rannshealth-logo.png" alt="RannsHealth — Powered by Rannsolve" class="loader-logo-img">
+        </div>
+        <div class="loader-logo-halo" aria-hidden="true"></div>
+      </div>
+
+      <!-- Cyan ECG Heartbeat Wave with Center Pulse and Workflow Nodes -->
+      <div class="loader-ecg-container" aria-hidden="true">
+        <svg class="loader-ecg-svg" viewBox="0 0 700 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="ecgGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#00F0FF" stop-opacity="0.2" />
+              <stop offset="25%" stop-color="#00F0FF" stop-opacity="0.85" />
+              <stop offset="50%" stop-color="#70F3FF" stop-opacity="1" />
+              <stop offset="75%" stop-color="#00D2B4" stop-opacity="0.85" />
+              <stop offset="100%" stop-color="#00D2B4" stop-opacity="0.2" />
+            </linearGradient>
+            <filter id="ecgGlow" x="-20%" y="-40%" width="140%" height="180%">
+              <feGaussianBlur stdDeviation="3.5" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+          </defs>
+
+          <!-- Dim Background Baseline Track -->
+          <path class="ecg-track-dim" d="M 20 60 L 120 60 L 180 60 Q 200 50 220 60 L 245 68 L 275 14 L 305 106 L 325 60 Q 345 48 365 60 L 390 60 L 550 60 L 680 60" />
+
+          <!-- Dynamic Cyan Animated Heartbeat Line -->
+          <path class="ecg-line-pulse" d="M 20 60 L 120 60 L 180 60 Q 200 50 220 60 L 245 68 L 275 14 L 305 106 L 325 60 Q 345 48 365 60 L 390 60 L 550 60 L 680 60" />
+
+          <!-- Soft Center Pulse as it passes center (Center at x=275, y=60) -->
+          <circle class="center-pulse-ring ring-1" cx="275" cy="60" r="28" />
+          <circle class="center-pulse-ring ring-2" cx="275" cy="60" r="28" />
+
+          <!-- Connected Workflow Node 1: Patient Care (x=120, y=60) -->
+          <g class="workflow-node node-patient" transform="translate(120, 60)">
+            <circle class="node-halo" r="14" />
+            <circle class="node-core" r="6" />
+            <circle class="node-center" r="2.5" />
+            <text class="node-label" y="34">Patient Care</text>
+          </g>
+
+          <!-- Connected Workflow Node 2: Claims (x=390, y=60) -->
+          <g class="workflow-node node-claims" transform="translate(390, 60)">
+            <circle class="node-halo" r="14" />
+            <circle class="node-core" r="6" />
+            <circle class="node-center" r="2.5" />
+            <text class="node-label" y="34">Claims</text>
+          </g>
+
+          <!-- Connected Workflow Node 3: Revenue Cycle (x=550, y=60) -->
+          <g class="workflow-node node-revenue" transform="translate(550, 60)">
+            <circle class="node-halo" r="14" />
+            <circle class="node-core" r="6" />
+            <circle class="node-center" r="2.5" />
+            <text class="node-label" y="34">Revenue Cycle</text>
+          </g>
+        </svg>
+      </div>
+
+      <!-- Exact Caption: “A healthier revenue cycle. A stronger practice.” -->
+      <h2 class="loader-caption">
+        <span class="loader-caption-primary">A healthier revenue cycle.</span>
+        <span class="loader-caption-accent">A stronger practice.</span>
+      </h2>
+    </div>
+  </div>
+
+  <script>
+    // Initialize data particles on canvas for preview
+    const canvas = document.getElementById('loaderParticlesCanvas');
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      let width, height;
+      const particles = [];
+      const count = 28;
+
+      function resize() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      }
+      window.addEventListener('resize', resize);
+      resize();
+
+      for (let i = 0; i < count; i++) {
+        particles.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          vx: (Math.random() - 0.5) * 0.4,
+          vy: (Math.random() - 0.5) * 0.4,
+          radius: Math.random() * 1.5 + 1,
+          alpha: Math.random() * 0.45 + 0.2
+        });
+      }
+
+      function render() {
+        ctx.clearRect(0, 0, width, height);
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 80) {
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.strokeStyle = 'rgba(0, 240, 255, ' + (0.15 * (1 - dist / 80)) + ')';
+              ctx.lineWidth = 0.75;
+              ctx.stroke();
+            }
+          }
+        }
+        for (let i = 0; i < particles.length; i++) {
+          const p = particles[i];
+          p.x += p.vx;
+          p.y += p.vy;
+          if (p.x < 0) p.x = width;
+          if (p.x > width) p.x = 0;
+          if (p.y < 0) p.y = height;
+          if (p.y > height) p.y = 0;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(0, 240, 255, ' + p.alpha + ')';
+          ctx.shadowColor = 'rgba(0, 240, 255, 0.6)';
+          ctx.shadowBlur = 4;
+          ctx.fill();
+          ctx.shadowBlur = 0;
+        }
+        requestAnimationFrame(render);
+      }
+      render();
+    }
+  </script>
+</body>
+</html>

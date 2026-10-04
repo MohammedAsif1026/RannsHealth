@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service | Draft for Review | RannsHealth</title>
+  <meta name="description" content="Draft Terms of Service for RannsHealth healthcare revenue-cycle management and AI products. Documented for business and legal review.">
+  <meta name="theme-color" content="#050914">
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css?v=2.2">
+  <link rel="stylesheet" href="css/base.css?v=2.2">
+  <link rel="stylesheet" href="css/components.css?v=2.2">
+  <link rel="stylesheet" href="css/animations.css?v=2.2">
+</head>
+
+<body>
+
+  <!-- ======================================================================
+       NAVIGATION & STICKY HEADER
+       ====================================================================== -->
+  <header class="header-nav" id="mainHeader">
+    <div class="container nav-container">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="RannsHealth — Powered by Rannsolve Home">
+        <img src="assets/rannshealth-logo.png" alt="RannsHealth — Powered by Rannsolve" class="brand-logo-img">
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" aria-label="Primary Navigation">
+        <a href="index.html#rcm-lifecycle" class="nav-link">RCM Lifecycle</a>
+        <div class="nav-item-dropdown" id="aiLabsDropdown">
+          <button type="button" class="nav-link nav-dropdown-trigger" id="aiLabsTrigger" aria-expanded="false" aria-haspopup="true" aria-controls="aiLabsMenu">
+            <span>AI Labs</span>
+            <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="nav-dropdown-menu" id="aiLabsMenu" role="menu" aria-labelledby="aiLabsTrigger">
+            <a href="rannscde.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">rannsCDE</span>
+            </a>
+            <a href="rannsccr.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">rannsCCR</span>
+            </a>
+            <a href="rannscpa.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">rannsCPA</span>
+            </a>
+            <a href="rcm-calculator.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">RCM Calculator</span>
+            </a>
+          </div>
+        </div>
+        <div class="nav-item-dropdown" id="specialtiesDropdown">
+          <button type="button" class="nav-link nav-dropdown-trigger" id="specialtiesTrigger" aria-expanded="false" aria-haspopup="true" aria-controls="specialtiesMenu">
+            <span>Specialties</span>
+            <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="nav-dropdown-menu" id="specialtiesMenu" role="menu" aria-labelledby="specialtiesTrigger">
+            <a href="organization-types.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">Organization Types</span>
+            </a>
+            <a href="medical-specialties.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">Medical Specialties</span>
+            </a>
+            <a href="behavioral-health.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">Behavioral Health</span>
+            </a>
+          </div>
+        </div>
+        <a href="index.html#transformation" class="nav-link">Outcomes</a>
+        <a href="index.html#dashboard" class="nav-link">Dashboard</a>
+        <a href="index.html#denials" class="nav-link">Denial Recovery</a>
+        <a href="index.html#services" class="nav-link">Services</a>
+        <a href="index.html#security" class="nav-link">Security & Compliance</a>
+      </nav>
+
+      <!-- Action CTAs -->
+      <div class="nav-actions">
+        <button type="button" class="btn btn-primary btn-sm open-consultation-modal-btn">Request a Consultation</button>
+        <button type="button" class="nav-mobile-toggle" aria-label="Toggle Mobile Menu" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="policy-page-main">
+    <div class="container">
+      <!-- Header -->
+      <div class="product-hero-header" style="text-align: left; max-width: 100%; margin-bottom: 24px;">
+        <div class="eyebrow-badge badge-cyan" style="margin-bottom: 12px;">
+          <span class="badge-dot"></span>
+          Corporate Governance · Legal & Regulatory
+        </div>
+        <h1 class="product-page-title" style="font-size: clamp(2rem, 3.8vw, 3rem); margin-bottom: 12px;">
+          Terms of Service & Platform Conditions
+        </h1>
+        <p class="product-page-subtitle" style="max-width: 820px; margin-bottom: 20px;">
+          Conditions governing access to and use of RannsHealth web resources, interactive AI product simulators, and informational demonstrations.
+        </p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <a href="index.html" class="btn btn-secondary btn-sm">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            <span>Return to Main Site</span>
+          </a>
+          <button type="button" class="btn btn-primary btn-sm open-consultation-modal-btn">
+            <span>Enterprise MSA Inquiries</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Business Review Notice Banner -->
+      <div class="policy-draft-banner">
+        <span class="policy-draft-badge">Draft Notice</span>
+        <div>
+          <strong>Draft Document for Business Review:</strong> These website terms govern general site access and preliminary demonstration usage. Enterprise commercial engagements are governed by separately negotiated Master Services Agreements (MSAs), Service Level Agreements (SLAs), and Business Associate Agreements (BAAs). Specific legal provisions are marked with placeholders (<span class="doc-placeholder">[Placeholder]</span>) pending corporate counsel finalization.
+        </div>
+      </div>
+
+      <!-- Main Layout: Sidebar & Content -->
+      <div class="legal-grid">
+        <!-- Sticky Sidebar Navigation -->
+        <aside class="legal-sidebar">
+          <div class="legal-nav-title">Terms Outline</div>
+          <nav class="legal-nav-list" aria-label="Terms of Service Sections">
+            <a href="#term-1" class="legal-nav-link">1. Agreement to Terms</a>
+            <a href="#term-2" class="legal-nav-link">2. Healthcare Disclaimer</a>
+            <a href="#term-3" class="legal-nav-link">3. AI Demonstrations</a>
+            <a href="#term-4" class="legal-nav-link">4. Intellectual Property</a>
+            <a href="#term-5" class="legal-nav-link">5. User Conduct</a>
+            <a href="#term-6" class="legal-nav-link">6. Warranty Disclaimers</a>
+            <a href="#term-7" class="legal-nav-link">7. Liability Limitations</a>
+            <a href="#term-8" class="legal-nav-link">8. Governing Jurisdiction</a>
+          </nav>
+        </aside>
+
+        <!-- Document Content -->
+        <article class="legal-content-card">
+          <!-- Section 1 -->
+          <section class="legal-section" id="term-1">
+            <h2 class="legal-section-title">
+              <span class="legal-section-number">01.</span>
+              Agreement to Terms & Enterprise MSA Precedence
+            </h2>
+            <p class="legal-text">
+              By accessing, browsing, or utilizing the website, digital demonstrations, or online interactive tools provided by <span class="doc-placeholder">[Company Legal Entity Name, e.g., RannsHealth / Infognana Solutions LLC]</span> ("the Company," "we," "us"), you agree to comply with and be bound by these Terms of Service.
+            </p>
+            <p class="legal-text">
+              <strong>Relationship to Commercial Agreements:</strong> If your healthcare organization has entered into an executed Master Services Agreement (MSA), Business Associate Agreement (BAA), Statement of Work (SOW), or Service Level Agreement (SLA) with the Company, the terms of those definitive contracts shall supersede and govern over these website terms in the event of any conflict.
+            </p>
+          </section>
+
+          <!-- Section 2 -->
+          <section class="legal-section" id="term-2">
+            <h2 class="legal-section-title">
+              <span class="legal-section-number">02.</span>
+              Healthcare & Clinical Decision-Making Disclaimer
+            </h2>
+            <p class="legal-text">
+              The products and services presented on this website—including revenue cycle management workflows, billing advisory tools, and AI Labs software (rannsCDE, rannsCCR, rannsCPA, and the RCM Calculator)—are designed exclusively for administrative, operational, billing compliance, and revenue cycle optimization purposes.
+            </p>
+            <div style="background: rgba(245, 158, 11, 0.08); border-left: 3px solid #F59E0B; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 18px 0; font-size: 0.92rem; color: #FDE68A; line-height: 1.6;">
+              <strong>Important Clinical Disclaimer:</strong> RannsHealth does not provide medical diagnoses, clinical treatment plans, or direct patient care advice. AI-assisted chart intelligence, entity extraction, and code validation tools are assistive administrative utilities intended to support certified clinical coders and billing professionals. All clinical diagnostic decisions remain the sole professional responsibility of licensed healthcare practitioners.
+            </div>
+          </section>
+
+          <!-- Section 3 -->
+          <section class="legal-section" id="term-3">
+            <h2 class="legal-section-title">
+              <span class="legal-section-number">03.</span>
+              Interactive Demonstrations & ROI Calculator
+            </h2>
+            <p class="legal-text">
+              The interactive document scanner and the RCM Calculator provided on this website are illustrative simulations designed to demonstrate system logic and potential financial improvements based on user-provided parameters:
+            </p>
+            <ul class="legal-list">
+              <li class="legal-list-item">
+                <span class="legal-list-bullet"></span>
+                <div>
+                  <strong>Illustrative Calculations:</strong> Projected denial reduction values and collection uplift figures generated by the RCM Calculator represent mathematical estimates based on generic industry averages. Actual financial outcomes vary based on provider specialty, payer mix, contract rates, and historical billing clean rates.
+                </div>
+              </li>
+              <li class="legal-list-item">
+                <span class="legal-list-bullet"></span>
+                <div>
+                  <strong>Simulated Clinical Content:</strong> Sample charts displayed in rannsCCR and rannsCDE interactive viewers are synthetic, de-identified clinical mockups created solely for product demonstration.
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <!-- Section 4 -->
+          <section class="legal-section" id="term-4">
+            <h2 class="legal-section-title">
+              <span class="legal-section-number">04.</span>
+              Intellectual Property & Proprietary Algorithms
+            </h2>
+            <p class="legal-text">
+              All proprietary algorithms, user interface architectures, software code, graphic designs, icons, documentation, and registered or unregistered trademarks (including "rannsCCR," "rannsCDE," "rannsCPA," "RannsHealth," and "Infognana") are the exclusive intellectual property of the Company and its licensors.
+            </p>
+            <p class="legal-text">
+              Visitors are granted a limited, revocable, non-exclusive license solely to view the content for evaluation purposes. No part of our software architectures, models, or design systems may be reverse engineered, copied, decompiled, scraped, or republished without prior written authorization.
+            </p>
+          </section>
+
+          <!-- Section 5 -->
+          <section class="legal-section" id="term-5">
+            <h2 class="legal-section-title">
+              <span class="legal-section-number">05.</span>
+              User Conduct & Prohibited Activities
+            </h2>
+            <p class="legal-text">
+              Users of this site agree not to:
+            </p>
+            <ul class="legal-list">
+              <li class="legal-list-item">
+                <span class="legal-list-bullet"></span>
+                <div>Transmit real, unencrypted Protected Health Information (PHI) or personal financial records via unauthenticated contact forms.</div>
+              </li>
+              <li class="legal-list-item">
+                <span class="legal-list-bullet"></span>
+                <div>Introduce malicious scripts, automated spiders, denial-of-service tools, or vulnerability assessment scanners without prior written penetration authorization.</div>
+              </li>
+              <li class="legal-list-item">
+                <span class="legal-list-bullet"></span>
+                <div>Impersonate licensed healthcare providers, health systems, or clearinghouse entities during consultation inquiries.</div>
+              </li>
+            </ul>
+          </section>
+
+          <!-- Section 6 -->
+          <section class="legal-section" id="term-6">
+            <h2 class="legal-section-title">
+              <span class="legal-section-number">06.</span>
+              Warranty Disclaimers
+            </h2>
+            <p class="legal-text">
+              This website, its content, and all preliminary demonstration features are provided on an "AS IS" and "AS AVAILABLE" basis without warranties of any kind, whether express or implied, including but not limited to implied warranties of merchantability, fitness for a particular administrative or healthcare purpose, non-infringement, or uninterrupted server availability.
+            </p>
+          </section>
+
+          <!-- Section 7 -->
+          <section class="legal-section" id="term-7">
+            <h2 class="legal-section-title">
+              <span class="legal-section-number">07.</span>
+              Limitation of Liability
+            </h2>
+            <p class="legal-text">
+              To the fullest extent permitted by applicable law, the Company, its directors, officers, employees, and technology partners shall not be liable for any indirect, incidental, special, consequential, or punitive damages (including loss of profits, revenue leakage, or business interruption) arising out of or related to your use of or inability to access this website or its demonstration tools.
+            </p>
+            <p class="legal-text">
+              Total aggregate liability for any website-related claims shall not exceed <span class="doc-placeholder">[Liability Dollar Cap Placeholder, e.g., $100.00 USD]</span>, subject to statutory limits in the governing jurisdiction.
+            </p>
+          </section>
+
+          <!-- Section 8 -->
+          <section class="legal-section" id="term-8">
+            <h2 class="legal-section-title">
+              <span class="legal-section-number">08.</span>
+              Governing Jurisdiction & Legal Contacts
+            </h2>
+            <p class="legal-text">
+              These Terms shall be construed and governed in accordance with the laws of <span class="doc-placeholder">[Governing State / Jurisdiction, e.g., State of Delaware / State of Texas]</span>, without regard to conflict of law principles. Any dispute arising under these website terms shall be subject to the exclusive jurisdiction of the state and federal courts located in <span class="doc-placeholder">[Designated County / Judicial District]</span>.
+            </p>
+            <div style="background: rgba(14, 24, 52, 0.6); border: 1px solid var(--border-glass); border-radius: 8px; padding: 20px; margin-top: 16px; font-size: 0.88rem; color: #CBD5E1; line-height: 1.6;">
+              <p><strong>Legal Inquiries:</strong> <a href="mailto:legal@infognana.com" style="color: var(--color-cyan);">legal@infognana.com</a></p>
+              <p><strong>Corporate Registered Office:</strong> <span class="doc-placeholder">[Designated Corporate Legal Address]</span></p>
+              <p><strong>Arbitration / Mediation Body:</strong> <span class="doc-placeholder">[Designated Arbitration Provider, e.g., American Arbitration Association (AAA)]</span></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ======================================================================
+       ENTERPRISE FOOTER
+       ====================================================================== -->
+  <footer class="site-footer">
+    <!-- Subtle Flowing-Light Effect (Blurred Violet, Indigo, and Cyan Ribbons) -->
+    <div class="footer-flowing-light" aria-hidden="true">
+      <div class="flow-ribbon flow-ribbon-1"></div>
+      <div class="flow-ribbon flow-ribbon-2"></div>
+      <div class="flow-ribbon flow-ribbon-3"></div>
+    </div>
+
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand & Bio -->
+        <div class="footer-brand-col">
+          <a href="index.html" class="brand-logo" aria-label="RannsHealth — Powered by Rannsolve Home">
+            <img src="assets/rannshealth-logo.png" alt="RannsHealth — Powered by Rannsolve" class="brand-logo-img-footer">
+          </a>
+          <p class="footer-copy">
+            Enterprise healthcare revenue cycle management, denial recovery intelligence, and AI-powered cognitive chart
+            review for health systems and physician groups.
+          </p>
+        </div>
+
+        <!-- Col 2: Solutions -->
+        <div>
+          <div class="footer-col-title">Solutions</div>
+          <div class="footer-links-list">
+            <a href="rannsccr.html" class="footer-link">rannsCCR AI Chart Reader</a>
+            <a href="rannscde.html" class="footer-link">rannsCDE Document Extraction</a>
+            <a href="rannscpa.html" class="footer-link">rannsCPA Prior Auth Engine</a>
+            <a href="rcm-calculator.html" class="footer-link">RCM Calculator</a>
+            <a href="index.html#rcm-lifecycle" class="footer-link">End-to-End RCM</a>
+          </div>
+        </div>
+
+        <!-- Col 3: Company & Trust -->
+        <div>
+          <div class="footer-col-title">Enterprise</div>
+          <div class="footer-links-list">
+            <a href="security-architecture.html" class="footer-link">Security Architecture</a>
+            <a href="index.html#transformation" class="footer-link">Client Outcomes</a>
+            <a href="#" class="footer-link open-consultation-modal-btn">Request a Demo</a>
+            <a href="index.html#security" class="footer-link">HIPAA & SOC 2 Capabilities</a>
+          </div>
+        </div>
+
+        <!-- Col 4: Contact & Locations -->
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <div class="footer-links-list" style="font-size: 0.85rem; color: #94A3B8; line-height: 1.6;">
+            <div>Email: <a href="mailto:solutions@infognana.com" style="color: var(--color-cyan);">solutions@infognana.com</a></div>
+            <div>Phone: +1 (800) 555-INFO</div>
+            <div style="margin-top: 8px;">Global Operations Center & Healthcare Delivery Centers</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 INFOGNANA SOLUTIONS. All rights reserved. Built for Healthcare Excellence.
+        </div>
+        <div style="display: flex; gap: 20px;">
+          <a href="privacy-policy.html" class="footer-link">Privacy Policy</a>
+          <a href="terms-of-service.html" class="footer-link">Terms of Service</a>
+          <a href="security-architecture.html" class="footer-link">Security Architecture</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Consultation Modal Component -->
+  <div class="modal-overlay" id="consultationModalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button type="button" class="modal-close-btn" id="closeConsultationModalBtn" aria-label="Close Modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <form id="consultationBookingForm">
+        <div style="margin-bottom: 24px;">
+          <div class="eyebrow-badge badge-cyan" style="margin-bottom: 8px;">
+            <span class="badge-dot"></span>
+            Enterprise Advisory
+          </div>
+          <h3 id="modalTitle" style="color: #FFFFFF; font-size: 1.5rem; font-weight: 700; margin-bottom: 6px;">
+            Request Enterprise Terms & Service Agreement Details
+          </h3>
+          <p style="font-size: 0.85rem; color: #94A3B8;">
+            Connect with our Healthcare Operations and Contracts team to review customized MSA, BAA, and SLA provisions.
+          </p>
+        </div>
+
+        <div class="form-group">
+          <label for="formFullName" class="form-label">Full Name *</label>
+          <input type="text" id="formFullName" class="form-input" placeholder="e.g. Dr. Sarah Jenkins, MD" required>
+        </div>
+
+        <div class="form-group">
+          <label for="formWorkEmail" class="form-label">Work Email *</label>
+          <input type="email" id="formWorkEmail" class="form-input" placeholder="sjenkins@healthsystem.org" required>
+        </div>
+
+        <div class="form-group">
+          <label for="formOrgType" class="form-label">Organization Type *</label>
+          <select id="formOrgType" class="form-select" required>
+            <option value="Hospital & Health System">Hospital & Health System</option>
+            <option value="Large Physician Practice">Large Physician Practice Group</option>
+            <option value="Specialty Clinic">Specialty Clinic</option>
+            <option value="Medical Billing Company">Medical Billing Company</option>
+            <option value="Ambulatory Surgical Center">Ambulatory Surgical Center</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary modal-submit-btn" style="width: 100%; margin-top: 12px;">
+          <span class="btn-glow-stream" aria-hidden="true"></span>
+          <span class="btn-text">Submit Request</span>
+          <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+
+        <div class="modal-privacy-notice">
+          🔒 Confidential. RannsHealth adheres to strict enterprise non-disclosure covenants.
+        </div>
+      </form>
+
+      <div id="modalConfirmationView" style="display: none;"></div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

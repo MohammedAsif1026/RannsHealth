@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>rannsCDE | AI Labs | INFOGNANA SOLUTIONS</title>
+  <meta name="description" content="rannsCDE - Agentic AI Document Processing for Healthcare by INFOGNANA SOLUTIONS.">
+  <meta name="theme-color" content="#050914">
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css?v=2.2">
+  <link rel="stylesheet" href="css/base.css?v=2.2">
+  <link rel="stylesheet" href="css/components.css?v=2.2">
+  <link rel="stylesheet" href="css/animations.css?v=2.2">
+</head>
+
+<body>
+
+  <!-- ======================================================================
+       1. NAVIGATION & STICKY HEADER
+       ====================================================================== -->
+  <header class="header-nav" id="mainHeader">
+    <div class="container nav-container">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="RannsHealth — Powered by Rannsolve Home">
+        <img src="assets/rannshealth-logo.png" alt="RannsHealth — Powered by Rannsolve" class="brand-logo-img">
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" aria-label="Primary Navigation">
+        <a href="index.html#rcm-lifecycle" class="nav-link">RCM Lifecycle</a>
+        <div class="nav-item-dropdown" id="aiLabsDropdown">
+          <button type="button" class="nav-link nav-dropdown-trigger active" id="aiLabsTrigger" aria-expanded="false" aria-haspopup="true" aria-controls="aiLabsMenu">
+            <span>AI Labs</span>
+            <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="nav-dropdown-menu" id="aiLabsMenu" role="menu" aria-labelledby="aiLabsTrigger">
+            <a href="rannscde.html" class="nav-dropdown-item active" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">rannsCDE</span>
+            </a>
+            <a href="rannsccr.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">rannsCCR</span>
+            </a>
+            <a href="rannscpa.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">rannsCPA</span>
+            </a>
+            <a href="rcm-calculator.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">RCM Calculator</span>
+            </a>
+          </div>
+        </div>
+        <div class="nav-item-dropdown" id="specialtiesDropdown">
+          <button type="button" class="nav-link nav-dropdown-trigger" id="specialtiesTrigger" aria-expanded="false" aria-haspopup="true" aria-controls="specialtiesMenu">
+            <span>Specialties</span>
+            <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="nav-dropdown-menu" id="specialtiesMenu" role="menu" aria-labelledby="specialtiesTrigger">
+            <a href="organization-types.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">Organization Types</span>
+            </a>
+            <a href="medical-specialties.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">Medical Specialties</span>
+            </a>
+            <a href="behavioral-health.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">Behavioral Health</span>
+            </a>
+          </div>
+        </div>
+        <a href="index.html#transformation" class="nav-link">Outcomes</a>
+        <a href="index.html#dashboard" class="nav-link">Dashboard</a>
+        <a href="index.html#denials" class="nav-link">Denial Recovery</a>
+        <a href="index.html#services" class="nav-link">Services</a>
+        <a href="index.html#security" class="nav-link">Security & Compliance</a>
+      </nav>
+
+      <!-- Action CTAs -->
+      <div class="nav-actions">
+        <button type="button" class="btn btn-primary btn-sm open-consultation-modal-btn">Request a Consultation</button>
+        <button type="button" class="nav-mobile-toggle" aria-label="Toggle Mobile Menu" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="product-page-main">
+    <div class="container">
+      <!-- Breadcrumb & Hero Header -->
+      <div class="product-hero-header">
+        <div class="eyebrow-badge badge-cyan product-hero-badge">
+          <span class="badge-dot"></span>
+          AI Labs · Agentic AI Document Intelligence
+        </div>
+        <h1 class="product-page-title">rannsCDE: Agentic AI Document Processing for Healthcare</h1>
+        <p class="product-page-subtitle">
+          Classify, extract, validate, and deliver trusted data from structured, semi-structured, handwritten, and unstructured healthcare documents.
+        </p>
+        <div class="product-hero-actions">
+          <button type="button" class="btn btn-primary open-consultation-modal-btn">
+            <span class="btn-glow-stream" aria-hidden="true"></span>
+            <span>Request a Demo</span>
+            <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+          <a href="#video-demo" class="btn btn-secondary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            <span>Watch Video Demo</span>
+          </a>
+          <a href="index.html" class="btn btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            <span>Back to Home</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Reference Product Card (Matching Reference Infographic) -->
+      <div class="product-infographic-card">
+        <div class="product-infographic-header">
+          <div class="product-card-icon-box">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="12" y1="18" x2="12" y2="12"></line>
+              <line x1="9" y1="15" x2="15" y2="15"></line>
+            </svg>
+          </div>
+          <div class="product-card-title-group">
+            <h2>rannsCDE</h2>
+            <div class="product-card-tagline">Agentic AI Document Processing for Healthcare</div>
+          </div>
+        </div>
+
+        <p class="product-infographic-intro">
+          Classify, extract, validate, and deliver trusted data from structured, semi-structured, handwritten, and unstructured healthcare documents.
+        </p>
+
+        <div class="product-caps-title">Key Capabilities</div>
+        <div class="product-caps-2col">
+          <div class="product-caps-item">
+            <span class="caps-bullet-dot"></span>
+            <span>AI-Powered Document Classification</span>
+          </div>
+          <div class="product-caps-item">
+            <span class="caps-bullet-dot"></span>
+            <span>Human-in-the-Loop Validation</span>
+          </div>
+          <div class="product-caps-item">
+            <span class="caps-bullet-dot"></span>
+            <span>OCR for Scanned & Handwritten Docs</span>
+          </div>
+          <div class="product-caps-item">
+            <span class="caps-bullet-dot"></span>
+            <span>Data Validation & Quality Control</span>
+          </div>
+          <div class="product-caps-item">
+            <span class="caps-bullet-dot"></span>
+            <span>Medical Forms & Claims Processing</span>
+          </div>
+          <div class="product-caps-item">
+            <span class="caps-bullet-dot"></span>
+            <span>EHR, RCM & Analytics Integration</span>
+          </div>
+          <div class="product-caps-item">
+            <span class="caps-bullet-dot"></span>
+            <span>PHI Detection & Automated Redaction</span>
+          </div>
+          <div class="product-caps-item">
+            <span class="caps-bullet-dot"></span>
+            <span>API & Workflow Automation</span>
+          </div>
+          <div class="product-caps-item">
+            <span class="caps-bullet-dot"></span>
+            <span>Intelligent Data Extraction</span>
+          </div>
+          <div class="product-caps-item">
+            <span class="caps-bullet-dot"></span>
+            <span>Enterprise-Grade Security</span>
+          </div>
+        </div>
+
+        <!-- Metrics Strip (From Screenshot) -->
+        <div class="product-ref-metrics-strip">
+          <div class="ref-metric-item">
+            <div class="ref-metric-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <circle cx="12" cy="12" r="6"></circle>
+                <circle cx="12" cy="12" r="2"></circle>
+              </svg>
+            </div>
+            <div class="ref-metric-data">
+              <div class="ref-metric-value">99.5%+</div>
+              <div class="ref-metric-name">Extraction Accuracy</div>
+            </div>
+          </div>
+
+          <div class="ref-metric-item">
+            <div class="ref-metric-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+            </div>
+            <div class="ref-metric-data">
+              <div class="ref-metric-value">1M+</div>
+              <div class="ref-metric-name">Documents Processed Daily</div>
+            </div>
+          </div>
+
+          <div class="ref-metric-item">
+            <div class="ref-metric-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+              </svg>
+            </div>
+            <div class="ref-metric-data">
+              <div class="ref-metric-value">10B+</div>
+              <div class="ref-metric-name">Documents & Images Processed Globally</div>
+            </div>
+          </div>
+
+          <div class="ref-metric-item">
+            <div class="ref-metric-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <div class="ref-metric-data">
+              <div class="ref-metric-value">60%+</div>
+              <div class="ref-metric-name">Reduction in Processing Costs</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Playable Responsive YouTube Video Section -->
+      <div class="video-showcase-card" id="video-demo">
+        <div class="video-header-bar">
+          <div class="video-title-wrap">
+            <span class="video-badge">Live Demonstration</span>
+            <span style="font-size: 0.95rem; font-weight: 700; color: #FFFFFF;">rannsCDE: Clinical Document Extraction in Action</span>
+          </div>
+          <span style="font-size: 0.78rem; color: #94A3B8; font-family: var(--font-mono);">Playable Embed</span>
+        </div>
+        <div class="video-responsive-frame">
+          <iframe 
+            class="video-iframe" 
+            src="https://www.youtube.com/embed/uJ8bZ-P1jMc" 
+            title="rannsCDE - Agentic AI Document Processing for Healthcare Video Demonstration" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+      <!-- Interactive Document Scanner Infographic -->
+      <div style="margin-top: var(--space-16); margin-bottom: var(--space-12);">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <div class="eyebrow-badge badge-teal" style="margin-bottom: 8px;">
+            <span class="badge-dot"></span>
+            Real-Time Simulation
+          </div>
+          <h2 style="font-size: 2rem; font-weight: 800; color: #FFFFFF; margin-bottom: 8px;">
+            Autonomous Document Extraction Engine
+          </h2>
+          <p style="font-size: 0.95rem; color: var(--text-secondary); max-width: 640px; margin: 0 auto;">
+            Watch simulated healthcare documents undergo automated classification, handwriting OCR, HIPAA PHI redaction, and EHR field mapping.
+          </p>
+        </div>
+
+        <div class="rannscde-scanner-window" style="max-width: 880px; margin: 0 auto;">
+          <div class="cde-pipeline-nav">
+            <span class="cde-pipeline-node active">1. Ingestion & Triage</span>
+            <span class="cde-pipeline-node">2. Vision & Cursive OCR</span>
+            <span class="cde-pipeline-node">3. PHI Guard & Redaction</span>
+            <span class="cde-pipeline-node">4. Semantic Extraction</span>
+            <span class="cde-pipeline-node">5. EHR / FHIR Push</span>
+          </div>
+          <div id="rannsCdeDocStream">
+            <!-- Rendered by js/rannscde-scanner.js -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Deep-Dive Capabilities Grid -->
+      <div style="margin-top: var(--space-16);">
+        <div style="text-align: center; margin-bottom: var(--space-10);">
+          <div class="eyebrow-badge badge-cyan" style="margin-bottom: 8px;">
+            <span class="badge-dot"></span>
+            Comprehensive Features
+          </div>
+          <h2 style="font-size: 2rem; font-weight: 800; color: #FFFFFF;">
+            Enterprise Healthcare Capabilities
+          </h2>
+        </div>
+
+        <div class="cap-deepdive-grid">
+          <div class="cap-deepdive-card">
+            <div class="cap-deepdive-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+              </svg>
+            </div>
+            <div class="cap-deepdive-title">Document Classification</div>
+            <div class="cap-deepdive-text">
+              Multi-modal AI classifies intake faxes, clinical progress notes, CMS forms, and lab reports with context awareness.
+            </div>
+          </div>
+
+          <div class="cap-deepdive-card">
+            <div class="cap-deepdive-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 20h9"></path>
+                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+              </svg>
+            </div>
+            <div class="cap-deepdive-title">OCR for Scanned & Handwritten Docs</div>
+            <div class="cap-deepdive-text">
+              Proprietary vision models trained on cursive physician handwriting, degraded faxes, and historical carbon copies.
+            </div>
+          </div>
+
+          <div class="cap-deepdive-card">
+            <div class="cap-deepdive-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+              </svg>
+            </div>
+            <div class="cap-deepdive-title">Forms & Claims Processing</div>
+            <div class="cap-deepdive-text">
+              Precision coordinate extraction for CMS-1500, UB-04, superbills, and custom clinical assessment questionnaires.
+            </div>
+          </div>
+
+          <div class="cap-deepdive-card">
+            <div class="cap-deepdive-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <div class="cap-deepdive-title">PHI Detection & Redaction</div>
+            <div class="cap-deepdive-text">
+              Automated detection and redaction of 18 HIPAA Safe Harbor identifiers to safeguard patient privacy at ingestion.
+            </div>
+          </div>
+
+          <div class="cap-deepdive-card">
+            <div class="cap-deepdive-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+              </svg>
+            </div>
+            <div class="cap-deepdive-title">Intelligent Data Extraction</div>
+            <div class="cap-deepdive-text">
+              Named-entity recognition converts clinical text into structured ICD-10, CPT, HCPCS, NPI, and NDC terminology.
+            </div>
+          </div>
+
+          <div class="cap-deepdive-card">
+            <div class="cap-deepdive-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <div class="cap-deepdive-title">Human-in-the-Loop Validation</div>
+            <div class="cap-deepdive-text">
+              Confidence-scored routing directs ambiguous or low-threshold extracts to specialized verification queues.
+            </div>
+          </div>
+
+          <div class="cap-deepdive-card">
+            <div class="cap-deepdive-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+            <div class="cap-deepdive-title">Validation & Quality Control</div>
+            <div class="cap-deepdive-text">
+              Multi-stage business logic checks cross-field consistency between demographic data, diagnosis codes, and policy rules.
+            </div>
+          </div>
+
+          <div class="cap-deepdive-card">
+            <div class="cap-deepdive-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+            </div>
+            <div class="cap-deepdive-title">EHR, RCM & Analytics Integration</div>
+            <div class="cap-deepdive-text">
+              Native FHIR, HL7, and API pipelines synchronize extracted data directly into Epic, Cerner, Athenahealth, and billing systems.
+            </div>
+          </div>
+
+          <div class="cap-deepdive-card">
+            <div class="cap-deepdive-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <div class="cap-deepdive-title">Enterprise Security & Compliance</div>
+            <div class="cap-deepdive-text">
+              SOC 2 Type II certified, HIPAA compliant, with AES-256 encryption at rest and TLS 1.3 in transit.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Consultation Callout -->
+      <div class="final-cta-card" style="margin-top: var(--space-8); text-align: center; padding: 48px 24px; background: rgba(14, 23, 48, 0.75); border: 1px solid rgba(0, 240, 255, 0.25); border-radius: 20px;">
+        <h2 style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF; margin-bottom: 12px;">
+          Ready to eliminate manual document processing?
+        </h2>
+        <p style="font-size: 1rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto 24px;">
+          Deploy rannsCDE to achieve 99.5%+ extraction accuracy, reduce processing costs by 60%+, and connect directly with your EHR.
+        </p>
+        <button type="button" class="btn btn-primary open-consultation-modal-btn">
+          <span class="btn-glow-stream" aria-hidden="true"></span>
+          <span>Schedule an Architecture Consultation</span>
+          <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- ======================================================================
+       ENTERPRISE FOOTER
+       ====================================================================== -->
+  <footer class="site-footer">
+    <!-- Subtle Flowing-Light Effect (Blurred Violet, Indigo, and Cyan Ribbons) -->
+    <div class="footer-flowing-light" aria-hidden="true">
+      <div class="flow-ribbon flow-ribbon-1"></div>
+      <div class="flow-ribbon flow-ribbon-2"></div>
+      <div class="flow-ribbon flow-ribbon-3"></div>
+    </div>
+
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand & Bio -->
+        <div class="footer-brand-col">
+          <a href="index.html" class="brand-logo" aria-label="RannsHealth — Powered by Rannsolve Home">
+            <img src="assets/rannshealth-logo.png" alt="RannsHealth — Powered by Rannsolve" class="brand-logo-img-footer">
+          </a>
+          <p class="footer-copy">
+            Enterprise healthcare revenue cycle management, denial recovery intelligence, and AI-powered cognitive chart
+            review for health systems and physician groups.
+          </p>
+        </div>
+
+        <!-- Col 2: Solutions -->
+        <div>
+          <div class="footer-col-title">Solutions</div>
+          <div class="footer-links-list">
+            <a href="rannsccr.html" class="footer-link">rannsCCR AI Chart Reader</a>
+            <a href="rannscde.html" class="footer-link">rannsCDE Document Extraction</a>
+            <a href="rannscpa.html" class="footer-link">rannsCPA Prior Auth Engine</a>
+            <a href="rcm-calculator.html" class="footer-link">RCM Calculator</a>
+            <a href="index.html#rcm-lifecycle" class="footer-link">End-to-End RCM</a>
+          </div>
+        </div>
+
+        <!-- Col 3: Company & Trust -->
+        <div>
+          <div class="footer-col-title">Enterprise</div>
+          <div class="footer-links-list">
+            <a href="index.html#security" class="footer-link">Security & Compliance</a>
+            <a href="index.html#transformation" class="footer-link">Client Outcomes</a>
+            <a href="#" class="footer-link open-consultation-modal-btn">Request a Demo</a>
+            <a href="index.html#security" class="footer-link">HIPAA & SOC 2 Capabilities</a>
+          </div>
+        </div>
+
+        <!-- Col 4: Contact & Locations -->
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <div class="footer-links-list" style="font-size: 0.85rem; color: #94A3B8; line-height: 1.6;">
+            <div>Email: <a href="mailto:solutions@infognana.com" style="color: var(--color-cyan);">solutions@infognana.com</a></div>
+            <div>Phone: +1 (800) 555-INFO</div>
+            <div style="margin-top: 8px;">Global Operations Center & Healthcare Delivery Centers</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 INFOGNANA SOLUTIONS. All rights reserved. Built for Healthcare Excellence.
+        </div>
+        <div style="display: flex; gap: 20px;">
+          <a href="privacy-policy.html" class="footer-link">Privacy Policy</a>
+          <a href="terms-of-service.html" class="footer-link">Terms of Service</a>
+          <a href="security-architecture.html" class="footer-link">Security Architecture</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       INTERACTIVE CONSULTATION & DEMO BOOKING MODAL
+       ====================================================================== -->
+  <div class="modal-overlay" id="consultationModalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button type="button" class="modal-close-btn" id="closeConsultationModalBtn" aria-label="Close Modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Booking Form -->
+      <form id="consultationBookingForm">
+        <div style="margin-bottom: 24px;">
+          <div class="eyebrow-badge badge-cyan" style="margin-bottom: 8px;">
+            <span class="badge-dot"></span>
+            RCM Advisory
+          </div>
+          <h3 id="modalTitle" style="color: #FFFFFF; font-size: 1.5rem; font-weight: 700; margin-bottom: 6px;">
+            Request a Consultation & AI Demo
+          </h3>
+          <p style="font-size: 0.85rem; color: #94A3B8;">
+            Connect with a Senior Healthcare RCM Architect from INFOGNANA SOLUTIONS to evaluate your clinical workflows and reimbursement potential.
+          </p>
+        </div>
+
+        <div class="form-group">
+          <label for="formFullName" class="form-label">Full Name *</label>
+          <input type="text" id="formFullName" class="form-input" placeholder="e.g. Dr. Sarah Jenkins, MD" required>
+        </div>
+
+        <div class="form-group">
+          <label for="formWorkEmail" class="form-label">Work Email *</label>
+          <input type="email" id="formWorkEmail" class="form-input" placeholder="sjenkins@healthsystem.org" required>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div class="form-group">
+            <label for="formOrgType" class="form-label">Organization Type *</label>
+            <select id="formOrgType" class="form-select" required>
+              <option value="Hospital & Health System">Hospital & Health System</option>
+              <option value="Large Physician Practice">Large Physician Practice Group</option>
+              <option value="Specialty Clinic (Oncology/Cardio/Ortho)">Specialty Clinic</option>
+              <option value="Medical Billing Company">Medical Billing Company</option>
+              <option value="Ambulatory Surgical Center">Ambulatory Surgical Center</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="formVolume" class="form-label">Monthly Claims Volume</label>
+            <select id="formVolume" class="form-select">
+              <option value="5,000 - 15,000 Claims/Mo">5,000 - 15,000 Claims/Mo</option>
+              <option value="15,000 - 50,000 Claims/Mo" selected>15,000 - 50,000 Claims/Mo</option>
+              <option value="50,000 - 200,000+ Claims/Mo">50,000 - 200,000+ Claims/Mo</option>
+              <option value="Enterprise Multi-Hospital">Enterprise Multi-Hospital</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="formPrimaryGoal" class="form-label">Primary Objective</label>
+          <select id="formPrimaryGoal" class="form-select">
+            <option value="Deploy rannsCDE Document AI">Deploy rannsCDE Document AI</option>
+            <option value="Deploy rannsCCR AI Chart Review">Deploy rannsCCR AI Chart Review</option>
+            <option value="Reduce Denials & A/R Days">Reduce Denials & Accelerate A/R</option>
+            <option value="Full Revenue Cycle Outsourcing">Full End-to-End RCM Outsourcing</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary modal-submit-btn" style="width: 100%; margin-top: 12px;">
+          <span class="btn-glow-stream" aria-hidden="true"></span>
+          <span class="btn-text">Submit Consultation Request</span>
+          <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+
+        <div class="modal-privacy-notice">
+          🔒 Confidential. INFOGNANA SOLUTIONS adheres to strict HIPAA non-disclosure and privacy protocols.
+        </div>
+      </form>
+
+      <!-- Confirmation State Container -->
+      <div id="modalConfirmationView" style="display: none;"></div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript Application -->
+  <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

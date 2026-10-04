@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>rannsCPA | AI Labs | INFOGNANA SOLUTIONS</title>
+  <meta name="description" content="rannsCPA - Prior Authorization & Pre-Claim Engine by INFOGNANA SOLUTIONS.">
+  <meta name="theme-color" content="#050914">
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css?v=2.2">
+  <link rel="stylesheet" href="css/base.css?v=2.2">
+  <link rel="stylesheet" href="css/components.css?v=2.2">
+  <link rel="stylesheet" href="css/animations.css?v=2.2">
+</head>
+
+<body>
+
+  <!-- ======================================================================
+       1. NAVIGATION & STICKY HEADER
+       ====================================================================== -->
+  <header class="header-nav" id="mainHeader">
+    <div class="container nav-container">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="RannsHealth — Powered by Rannsolve Home">
+        <img src="assets/rannshealth-logo.png" alt="RannsHealth — Powered by Rannsolve" class="brand-logo-img">
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" aria-label="Primary Navigation">
+        <a href="index.html#rcm-lifecycle" class="nav-link">RCM Lifecycle</a>
+        <div class="nav-item-dropdown" id="aiLabsDropdown">
+          <button type="button" class="nav-link nav-dropdown-trigger active" id="aiLabsTrigger" aria-expanded="false" aria-haspopup="true" aria-controls="aiLabsMenu">
+            <span>AI Labs</span>
+            <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="nav-dropdown-menu" id="aiLabsMenu" role="menu" aria-labelledby="aiLabsTrigger">
+            <a href="rannscde.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">rannsCDE</span>
+            </a>
+            <a href="rannsccr.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">rannsCCR</span>
+            </a>
+            <a href="rannscpa.html" class="nav-dropdown-item active" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">rannsCPA</span>
+            </a>
+            <a href="rcm-calculator.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">RCM Calculator</span>
+            </a>
+          </div>
+        </div>
+        <div class="nav-item-dropdown" id="specialtiesDropdown">
+          <button type="button" class="nav-link nav-dropdown-trigger" id="specialtiesTrigger" aria-expanded="false" aria-haspopup="true" aria-controls="specialtiesMenu">
+            <span>Specialties</span>
+            <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="nav-dropdown-menu" id="specialtiesMenu" role="menu" aria-labelledby="specialtiesTrigger">
+            <a href="organization-types.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">Organization Types</span>
+            </a>
+            <a href="medical-specialties.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">Medical Specialties</span>
+            </a>
+            <a href="behavioral-health.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">Behavioral Health</span>
+            </a>
+          </div>
+        </div>
+        <a href="index.html#transformation" class="nav-link">Outcomes</a>
+        <a href="index.html#dashboard" class="nav-link">Dashboard</a>
+        <a href="index.html#denials" class="nav-link">Denial Recovery</a>
+        <a href="index.html#services" class="nav-link">Services</a>
+        <a href="index.html#security" class="nav-link">Security & Compliance</a>
+      </nav>
+
+      <!-- Action CTAs -->
+      <div class="nav-actions">
+        <button type="button" class="btn btn-primary btn-sm open-consultation-modal-btn">Request a Consultation</button>
+        <button type="button" class="nav-mobile-toggle" aria-label="Toggle Mobile Menu" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="product-page-main">
+    <div class="container">
+      <!-- Breadcrumb & Hero Header -->
+      <div class="product-hero-header">
+        <div class="eyebrow-badge badge-teal product-hero-badge">
+          <span class="badge-dot"></span>
+          AI Labs · Healthcare Workflow Automation
+        </div>
+        <h1 class="product-page-title">rannsCPA: No-Code Healthcare Workflow Automation</h1>
+        <p class="product-page-subtitle">
+          Design, automate, and scale healthcare workflows with intelligent AI agents and flexible no-code process automation.
+        </p>
+        <div class="product-hero-actions">
+          <button type="button" class="btn btn-primary open-consultation-modal-btn">
+            <span class="btn-glow-stream" aria-hidden="true"></span>
+            <span>Request a Demo</span>
+            <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+          <a href="#workflow-architecture" class="btn btn-secondary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="3" y1="9" x2="21" y2="9"></line>
+              <line x1="9" y1="21" x2="9" y2="9"></line>
+            </svg>
+            <span>Explore Workflows</span>
+          </a>
+          <a href="index.html" class="btn btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            <span>Back to Home</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Reference Product Card (Matching Reference Screenshot 1 Bottom Wide Card) -->
+      <div class="cpa-wide-card">
+        <!-- Col 1: Robot Avatar & Brand Header -->
+        <div class="cpa-left-brand">
+          <div class="cpa-robot-avatar">
+            <!-- Sleek AI Agent Robot SVG Icon -->
+            <svg width="90" height="90" viewBox="0 0 100 100" fill="none">
+              <circle cx="50" cy="50" r="46" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="2"></circle>
+              <!-- Antenna -->
+              <line x1="50" y1="20" x2="50" y2="12" stroke="#0284C7" stroke-width="3" stroke-linecap="round"></line>
+              <circle cx="50" cy="10" r="4" fill="#00F0FF"></circle>
+              <!-- Robot Head -->
+              <rect x="25" y="22" width="50" height="38" rx="14" fill="#0A1E4A" stroke="#0284C7" stroke-width="2"></rect>
+              <!-- Face Screen / Visor -->
+              <rect x="30" y="27" width="40" height="24" rx="8" fill="#050C22"></rect>
+              <!-- Glowing Cyan Eyes -->
+              <ellipse cx="40" cy="39" rx="4.5" ry="5.5" fill="#00F0FF"></ellipse>
+              <ellipse cx="60" cy="39" rx="4.5" ry="5.5" fill="#00F0FF"></ellipse>
+              <!-- Smile / Audio Pulse -->
+              <path d="M44 46 Q50 50 56 46" stroke="#00D2B4" stroke-width="2" stroke-linecap="round" fill="none"></path>
+              <!-- Body -->
+              <path d="M30 64 C30 60 70 60 70 64 L76 86 C76 90 24 90 24 86 Z" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"></path>
+              <!-- Chest Badge -->
+              <circle cx="50" cy="74" r="7" fill="#0284C7"></circle>
+              <path d="M47 74 L49 76 L54 71" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+              <!-- Arms -->
+              <path d="M22 66 Q14 74 18 84" stroke="#0284C7" stroke-width="5" stroke-linecap="round" fill="none"></path>
+              <path d="M78 66 Q86 74 82 84" stroke="#0284C7" stroke-width="5" stroke-linecap="round" fill="none"></path>
+            </svg>
+          </div>
+          <h2>rannsCPA</h2>
+          <div class="cpa-sub">No-Code Healthcare Workflow Automation</div>
+        </div>
+
+        <!-- Col 2: Description & Key Capabilities -->
+        <div class="cpa-center-content">
+          <p class="cpa-desc-text">
+            Design, automate, and scale healthcare workflows with intelligent AI agents and flexible no-code process automation.
+          </p>
+
+          <div class="cpa-caps-list">
+            <div class="cpa-cap-row">
+              <span class="caps-bullet-dot teal"></span>
+              <span>End-to-End Workflow Automation</span>
+            </div>
+            <div class="cpa-cap-row">
+              <span class="caps-bullet-dot teal"></span>
+              <span>AI Agents for Task Orchestration & Decision Automation</span>
+            </div>
+            <div class="cpa-cap-row">
+              <span class="caps-bullet-dot teal"></span>
+              <span>Intelligent Document Routing & System Integration</span>
+            </div>
+            <div class="cpa-cap-row">
+              <span class="caps-bullet-dot teal"></span>
+              <span>Claims, Payment & Denial Management Automation</span>
+            </div>
+            <div class="cpa-cap-row">
+              <span class="caps-bullet-dot teal"></span>
+              <span>Prior Authorization & Patient Communication Workflows</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 3: Deep Blue Metrics Sidebar (From Screenshot) -->
+        <div class="cpa-metrics-sidebar">
+          <div class="cpa-stat-box">
+            <div class="cpa-stat-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <div class="cpa-stat-num">80%+</div>
+            <div class="cpa-stat-label">Reduction in Manual Work</div>
+          </div>
+
+          <div class="cpa-stat-box">
+            <div class="cpa-stat-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="16 12 12 8 8 12"></polyline>
+                <line x1="12" y1="16" x2="12" y2="8"></line>
+              </svg>
+            </div>
+            <div class="cpa-stat-num">5x</div>
+            <div class="cpa-stat-label">Faster Turnaround</div>
+          </div>
+
+          <div class="cpa-stat-box">
+            <div class="cpa-stat-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <div class="cpa-stat-num">50%+</div>
+            <div class="cpa-stat-label">Reduction in Operational Costs</div>
+          </div>
+
+          <div class="cpa-stat-box">
+            <div class="cpa-stat-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+              </svg>
+            </div>
+            <div class="cpa-stat-num">24/7</div>
+            <div class="cpa-stat-label">Continuous Automation</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual Workflow Process Pipeline Diagram -->
+      <div id="workflow-architecture" style="margin-top: var(--space-16); margin-bottom: var(--space-16);">
+        <div style="text-align: center; margin-bottom: var(--space-10);">
+          <div class="eyebrow-badge badge-teal" style="margin-bottom: 8px;">
+            <span class="badge-dot"></span>
+            Agentic Orchestration Canvas
+          </div>
+          <h2 style="font-size: 2rem; font-weight: 800; color: #FFFFFF; margin-bottom: 8px;">
+            End-to-End Autonomous Healthcare Workflow
+          </h2>
+          <p style="font-size: 0.95rem; color: var(--text-secondary); max-width: 680px; margin: 0 auto;">
+            rannsCPA chains specialized agent triggers, policy evaluation, portal RPA, and clearinghouse transactions into zero-touch execution loops.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; position: relative;">
+          <!-- Step 1 -->
+          <div class="cap-deepdive-card" style="border-top: 3px solid #00D2B4;">
+            <div style="font-family: var(--font-mono); font-size: 0.72rem; color: #00D2B4; font-weight: 700; margin-bottom: 8px;">NODE 01 · TRIGGER</div>
+            <div class="cap-deepdive-title" style="font-size: 1.05rem;">Event Ingestion</div>
+            <div class="cap-deepdive-text" style="font-size: 0.8rem;">
+              EHR appointment schedule or claim rejection automatically initiates workflow agent.
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="cap-deepdive-card" style="border-top: 3px solid #0284C7;">
+            <div style="font-family: var(--font-mono); font-size: 0.72rem; color: #0284C7; font-weight: 700; margin-bottom: 8px;">NODE 02 · REASONING</div>
+            <div class="cap-deepdive-title" style="font-size: 1.05rem;">Policy Matching</div>
+            <div class="cap-deepdive-text" style="font-size: 0.8rem;">
+              AI agent evaluates payer-specific medical necessity criteria and required documentation.
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="cap-deepdive-card" style="border-top: 3px solid #8B5CF6;">
+            <div style="font-family: var(--font-mono); font-size: 0.72rem; color: #8B5CF6; font-weight: 700; margin-bottom: 8px;">NODE 03 · EXECUTION</div>
+            <div class="cap-deepdive-title" style="font-size: 1.05rem;">Prior-Auth / 278 Pipe</div>
+            <div class="cap-deepdive-text" style="font-size: 0.8rem;">
+              Autonomous submission via 278 EDI transaction or authenticated payer web portal bot.
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="cap-deepdive-card" style="border-top: 3px solid #F59E0B;">
+            <div style="font-family: var(--font-mono); font-size: 0.72rem; color: #F59E0B; font-weight: 700; margin-bottom: 8px;">NODE 04 · MONITORING</div>
+            <div class="cap-deepdive-title" style="font-size: 1.05rem;">Status Auto-Polling</div>
+            <div class="cap-deepdive-text" style="font-size: 0.8rem;">
+              Periodic 277 query loops track approval status and alert teams if human review is requested.
+            </div>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="cap-deepdive-card" style="border-top: 3px solid #10B981;">
+            <div style="font-family: var(--font-mono); font-size: 0.72rem; color: #10B981; font-weight: 700; margin-bottom: 8px;">NODE 05 · CLOSURE</div>
+            <div class="cap-deepdive-title" style="font-size: 1.05rem;">EHR Sync & SMS</div>
+            <div class="cap-deepdive-text" style="font-size: 0.8rem;">
+              Approval number automatically posted to EHR; automated care text sent to patient.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Deep-Dive Capabilities Grid -->
+      <div style="margin-top: var(--space-16);">
+        <div style="text-align: center; margin-bottom: var(--space-10);">
+          <div class="eyebrow-badge badge-teal" style="margin-bottom: 8px;">
+            <span class="badge-dot"></span>
+            Autonomous Capabilities
+          </div>
+          <h2 style="font-size: 2rem; font-weight: 800; color: #FFFFFF;">
+            No-Code Healthcare Workflow Intelligence
+          </h2>
+        </div>
+
+        <div class="cap-deepdive-grid">
+          <div class="cap-deepdive-card">
+            <div class="cap-deepdive-icon" style="color: #00D2B4; background: rgba(0, 210, 180, 0.1); border-color: rgba(0, 210, 180, 0.3);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <div class="cap-deepdive-title">End-to-End Workflow Automation</div>
+            <div class="cap-deepdive-text">
+              Eliminate disjointed manual handoffs by connecting registration, clinical orders, prior authorizations, billing, and remittance.
+            </div>
+          </div>
+
+          <div class="cap-deepdive-card">
+            <div class="cap-deepdive-icon" style="color: #00D2B4; background: rgba(0, 210, 180, 0.1); border-color: rgba(0, 210, 180, 0.3);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+              </svg>
+            </div>
+            <div class="cap-deepdive-title">AI Agents for Task Orchestration</div>
+            <div class="cap-deepdive-text">
+              Deploy autonomous agent personas that navigate payer portals, query medical documentation, and resolve exceptions 24/7.
+            </div>
+          </div>
+
+          <div class="cap-deepdive-card">
+            <div class="cap-deepdive-icon" style="color: #00D2B4; background: rgba(0, 210, 180, 0.1); border-color: rgba(0, 210, 180, 0.3);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="16 16 12 12 8 16"></polyline>
+                <line x1="12" y1="12" x2="12" y2="21"></line>
+                <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"></path>
+                <polyline points="16 16 12 12 8 16"></polyline>
+              </svg>
+            </div>
+            <div class="cap-deepdive-title">Intelligent Document Routing</div>
+            <div class="cap-deepdive-text">
+              Automatically route clinical letters, appeals, and explanation of benefits directly to appropriate department queues.
+            </div>
+          </div>
+
+          <div class="cap-deepdive-card">
+            <div class="cap-deepdive-icon" style="color: #00D2B4; background: rgba(0, 210, 180, 0.1); border-color: rgba(0, 210, 180, 0.3);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <div class="cap-deepdive-title">Claims & Denial Management</div>
+            <div class="cap-deepdive-text">
+              Auto-generate denial appeal packages with clinical documentation citations, submit reconsiderations, and auto-post ERA 835s.
+            </div>
+          </div>
+
+          <div class="cap-deepdive-card">
+            <div class="cap-deepdive-icon" style="color: #00D2B4; background: rgba(0, 210, 180, 0.1); border-color: rgba(0, 210, 180, 0.3);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+            <div class="cap-deepdive-title">Prior Authorization & Patient Updates</div>
+            <div class="cap-deepdive-text">
+              Streamline 278 authorization pipelines and automatically message patients regarding authorization approvals and next steps.
+            </div>
+          </div>
+
+          <div class="cap-deepdive-card">
+            <div class="cap-deepdive-icon" style="color: #00D2B4; background: rgba(0, 210, 180, 0.1); border-color: rgba(0, 210, 180, 0.3);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <div class="cap-deepdive-title">Continuous 24/7 Operations</div>
+            <div class="cap-deepdive-text">
+              Keep critical revenue cycle pipelines moving without backlog spikes, staffing shortages, or weekend delays.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Consultation Callout -->
+      <div class="final-cta-card" style="margin-top: var(--space-8); text-align: center; padding: 48px 24px; background: rgba(14, 23, 48, 0.75); border: 1px solid rgba(0, 210, 180, 0.3); border-radius: 20px;">
+        <h2 style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF; margin-bottom: 12px;">
+          Achieve 80%+ Reduction in Manual Work
+        </h2>
+        <p style="font-size: 1rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto 24px;">
+          Empower your operations with 5× faster turnaround, 50%+ lower operational costs, and continuous 24/7 autonomous execution.
+        </p>
+        <button type="button" class="btn btn-primary open-consultation-modal-btn">
+          <span class="btn-glow-stream" aria-hidden="true"></span>
+          <span>Build Your First AI Workflow</span>
+          <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- ======================================================================
+       ENTERPRISE FOOTER
+       ====================================================================== -->
+  <footer class="site-footer">
+    <!-- Subtle Flowing-Light Effect (Blurred Violet, Indigo, and Cyan Ribbons) -->
+    <div class="footer-flowing-light" aria-hidden="true">
+      <div class="flow-ribbon flow-ribbon-1"></div>
+      <div class="flow-ribbon flow-ribbon-2"></div>
+      <div class="flow-ribbon flow-ribbon-3"></div>
+    </div>
+
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand & Bio -->
+        <div class="footer-brand-col">
+          <a href="index.html" class="brand-logo" aria-label="RannsHealth — Powered by Rannsolve Home">
+            <img src="assets/rannshealth-logo.png" alt="RannsHealth — Powered by Rannsolve" class="brand-logo-img-footer">
+          </a>
+          <p class="footer-copy">
+            Enterprise healthcare revenue cycle management, denial recovery intelligence, and AI-powered cognitive chart
+            review for health systems and physician groups.
+          </p>
+        </div>
+
+        <!-- Col 2: Solutions -->
+        <div>
+          <div class="footer-col-title">Solutions</div>
+          <div class="footer-links-list">
+            <a href="rannsccr.html" class="footer-link">rannsCCR AI Chart Reader</a>
+            <a href="rannscde.html" class="footer-link">rannsCDE Document Extraction</a>
+            <a href="rannscpa.html" class="footer-link">rannsCPA Prior Auth Engine</a>
+            <a href="rcm-calculator.html" class="footer-link">RCM Calculator</a>
+            <a href="index.html#rcm-lifecycle" class="footer-link">End-to-End RCM</a>
+          </div>
+        </div>
+
+        <!-- Col 3: Company & Trust -->
+        <div>
+          <div class="footer-col-title">Enterprise</div>
+          <div class="footer-links-list">
+            <a href="index.html#security" class="footer-link">Security & Compliance</a>
+            <a href="index.html#transformation" class="footer-link">Client Outcomes</a>
+            <a href="#" class="footer-link open-consultation-modal-btn">Request a Demo</a>
+            <a href="index.html#security" class="footer-link">HIPAA & SOC 2 Capabilities</a>
+          </div>
+        </div>
+
+        <!-- Col 4: Contact & Locations -->
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <div class="footer-links-list" style="font-size: 0.85rem; color: #94A3B8; line-height: 1.6;">
+            <div>Email: <a href="mailto:solutions@infognana.com" style="color: var(--color-cyan);">solutions@infognana.com</a></div>
+            <div>Phone: +1 (800) 555-INFO</div>
+            <div style="margin-top: 8px;">Global Operations Center & Healthcare Delivery Centers</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 INFOGNANA SOLUTIONS. All rights reserved. Built for Healthcare Excellence.
+        </div>
+        <div style="display: flex; gap: 20px;">
+          <a href="privacy-policy.html" class="footer-link">Privacy Policy</a>
+          <a href="terms-of-service.html" class="footer-link">Terms of Service</a>
+          <a href="security-architecture.html" class="footer-link">Security Architecture</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       INTERACTIVE CONSULTATION & DEMO BOOKING MODAL
+       ====================================================================== -->
+  <div class="modal-overlay" id="consultationModalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button type="button" class="modal-close-btn" id="closeConsultationModalBtn" aria-label="Close Modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Booking Form -->
+      <form id="consultationBookingForm">
+        <div style="margin-bottom: 24px;">
+          <div class="eyebrow-badge badge-cyan" style="margin-bottom: 8px;">
+            <span class="badge-dot"></span>
+            RCM Advisory
+          </div>
+          <h3 id="modalTitle" style="color: #FFFFFF; font-size: 1.5rem; font-weight: 700; margin-bottom: 6px;">
+            Request a Consultation & rannsCPA Demo
+          </h3>
+          <p style="font-size: 0.85rem; color: #94A3B8;">
+            Connect with a Senior Healthcare RCM Architect from INFOGNANA SOLUTIONS to evaluate your prior authorization turnaround and clearance rate.
+          </p>
+        </div>
+
+        <div class="form-group">
+          <label for="formFullName" class="form-label">Full Name *</label>
+          <input type="text" id="formFullName" class="form-input" placeholder="e.g. Dr. Sarah Jenkins, MD" required>
+        </div>
+
+        <div class="form-group">
+          <label for="formWorkEmail" class="form-label">Work Email *</label>
+          <input type="email" id="formWorkEmail" class="form-input" placeholder="sjenkins@healthsystem.org" required>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div class="form-group">
+            <label for="formOrgType" class="form-label">Organization Type *</label>
+            <select id="formOrgType" class="form-select" required>
+              <option value="Hospital & Health System">Hospital & Health System</option>
+              <option value="Large Physician Practice">Large Physician Practice Group</option>
+              <option value="Specialty Clinic (Oncology/Cardio/Ortho)">Specialty Clinic</option>
+              <option value="Medical Billing Company">Medical Billing Company</option>
+              <option value="Ambulatory Surgical Center">Ambulatory Surgical Center</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="formVolume" class="form-label">Monthly Claims Volume</label>
+            <select id="formVolume" class="form-select">
+              <option value="5,000 - 15,000 Claims/Mo">5,000 - 15,000 Claims/Mo</option>
+              <option value="15,000 - 50,000 Claims/Mo" selected>15,000 - 50,000 Claims/Mo</option>
+              <option value="50,000 - 200,000+ Claims/Mo">50,000 - 200,000+ Claims/Mo</option>
+              <option value="Enterprise Multi-Hospital">Enterprise Multi-Hospital</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="formPrimaryGoal" class="form-label">Primary Objective</label>
+          <select id="formPrimaryGoal" class="form-select">
+            <option value="Automate Prior Authorization with rannsCPA">Automate Prior Authorization with rannsCPA</option>
+            <option value="Deploy rannsCCR AI Chart Review">Deploy rannsCCR AI Chart Review</option>
+            <option value="Reduce Denials & A/R Days">Reduce Denials & Accelerate A/R</option>
+            <option value="Full Revenue Cycle Outsourcing">Full End-to-End RCM Outsourcing</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary modal-submit-btn" style="width: 100%; margin-top: 12px;">
+          <span class="btn-glow-stream" aria-hidden="true"></span>
+          <span class="btn-text">Submit Consultation Request</span>
+          <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+
+        <div class="modal-privacy-notice">
+          🔒 Confidential. INFOGNANA SOLUTIONS adheres to strict HIPAA non-disclosure and privacy protocols.
+        </div>
+      </form>
+
+      <!-- Confirmation State Container -->
+      <div id="modalConfirmationView" style="display: none;"></div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript Application -->
+  <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

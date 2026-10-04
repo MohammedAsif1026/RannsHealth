@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Behavioral Health Billing & Credentialing | RannsHealth</title>
+  <meta name="description" content="Specialized Behavioral Health RCM, Mental Health Billing, Psychiatry, Psychology, Therapist, Substance Use Disorder, IOP/PHP, CCBHC, ABA Therapy Billing, and Credentialing.">
+  <meta name="theme-color" content="#050914">
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css?v=2.2">
+  <link rel="stylesheet" href="css/base.css?v=2.2">
+  <link rel="stylesheet" href="css/components.css?v=2.2">
+  <link rel="stylesheet" href="css/animations.css?v=2.2">
+</head>
+
+<body>
+
+  <!-- ======================================================================
+       NAVIGATION & STICKY HEADER
+       ====================================================================== -->
+  <header class="header-nav" id="mainHeader">
+    <div class="container nav-container">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="RannsHealth — Powered by Rannsolve Home">
+        <img src="assets/rannshealth-logo.png" alt="RannsHealth — Powered by Rannsolve" class="brand-logo-img">
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" aria-label="Primary Navigation">
+        <a href="index.html#rcm-lifecycle" class="nav-link">RCM Lifecycle</a>
+        <div class="nav-item-dropdown" id="aiLabsDropdown">
+          <button type="button" class="nav-link nav-dropdown-trigger" id="aiLabsTrigger" aria-expanded="false" aria-haspopup="true" aria-controls="aiLabsMenu">
+            <span>AI Labs</span>
+            <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="nav-dropdown-menu" id="aiLabsMenu" role="menu" aria-labelledby="aiLabsTrigger">
+            <a href="rannscde.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">rannsCDE</span>
+            </a>
+            <a href="rannsccr.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">rannsCCR</span>
+            </a>
+            <a href="rannscpa.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">rannsCPA</span>
+            </a>
+            <a href="rcm-calculator.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">RCM Calculator</span>
+            </a>
+          </div>
+        </div>
+        <div class="nav-item-dropdown" id="specialtiesDropdown">
+          <button type="button" class="nav-link nav-dropdown-trigger active" id="specialtiesTrigger" aria-expanded="false" aria-haspopup="true" aria-controls="specialtiesMenu">
+            <span>Specialties</span>
+            <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="nav-dropdown-menu" id="specialtiesMenu" role="menu" aria-labelledby="specialtiesTrigger">
+            <a href="organization-types.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">Organization Types</span>
+            </a>
+            <a href="medical-specialties.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">Medical Specialties</span>
+            </a>
+            <a href="behavioral-health.html" class="nav-dropdown-item active" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">Behavioral Health</span>
+            </a>
+          </div>
+        </div>
+        <a href="index.html#transformation" class="nav-link">Outcomes</a>
+        <a href="index.html#dashboard" class="nav-link">Dashboard</a>
+        <a href="index.html#denials" class="nav-link">Denial Recovery</a>
+        <a href="index.html#services" class="nav-link">Services</a>
+        <a href="index.html#security" class="nav-link">Security & Compliance</a>
+      </nav>
+
+      <!-- Action CTAs -->
+      <div class="nav-actions">
+        <button type="button" class="btn btn-primary btn-sm open-consultation-modal-btn">Request a Consultation</button>
+        <button type="button" class="nav-mobile-toggle" aria-label="Toggle Mobile Menu" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="product-page-main">
+    <div class="container">
+      <!-- Breadcrumb & Hero Header -->
+      <div class="product-hero-header">
+        <div class="eyebrow-badge badge-cyan product-hero-badge">
+          <span class="badge-dot"></span>
+          Specialties · Behavioral & Mental Health Intelligence
+        </div>
+        <h1 class="product-page-title">
+          Behavioral Health Revenue Cycle & Clinical Credentialing
+        </h1>
+        <p class="product-page-subtitle">
+          Engineered for the specialized operational realities of mental health: navigating time-based therapy codes, concurrent authorizations, level-of-care requirements, parity compliance, and payer panel enrollment.
+        </p>
+        <div class="product-hero-actions">
+          <button type="button" class="btn btn-primary open-consultation-modal-btn">
+            <span class="btn-glow-stream" aria-hidden="true"></span>
+            <span>Request Behavioral Health Consultation</span>
+            <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+          <a href="index.html" class="btn btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            <span>Back to Home</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero Visual Banner Image -->
+      <div class="specialty-hero-banner">
+        <img src="assets/behavioral-health.jpg" alt="Behavioral and Mental Health Clinical Intelligence and Telehealth" class="specialty-hero-img">
+        <div class="specialty-hero-overlay">
+          <div>
+            <div style="font-size: 0.8rem; font-weight: 700; color: #A78BFA; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px;">
+              Mental Health & Addictive Medicine Architecture
+            </div>
+            <h2 style="font-size: 1.45rem; font-weight: 700; color: #FFFFFF; margin: 0;">
+              Comprehensive RCM for Psychiatric, Therapy, and Specialized Care Facilities
+            </h2>
+          </div>
+        </div>
+      </div>
+
+      <!-- Behavioral Health 11 Categories Presentation -->
+      <div class="behavioral-categories-grid">
+        <!-- 1. Behavioral Health RCM -->
+        <article class="bh-card reveal-on-scroll">
+          <div class="bh-card-header">
+            <div class="bh-icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M16 12l-4-4-4 4M12 16V8"></path>
+              </svg>
+            </div>
+            <h2 class="bh-card-title">Behavioral Health RCM</h2>
+          </div>
+          <p class="bh-card-desc">
+            End-to-end revenue cycle management designed specifically for behavioral health organizations, uniting front-desk benefit verification, utilization review coordination, billing, and denial management.
+          </p>
+          <ul class="bh-bullet-list">
+            <li class="bh-bullet-item"><span class="bh-bullet-dot"></span><span>Front-to-back lifecycle integration</span></li>
+            <li class="bh-bullet-item"><span class="bh-bullet-dot"></span><span>Mental Health Parity Act compliance tracking</span></li>
+            <li class="bh-bullet-item"><span class="bh-bullet-dot"></span><span>Dedicated behavioral A/R follow-up teams</span></li>
+          </ul>
+        </article>
+
+        <!-- 2. Behavioral Health Billing -->
+        <article class="bh-card reveal-on-scroll delay-100">
+          <div class="bh-card-header">
+            <div class="bh-icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                <path d="M7 15h0M2 9.5h20"></path>
+              </svg>
+            </div>
+            <h2 class="bh-card-title">Behavioral Health Billing</h2>
+          </div>
+          <p class="bh-card-desc">
+            Specialized claims generation and submission for behavioral health outpatient clinics, group practices, and residential centers across commercial payers, Medicare, and state Medicaid programs.
+          </p>
+          <ul class="bh-bullet-list">
+            <li class="bh-bullet-item"><span class="bh-bullet-dot"></span><span>Electronic 837P and 837I transaction scrubbing</span></li>
+            <li class="bh-bullet-item"><span class="bh-bullet-dot"></span><span>Authorized session units and date span management</span></li>
+            <li class="bh-bullet-item"><span class="bh-bullet-dot"></span><span>Payer-specific billing guideline mapping</span></li>
+          </ul>
+        </article>
+
+        <!-- 3. Mental Health Billing -->
+        <article class="bh-card reveal-on-scroll delay-200">
+          <div class="bh-card-header">
+            <div class="bh-icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14.93V17a1 1 0 0 1-2 0v-.07A8 8 0 0 1 4.07 11H4a1 1 0 0 1 0-2h.07A8 8 0 0 1 11 4.07V4a1 1 0 0 1 2 0v.07A8 8 0 0 1 19.93 11H20a1 1 0 0 1 0 2h-.07A8 8 0 0 1 13 16.93z"></path>
+              </svg>
+            </div>
+            <h2 class="bh-card-title">Mental Health Billing</h2>
+          </div>
+          <p class="bh-card-desc">
+            Precise billing for individual, group, and family psychotherapy sessions, ensuring exact alignment between session duration documentation and time-based CPT code requirements.
+          </p>
+          <ul class="bh-bullet-list">
+            <li class="bh-bullet-item"><span class="bh-bullet-dot"></span><span>Routine psychotherapy codes (90832, 90834, 90837)</span></li>
+            <li class="bh-bullet-item"><span class="bh-bullet-dot"></span><span>Interactive complexity (+90785) add-on billing</span></li>
+            <li class="bh-bullet-item"><span class="bh-bullet-dot"></span><span>Crisis psychotherapy session tracking (90839, +90840)</span></li>
+          </ul>
+        </article>
+
+        <!-- 4. Psychiatry Billing -->
+        <article class="bh-card reveal-on-scroll">
+          <div class="bh-card-header">
+            <div class="bh-icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+              </svg>
+            </div>
+            <h2 class="bh-card-title">Psychiatry Billing</h2>
+          </div>
+          <p class="bh-card-desc">
+            Tailored billing for psychiatric medical practitioners, combining medical Evaluation & Management (E/M) decision-making with psychiatric diagnostic evaluations and pharmacologic management.
+          </p>
+          <ul class="bh-bullet-list">
+            <li class="bh-bullet-item"><span class="bh-bullet-dot"></span><span>E/M with psychotherapy add-ons (e.g. 99213 + 90833)</span></li>
+            <li class="bh-bullet-item"><span class="bh-bullet-dot"></span><span>Psychiatric evaluations (90791, 90792 with medical)</span></li>
+            <li class="bh-bullet-item"><span class="bh-bullet-dot"></span><span>Telepsychiatry POS 02 / 10 and modifier 95 tracking</span></li>
+          </ul>
+        </article>
+
+        <!-- 5. Psychology Billing -->
+        <article class="bh-card reveal-on-scroll delay-100">
+          <div class="bh-card-header">
+            <div class="bh-icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+              </svg>
+            </div>
+            <h2 class="bh-card-title">Psychology Billing</h2>
+          </div>
+          <p class="bh-card-desc">
+            Specialized coding for clinical psychologists conducting extensive psychological and neuropsychological assessment batteries, cognitive testing, and diagnostic reporting.
+          </p>
+          <ul class="bh-bullet-list">
+            <li class="bh-bullet-item"><span class="bh-bullet-dot"></span><span>Psychological testing evaluation (96130, +96131)</span></li>
+            <li class="bh-bullet-item"><span class="bh-bullet-dot"></span><span>Test administration by professional (96136, +96137)</span></li>
+            <li class="bh-bullet-item"><span class="bh-bullet-dot"></span><span>Automated/technician testing code capture</span></li>
+          </ul>
+        </article>
+
+        <!-- 6. Therapist Billing -->
+        <article class="bh-card reveal-on-scroll delay-200">
+          <div class="bh-card-header">
+            <div class="bh-icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+              </svg>
+            </div>
+            <h2 class="bh-card-title">Therapist Billing</h2>
+          </div>
+          <p class="bh-card-desc">
+            Streamlined revenue cycle management for Licensed Clinical Social Workers (LCSW), Licensed Marriage and Family Therapists (LMFT), and Licensed Professional Counselors (LPC).
+          </p>
+          <ul class="bh-bullet-list">
+            <li class="bh-bullet-item"><span class="bh-bullet-dot"></span><span>Couples and family therapy (90846, 90847)</span></li>
+            <li class="bh-bullet-item"><span class="bh-bullet-dot"></span><span>Mid-level provider modifier assignment (AJ, HO)</span></li>
+            <li class="bh-bullet-item"><span class="bh-bullet-dot"></span><span>Private practice & group clinic billing workflows</span></li>
+          </ul>
+        </article>
+
+        <!-- 7. Substance Use Disorder Billing -->
+        <article class="bh-card reveal-on-scroll">
+          <div class="bh-card-header">
+            <div class="bh-icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+              </svg>
+            </div>
+            <h2 class="bh-card-title">Substance Use Disorder (SUD) Billing</h2>
+          </div>
+          <p class="bh-card-desc">
+            Navigation of American Society of Addiction Medicine (ASAM) criteria, Medication-Assisted Treatment (MAT) billing, ambulatory detox protocols, and residential addiction recovery claims.
+          </p>
+          <ul class="bh-bullet-list">
+            <li class="bh-bullet-item"><span class="bh-bullet-dot"></span><span>MAT bundled weekly/monthly episode codes (G2086-G2088)</span></li>
+            <li class="bh-bullet-item"><span class="bh-bullet-dot"></span><span>Presumptive & definitive drug screen billing compliance</span></li>
+            <li class="bh-bullet-item"><span class="bh-bullet-dot"></span><span>Residential room and board revenue code coordination</span></li>
+          </ul>
+        </article>
+
+        <!-- 8. IOP & PHP Billing -->
+        <article class="bh-card reveal-on-scroll delay-100">
+          <div class="bh-card-header">
+            <div class="bh-icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+            </div>
+            <h2 class="bh-card-title">IOP & PHP Billing</h2>
+          </div>
+          <p class="bh-card-desc">
+            Billing management for Intensive Outpatient Programs (IOP) and Partial Hospitalization Programs (PHP), managing per-diem rates, minimum therapeutic hour thresholds, and UB-04 institutional claims.
+          </p>
+          <ul class="bh-bullet-list">
+            <li class="bh-bullet-item"><span class="bh-bullet-dot"></span><span>Revenue codes 0905 (PHP) and 0906 (IOP) adjudication</span></li>
+            <li class="bh-bullet-item"><span class="bh-bullet-dot"></span><span>HCPCS per-diem codes (H0015, H0035, S9480)</span></li>
+            <li class="bh-bullet-item"><span class="bh-bullet-dot"></span><span>Concurrent authorization & length-of-stay tracking</span></li>
+          </ul>
+        </article>
+
+        <!-- 9. CCBHC Billing -->
+        <article class="bh-card reveal-on-scroll delay-200">
+          <div class="bh-card-header">
+            <div class="bh-icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <h2 class="bh-card-title">CCBHC Billing</h2>
+          </div>
+          <p class="bh-card-desc">
+            Expertise in Certified Community Behavioral Health Clinic (CCBHC) prospective payment systems (PPS), comprehensive community care coordination, and state Medicaid demonstration reimbursement models.
+          </p>
+          <ul class="bh-bullet-list">
+            <li class="bh-bullet-item"><span class="bh-bullet-dot"></span><span>Daily/monthly PPS encounter rate reconciliation</span></li>
+            <li class="bh-bullet-item"><span class="bh-bullet-dot"></span><span>Required 9 core services tracking & reporting</span></li>
+            <li class="bh-bullet-item"><span class="bh-bullet-dot"></span><span>Quality bonus payment data integrity auditing</span></li>
+          </ul>
+        </article>
+
+        <!-- 10. ABA Therapy Billing -->
+        <article class="bh-card reveal-on-scroll">
+          <div class="bh-card-header">
+            <div class="bh-icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="4"></circle>
+                <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path>
+              </svg>
+            </div>
+            <h2 class="bh-card-title">ABA Therapy Billing</h2>
+          </div>
+          <p class="bh-card-desc">
+            Applied Behavior Analysis billing for autism spectrum disorder care, administering adaptive behavior assessments, direct 1-on-1 technician treatment, and Board Certified Behavior Analyst (BCBA) supervision.
+          </p>
+          <ul class="bh-bullet-list">
+            <li class="bh-bullet-item"><span class="bh-bullet-dot"></span><span>Assessment & plan development codes (97151, 97152)</span></li>
+            <li class="bh-bullet-item"><span class="bh-bullet-dot"></span><span>Adaptive treatment by technician (97153) in 15-min increments</span></li>
+            <li class="bh-bullet-item"><span class="bh-bullet-dot"></span><span>BCBA protocol modification & supervision (97155)</span></li>
+          </ul>
+        </article>
+
+        <!-- 11. Behavioral Health Credentialing -->
+        <article class="bh-card reveal-on-scroll delay-100" style="grid-column: span 1;">
+          <div class="bh-card-header">
+            <div class="bh-icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 11l3 3L22 4"></path>
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+              </svg>
+            </div>
+            <h2 class="bh-card-title">Behavioral Health Credentialing</h2>
+          </div>
+          <p class="bh-card-desc">
+            Provider enrollment, primary source verification, and panel credentialing for psychiatrists, psychologists, therapists, and behavioral health facilities across commercial and government health plans.
+          </p>
+          <ul class="bh-bullet-list">
+            <li class="bh-bullet-item"><span class="bh-bullet-dot"></span><span>CAQH profile establishment and quarterly re-attestation</span></li>
+            <li class="bh-bullet-item"><span class="bh-bullet-dot"></span><span>Commercial payer network enrollment & contract tracking</span></li>
+            <li class="bh-bullet-item"><span class="bh-bullet-dot"></span><span>State Medicaid and Medicare PECOS enrollment</span></li>
+          </ul>
+        </article>
+      </div>
+
+      <!-- Infographic: Behavioral Health Billing Lifecycle -->
+      <div class="workflow-infographic" style="margin-bottom: var(--space-16); padding: 32px 28px;">
+        <div style="text-align: center; max-width: 650px; margin: 0 auto 28px;">
+          <div style="font-size: 0.8rem; font-weight: 700; color: #A78BFA; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px;">
+            Behavioral Health RCM Lifecycle
+          </div>
+          <h2 style="font-size: 1.5rem; font-weight: 800; color: #FFFFFF; margin-bottom: 8px;">
+            Structured Compliance for Mental Health & Addiction Treatment
+          </h2>
+          <p style="font-size: 0.88rem; color: #94A3B8; line-height: 1.5;">
+            Managing authorizations, session units, and parity reviews to accelerate collections and prevent service interruptions.
+          </p>
+        </div>
+
+        <div class="workflow-steps">
+          <div class="workflow-step">
+            <span class="workflow-step-num" style="background: #A78BFA; color: #050914;">1</span>
+            <div class="workflow-step-title">Intake & Authorization</div>
+            <div class="workflow-step-desc">Immediate verification of behavioral health carve-outs, co-pays, and pre-auth units.</div>
+          </div>
+          <div class="workflow-step">
+            <span class="workflow-step-num" style="background: #A78BFA; color: #050914;">2</span>
+            <div class="workflow-step-title">Time & Service Coding</div>
+            <div class="workflow-step-desc">Exact time increments and documentation alignment for therapy, E/M, and testing.</div>
+          </div>
+          <div class="workflow-step">
+            <span class="workflow-step-num" style="background: #A78BFA; color: #050914;">3</span>
+            <div class="workflow-step-title">Concurrent Review Tracking</div>
+            <div class="workflow-step-desc">Monitoring authorization expiration dates and session thresholds to avoid uncovered care.</div>
+          </div>
+          <div class="workflow-step">
+            <span class="workflow-step-num" style="background: #A78BFA; color: #050914;">4</span>
+            <div class="workflow-step-title">Parity & Appeals Management</div>
+            <div class="workflow-step-desc">Robust appeal generation invoking parity laws for improper behavioral claim denials.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Consultation CTA Banner -->
+      <div style="background: linear-gradient(135deg, rgba(8, 14, 32, 0.9) 0%, rgba(20, 15, 45, 0.85) 100%); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: var(--radius-xl); padding: clamp(28px, 5vw, 48px); text-align: center; margin-bottom: var(--space-12);">
+        <h3 style="color: #FFFFFF; font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 800; margin-bottom: 12px;">
+          Optimize Your Behavioral Health Billing & Credentialing
+        </h3>
+        <p style="color: var(--text-secondary); max-width: 650px; margin: 0 auto 24px; font-size: 0.95rem; line-height: 1.6;">
+          Speak with our behavioral health billing specialists to evaluate session unit tracking, utilization review workflows, and provider enrollment.
+        </p>
+        <button type="button" class="btn btn-primary btn-lg open-consultation-modal-btn">
+          <span class="btn-glow-stream" aria-hidden="true"></span>
+          <span>Schedule Behavioral Health Consultation</span>
+          <svg class="btn-icon-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- ======================================================================
+       ENTERPRISE FOOTER
+       ====================================================================== -->
+  <footer class="site-footer">
+    <!-- Subtle Flowing-Light Effect (Blurred Violet, Indigo, and Cyan Ribbons) -->
+    <div class="footer-flowing-light" aria-hidden="true">
+      <div class="flow-ribbon flow-ribbon-1"></div>
+      <div class="flow-ribbon flow-ribbon-2"></div>
+      <div class="flow-ribbon flow-ribbon-3"></div>
+    </div>
+
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand & Bio -->
+        <div class="footer-brand-col">
+          <a href="index.html" class="brand-logo" aria-label="RannsHealth — Powered by Rannsolve Home">
+            <img src="assets/rannshealth-logo.png" alt="RannsHealth — Powered by Rannsolve" class="brand-logo-img-footer">
+          </a>
+          <p class="footer-copy">
+            Enterprise healthcare revenue cycle management, denial recovery intelligence, and AI-powered cognitive chart
+            review for health systems and physician groups.
+          </p>
+        </div>
+
+        <!-- Col 2: Solutions -->
+        <div>
+          <div class="footer-col-title">Solutions</div>
+          <div class="footer-links-list">
+            <a href="rannsccr.html" class="footer-link">rannsCCR AI Chart Reader</a>
+            <a href="rannscde.html" class="footer-link">rannsCDE Document Extraction</a>
+            <a href="rannscpa.html" class="footer-link">rannsCPA Prior Auth Engine</a>
+            <a href="rcm-calculator.html" class="footer-link">RCM Calculator</a>
+            <a href="index.html#rcm-lifecycle" class="footer-link">End-to-End RCM</a>
+          </div>
+        </div>
+
+        <!-- Col 3: Company & Trust -->
+        <div>
+          <div class="footer-col-title">Enterprise</div>
+          <div class="footer-links-list">
+            <a href="security-architecture.html" class="footer-link">Security Architecture</a>
+            <a href="index.html#transformation" class="footer-link">Client Outcomes</a>
+            <a href="#" class="footer-link open-consultation-modal-btn">Request a Demo</a>
+            <a href="index.html#security" class="footer-link">HIPAA & SOC 2 Capabilities</a>
+          </div>
+        </div>
+
+        <!-- Col 4: Contact & Locations -->
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <div class="footer-links-list" style="font-size: 0.85rem; color: #94A3B8; line-height: 1.6;">
+            <div>Email: <a href="mailto:solutions@infognana.com" style="color: var(--color-cyan);">solutions@infognana.com</a></div>
+            <div>Phone: +1 (800) 555-INFO</div>
+            <div style="margin-top: 8px;">Global Operations Center & Healthcare Delivery Centers</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 INFOGNANA SOLUTIONS. All rights reserved. Built for Healthcare Excellence.
+        </div>
+        <div style="display: flex; gap: 20px;">
+          <a href="privacy-policy.html" class="footer-link">Privacy Policy</a>
+          <a href="terms-of-service.html" class="footer-link">Terms of Service</a>
+          <a href="security-architecture.html" class="footer-link">Security Architecture</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Consultation Modal Component -->
+  <div class="modal-overlay" id="consultationModalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button type="button" class="modal-close-btn" id="closeConsultationModalBtn" aria-label="Close Modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <form id="consultationBookingForm">
+        <div style="margin-bottom: 24px;">
+          <div class="eyebrow-badge badge-cyan" style="margin-bottom: 8px;">
+            <span class="badge-dot"></span>
+            Behavioral Health Advisory
+          </div>
+          <h3 id="modalTitle" style="color: #FFFFFF; font-size: 1.5rem; font-weight: 700; margin-bottom: 6px;">
+            Schedule Behavioral Health RCM Review
+          </h3>
+          <p style="font-size: 0.85rem; color: #94A3B8;">
+            Connect with a Senior Behavioral Health RCM Specialist to review prior authorizations, session unit tracking, or credentialing.
+          </p>
+        </div>
+
+        <div class="form-group">
+          <label for="formFullName" class="form-label">Full Name *</label>
+          <input type="text" id="formFullName" class="form-input" placeholder="e.g. Dr. Sarah Jenkins, MD" required>
+        </div>
+
+        <div class="form-group">
+          <label for="formWorkEmail" class="form-label">Work Email *</label>
+          <input type="email" id="formWorkEmail" class="form-input" placeholder="sjenkins@healthsystem.org" required>
+        </div>
+
+        <div class="form-group">
+          <label for="formOrgType" class="form-label">Primary Behavioral Domain *</label>
+          <select id="formOrgType" class="form-select" required>
+            <option value="Behavioral Health RCM">Behavioral Health RCM (Comprehensive)</option>
+            <option value="Mental Health Billing">Mental Health / Psychotherapy Billing</option>
+            <option value="Psychiatry Billing">Psychiatry Practice Billing</option>
+            <option value="Psychology Billing">Psychology & Assessment Billing</option>
+            <option value="Therapist Billing">Therapist / Counselor Billing</option>
+            <option value="Substance Use Disorder">Substance Use Disorder / MAT</option>
+            <option value="IOP & PHP">IOP & PHP Facilities</option>
+            <option value="CCBHC">CCBHC Clinic</option>
+            <option value="ABA Therapy">ABA Therapy Practice</option>
+            <option value="Credentialing">Behavioral Health Credentialing</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary modal-submit-btn" style="width: 100%; margin-top: 12px;">
+          <span class="btn-glow-stream" aria-hidden="true"></span>
+          <span class="btn-text">Submit Consultation Request</span>
+          <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+
+        <div class="modal-privacy-notice">
+          🔒 Confidential. RannsHealth adheres to strict HIPAA non-disclosure protocols.
+        </div>
+      </form>
+
+      <div id="modalConfirmationView" style="display: none;"></div>
+    </div>
+  </div>
+
+  <!-- JavaScript Application -->
+  <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>rannsCCR | AI Labs | INFOGNANA SOLUTIONS</title>
+  <meta name="description" content="rannsCCR - Cognitive Clinical Chart Review & Ingestion by INFOGNANA SOLUTIONS.">
+  <meta name="theme-color" content="#050914">
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css?v=2.2">
+  <link rel="stylesheet" href="css/base.css?v=2.2">
+  <link rel="stylesheet" href="css/components.css?v=2.2">
+  <link rel="stylesheet" href="css/animations.css?v=2.2">
+</head>
+
+<body>
+
+  <!-- ======================================================================
+       1. NAVIGATION & STICKY HEADER
+       ====================================================================== -->
+  <header class="header-nav" id="mainHeader">
+    <div class="container nav-container">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="RannsHealth — Powered by Rannsolve Home">
+        <img src="assets/rannshealth-logo.png" alt="RannsHealth — Powered by Rannsolve" class="brand-logo-img">
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" aria-label="Primary Navigation">
+        <a href="index.html#rcm-lifecycle" class="nav-link">RCM Lifecycle</a>
+        <div class="nav-item-dropdown" id="aiLabsDropdown">
+          <button type="button" class="nav-link nav-dropdown-trigger active" id="aiLabsTrigger" aria-expanded="false" aria-haspopup="true" aria-controls="aiLabsMenu">
+            <span>AI Labs</span>
+            <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="nav-dropdown-menu" id="aiLabsMenu" role="menu" aria-labelledby="aiLabsTrigger">
+            <a href="rannscde.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">rannsCDE</span>
+            </a>
+            <a href="rannsccr.html" class="nav-dropdown-item active" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">rannsCCR</span>
+            </a>
+            <a href="rannscpa.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">rannsCPA</span>
+            </a>
+            <a href="rcm-calculator.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">RCM Calculator</span>
+            </a>
+          </div>
+        </div>
+        <div class="nav-item-dropdown" id="specialtiesDropdown">
+          <button type="button" class="nav-link nav-dropdown-trigger" id="specialtiesTrigger" aria-expanded="false" aria-haspopup="true" aria-controls="specialtiesMenu">
+            <span>Specialties</span>
+            <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="nav-dropdown-menu" id="specialtiesMenu" role="menu" aria-labelledby="specialtiesTrigger">
+            <a href="organization-types.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">Organization Types</span>
+            </a>
+            <a href="medical-specialties.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">Medical Specialties</span>
+            </a>
+            <a href="behavioral-health.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">Behavioral Health</span>
+            </a>
+          </div>
+        </div>
+        <a href="index.html#transformation" class="nav-link">Outcomes</a>
+        <a href="index.html#dashboard" class="nav-link">Dashboard</a>
+        <a href="index.html#denials" class="nav-link">Denial Recovery</a>
+        <a href="index.html#services" class="nav-link">Services</a>
+        <a href="index.html#security" class="nav-link">Security & Compliance</a>
+      </nav>
+
+      <!-- Action CTAs -->
+      <div class="nav-actions">
+        <button type="button" class="btn btn-primary btn-sm open-consultation-modal-btn">Request a Consultation</button>
+        <button type="button" class="nav-mobile-toggle" aria-label="Toggle Mobile Menu" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="product-page-main">
+    <div class="container">
+      <!-- Breadcrumb & Hero Header -->
+      <div class="product-hero-header">
+        <div class="eyebrow-badge badge-violet product-hero-badge">
+          <span class="badge-dot"></span>
+          AI Labs · Agentic AI Chart Intelligence
+        </div>
+        <h1 class="product-page-title">rannsCCR: Agentic AI Chart Intelligence for Better Patient Outcomes</h1>
+        <p class="product-page-subtitle">
+          Search, summarize, and understand patient charts to surface relevant clinical information, identify care gaps, and support informed decisions.
+        </p>
+        <div class="product-hero-actions">
+          <button type="button" class="btn btn-primary open-consultation-modal-btn">
+            <span class="btn-glow-stream" aria-hidden="true"></span>
+            <span>Request a Demo</span>
+            <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+          <a href="#video-demo" class="btn btn-secondary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            <span>Watch Video Demo</span>
+          </a>
+          <a href="index.html" class="btn btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            <span>Back to Home</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Reference Product Card (Matching Reference Infographic) -->
+      <div class="product-infographic-card">
+        <div class="product-infographic-header">
+          <div class="product-card-icon-box purple-gradient">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+              <path d="M6 10h2l2-3 3 6 2-3h3"></path>
+            </svg>
+          </div>
+          <div class="product-card-title-group">
+            <h2>rannsCCR</h2>
+            <div class="product-card-tagline purple-text">Agentic AI Chart Intelligence for Better Patient Outcomes</div>
+          </div>
+        </div>
+
+        <p class="product-infographic-intro">
+          Search, summarize, and understand patient charts to surface relevant clinical information, identify care gaps, and support informed decisions.
+        </p>
+
+        <div class="product-caps-title">Key Capabilities</div>
+        <div class="product-caps-2col">
+          <div class="product-caps-item">
+            <span class="caps-bullet-dot purple"></span>
+            <span>AI-Powered Patient Chart Search</span>
+          </div>
+          <div class="product-caps-item">
+            <span class="caps-bullet-dot purple"></span>
+            <span>Risk Adjustment (HCC) Support</span>
+          </div>
+          <div class="product-caps-item">
+            <span class="caps-bullet-dot purple"></span>
+            <span>Clinical Chart Summarization</span>
+          </div>
+          <div class="product-caps-item">
+            <span class="caps-bullet-dot purple"></span>
+            <span>Medication & Diagnosis Search</span>
+          </div>
+          <div class="product-caps-item">
+            <span class="caps-bullet-dot purple"></span>
+            <span>HEDIS Measure Extraction</span>
+          </div>
+          <div class="product-caps-item">
+            <span class="caps-bullet-dot purple"></span>
+            <span>Clinical Narrative Understanding</span>
+          </div>
+          <div class="product-caps-item">
+            <span class="caps-bullet-dot purple"></span>
+            <span>Gap Finder (Gap in Care Identification)</span>
+          </div>
+          <div class="product-caps-item">
+            <span class="caps-bullet-dot purple"></span>
+            <span>Patient Timeline & Longitudinal View</span>
+          </div>
+          <div class="product-caps-item">
+            <span class="caps-bullet-dot purple"></span>
+            <span>ICD-10 & CPT Intelligence</span>
+          </div>
+          <div class="product-caps-item">
+            <span class="caps-bullet-dot purple"></span>
+            <span>EHR Integration (FHIR Compatible)</span>
+          </div>
+        </div>
+
+        <!-- Metrics Strip (From Screenshot) -->
+        <div class="product-ref-metrics-strip">
+          <div class="ref-metric-item">
+            <div class="ref-metric-icon purple">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <div class="ref-metric-data">
+              <div class="ref-metric-value">&lt;1s</div>
+              <div class="ref-metric-name">Second Chart Search Response</div>
+            </div>
+          </div>
+
+          <div class="ref-metric-item">
+            <div class="ref-metric-icon purple">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 6v6l4 2"></path>
+                <path d="M16 16l4 4"></path>
+              </svg>
+            </div>
+            <div class="ref-metric-data">
+              <div class="ref-metric-value">4x</div>
+              <div class="ref-metric-name">Faster Chart Reviews</div>
+            </div>
+          </div>
+
+          <div class="ref-metric-item">
+            <div class="ref-metric-icon purple">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+              </svg>
+            </div>
+            <div class="ref-metric-data">
+              <div class="ref-metric-value">60%+</div>
+              <div class="ref-metric-name">Improvement in Clinical Efficiency</div>
+            </div>
+          </div>
+
+          <div class="ref-metric-item">
+            <div class="ref-metric-icon purple">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+                <path d="M4 4l6-2 4 4 6-2"></path>
+              </svg>
+            </div>
+            <div class="ref-metric-data">
+              <div class="ref-metric-value">98%</div>
+              <div class="ref-metric-name">Revenue Growth Potential</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Playable Responsive YouTube Video Section -->
+      <div class="video-showcase-card" id="video-demo">
+        <div class="video-header-bar">
+          <div class="video-title-wrap">
+            <span class="video-badge" style="background: rgba(139, 92, 246, 0.15); color: #C084FC; border-color: rgba(139, 92, 246, 0.3);">Live Demonstration</span>
+            <span style="font-size: 0.95rem; font-weight: 700; color: #FFFFFF;">rannsCCR: Cognitive Medical Chart Review in Action</span>
+          </div>
+          <span style="font-size: 0.78rem; color: #94A3B8; font-family: var(--font-mono);">Playable Embed</span>
+        </div>
+        <div class="video-responsive-frame">
+          <iframe 
+            class="video-iframe" 
+            src="https://www.youtube.com/embed/l9bduTKLNn0" 
+            title="rannsCCR - Agentic AI Chart Intelligence for Better Patient Outcomes Video Demonstration" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+      <!-- Interactive Chart Scanner & Entity Highlighter Infographic -->
+      <div style="margin-top: var(--space-16); margin-bottom: var(--space-12);">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <div class="eyebrow-badge badge-violet" style="margin-bottom: 8px;">
+            <span class="badge-dot"></span>
+            Interactive NLP Workspace
+          </div>
+          <h2 style="font-size: 2rem; font-weight: 800; color: #FFFFFF; margin-bottom: 8px;">
+            Sub-Second Clinical Chart Exploration
+          </h2>
+          <p style="font-size: 0.95rem; color: var(--text-secondary); max-width: 640px; margin: 0 auto;">
+            Try the live search bar below to filter clinical progress notes, extract active prescriptions, and surface HCC risk categories instantly.
+          </p>
+        </div>
+
+        <div class="rannsccr-grid" style="max-width: 1040px; margin: 0 auto;">
+          <!-- Simulated EHR Chart Window -->
+          <div class="chart-viewer-window">
+            <div class="window-header">
+              <div class="window-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <div class="window-title">EHR Encounter Record · Patient ID #884920</div>
+              <span id="searchSpeedBadge" class="cde-status-pill" style="color: #38BDF8;">⚡ Search in &lt;0.20s</span>
+            </div>
+
+            <!-- Patient Header Bar -->
+            <div class="patient-header-bar">
+              <div class="patient-info">
+                <div class="patient-avatar">JD</div>
+                <div>
+                  <div style="font-size: 0.88rem; font-weight: 700; color: #FFFFFF;">DOE, JOHN [SIMULATED]</div>
+                  <div style="font-size: 0.72rem; color: #94A3B8;">58 Y/O Male · MRN: 9940129 · Primary Ins: Commercial PPO</div>
+                </div>
+              </div>
+              <span class="cde-status-pill" style="color: #10B981;">● Chart Synchronized</span>
+            </div>
+
+            <!-- Search Bar Input -->
+            <div style="padding: 12px 18px; background: rgba(5, 9, 20, 0.8); border-bottom: 1px solid var(--border-subtle);">
+              <input 
+                type="text" 
+                id="chartSearchInput" 
+                class="form-input" 
+                style="height: 40px; font-size: 0.85rem;" 
+                placeholder="Search chart (e.g. Diabetes, Metformin, CPT, HCC, Hypertension)..."
+              >
+            </div>
+
+            <!-- Chart Document Content -->
+            <div 
+              id="chartDocumentBody" 
+              style="padding: 18px; font-family: var(--font-mono); font-size: 0.78rem; line-height: 1.7; color: #CBD5E1; max-height: 380px; overflow-y: auto; background: #070D1E;"
+            >
+              <!-- Populated by js/rannsccr-scanner.js -->
+            </div>
+          </div>
+
+          <!-- Extracted Entities Sidebar -->
+          <div class="chart-viewer-window">
+            <div class="window-header">
+              <div class="window-title">AI Extracted Clinical Entities & Quality Rules</div>
+              <span class="cde-status-pill" style="color: #A855F7;">NCQA HEDIS Active</span>
+            </div>
+            <div style="padding: 16px; background: rgba(14, 24, 52, 0.5); border-bottom: 1px solid var(--border-subtle); font-size: 0.78rem; color: #94A3B8;">
+              Click or search to inspect validated ICD-10, CPT, and Risk Adjustment factors:
+            </div>
+            <div id="extractedEntitiesContainer" style="padding: 14px; max-height: 420px; overflow-y: auto; display: flex; flex-direction: column; gap: 8px;">
+              <!-- Populated by js/rannsccr-scanner.js -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Deep-Dive Capabilities Grid -->
+      <div style="margin-top: var(--space-16);">
+        <div style="text-align: center; margin-bottom: var(--space-10);">
+          <div class="eyebrow-badge badge-violet" style="margin-bottom: 8px;">
+            <span class="badge-dot"></span>
+            Clinical Capabilities
+          </div>
+          <h2 style="font-size: 2rem; font-weight: 800; color: #FFFFFF;">
+            Comprehensive Chart Intelligence Suite
+          </h2>
+        </div>
+
+        <div class="cap-deepdive-grid">
+          <div class="cap-deepdive-card">
+            <div class="cap-deepdive-icon" style="color: #C084FC; background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.3);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </div>
+            <div class="cap-deepdive-title">AI-Powered Patient Chart Search</div>
+            <div class="cap-deepdive-text">
+              Natural language queries retrieve historical physician progress notes, lab trajectories, and pathology reports in under 1 second.
+            </div>
+          </div>
+
+          <div class="cap-deepdive-card">
+            <div class="cap-deepdive-icon" style="color: #C084FC; background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.3);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+              </svg>
+            </div>
+            <div class="cap-deepdive-title">Clinical Chart Summarization</div>
+            <div class="cap-deepdive-text">
+              Synthesizes multi-specialty encounters into structured, chronological patient briefs with clickable evidence back-links.
+            </div>
+          </div>
+
+          <div class="cap-deepdive-card">
+            <div class="cap-deepdive-icon" style="color: #C084FC; background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.3);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            </div>
+            <div class="cap-deepdive-title">HEDIS Measure Extraction</div>
+            <div class="cap-deepdive-text">
+              Automated audit of clinical encounters against NCQA HEDIS quality specifications, identifying compliance and documentation gaps.
+            </div>
+          </div>
+
+          <div class="cap-deepdive-card">
+            <div class="cap-deepdive-icon" style="color: #C084FC; background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.3);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+            </div>
+            <div class="cap-deepdive-title">Gap Finder (Care Gaps)</div>
+            <div class="cap-deepdive-text">
+              Surfaces overdue screenings, missing diabetic monitoring exams, missed vaccines, and non-adherent medication patterns.
+            </div>
+          </div>
+
+          <div class="cap-deepdive-card">
+            <div class="cap-deepdive-icon" style="color: #C084FC; background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.3);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              </svg>
+            </div>
+            <div class="cap-deepdive-title">ICD-10 & CPT Intelligence</div>
+            <div class="cap-deepdive-text">
+              Cross-references physician clinical documentation against reported codes to eliminate medical necessity denials and under-coding.
+            </div>
+          </div>
+
+          <div class="cap-deepdive-card">
+            <div class="cap-deepdive-icon" style="color: #C084FC; background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.3);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <div class="cap-deepdive-title">Risk Adjustment (HCC) Support</div>
+            <div class="cap-deepdive-text">
+              Maps documented chronic conditions to CMS-HCC V24 and V28 categories, ensuring complete Risk Adjustment Factor (RAF) capture.
+            </div>
+          </div>
+
+          <div class="cap-deepdive-card">
+            <div class="cap-deepdive-icon" style="color: #C084FC; background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.3);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="M9 12h6"></path>
+                <path d="M12 9v6"></path>
+              </svg>
+            </div>
+            <div class="cap-deepdive-title">Medication & Diagnosis Search</div>
+            <div class="cap-deepdive-text">
+              Tracks medication therapies, dosage changes, adverse reaction notes, and active comorbidities chronologically.
+            </div>
+          </div>
+
+          <div class="cap-deepdive-card">
+            <div class="cap-deepdive-icon" style="color: #C084FC; background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.3);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+            </div>
+            <div class="cap-deepdive-title">Clinical Narrative Understanding</div>
+            <div class="cap-deepdive-text">
+              Decodes specialized medical shorthand, complex physician prose, diagnostic radiology impressions, and surgical notes.
+            </div>
+          </div>
+
+          <div class="cap-deepdive-card">
+            <div class="cap-deepdive-icon" style="color: #C084FC; background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.3);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+            </div>
+            <div class="cap-deepdive-title">EHR Integration (FHIR Compatible)</div>
+            <div class="cap-deepdive-text">
+              Bi-directional SMART-on-FHIR and HL7 connectivity enables live integration into Epic, Cerner, MEDITECH, and AthenaClinicals.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Consultation Callout -->
+      <div class="final-cta-card" style="margin-top: var(--space-8); text-align: center; padding: 48px 24px; background: rgba(14, 23, 48, 0.75); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 20px;">
+        <h2 style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF; margin-bottom: 12px;">
+          Experience 4× Faster Clinical Chart Reviews
+        </h2>
+        <p style="font-size: 1rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto 24px;">
+          Enable your clinicians and revenue cycle auditors with sub-second chart search, automated HEDIS extraction, and 98% revenue growth potential.
+        </p>
+        <button type="button" class="btn btn-primary open-consultation-modal-btn">
+          <span class="btn-glow-stream" aria-hidden="true"></span>
+          <span>Schedule an rannsCCR Walkthrough</span>
+          <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- ======================================================================
+       ENTERPRISE FOOTER
+       ====================================================================== -->
+  <footer class="site-footer">
+    <!-- Subtle Flowing-Light Effect (Blurred Violet, Indigo, and Cyan Ribbons) -->
+    <div class="footer-flowing-light" aria-hidden="true">
+      <div class="flow-ribbon flow-ribbon-1"></div>
+      <div class="flow-ribbon flow-ribbon-2"></div>
+      <div class="flow-ribbon flow-ribbon-3"></div>
+    </div>
+
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand & Bio -->
+        <div class="footer-brand-col">
+          <a href="index.html" class="brand-logo" aria-label="RannsHealth — Powered by Rannsolve Home">
+            <img src="assets/rannshealth-logo.png" alt="RannsHealth — Powered by Rannsolve" class="brand-logo-img-footer">
+          </a>
+          <p class="footer-copy">
+            Enterprise healthcare revenue cycle management, denial recovery intelligence, and AI-powered cognitive chart
+            review for health systems and physician groups.
+          </p>
+        </div>
+
+        <!-- Col 2: Solutions -->
+        <div>
+          <div class="footer-col-title">Solutions</div>
+          <div class="footer-links-list">
+            <a href="rannsccr.html" class="footer-link">rannsCCR AI Chart Reader</a>
+            <a href="rannscde.html" class="footer-link">rannsCDE Document Extraction</a>
+            <a href="rannscpa.html" class="footer-link">rannsCPA Prior Auth Engine</a>
+            <a href="rcm-calculator.html" class="footer-link">RCM Calculator</a>
+            <a href="index.html#rcm-lifecycle" class="footer-link">End-to-End RCM</a>
+          </div>
+        </div>
+
+        <!-- Col 3: Company & Trust -->
+        <div>
+          <div class="footer-col-title">Enterprise</div>
+          <div class="footer-links-list">
+            <a href="index.html#security" class="footer-link">Security & Compliance</a>
+            <a href="index.html#transformation" class="footer-link">Client Outcomes</a>
+            <a href="#" class="footer-link open-consultation-modal-btn">Request a Demo</a>
+            <a href="index.html#security" class="footer-link">HIPAA & SOC 2 Capabilities</a>
+          </div>
+        </div>
+
+        <!-- Col 4: Contact & Locations -->
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <div class="footer-links-list" style="font-size: 0.85rem; color: #94A3B8; line-height: 1.6;">
+            <div>Email: <a href="mailto:solutions@infognana.com" style="color: var(--color-cyan);">solutions@infognana.com</a></div>
+            <div>Phone: +1 (800) 555-INFO</div>
+            <div style="margin-top: 8px;">Global Operations Center & Healthcare Delivery Centers</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 INFOGNANA SOLUTIONS. All rights reserved. Built for Healthcare Excellence.
+        </div>
+        <div style="display: flex; gap: 20px;">
+          <a href="privacy-policy.html" class="footer-link">Privacy Policy</a>
+          <a href="terms-of-service.html" class="footer-link">Terms of Service</a>
+          <a href="security-architecture.html" class="footer-link">Security Architecture</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       INTERACTIVE CONSULTATION & DEMO BOOKING MODAL
+       ====================================================================== -->
+  <div class="modal-overlay" id="consultationModalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button type="button" class="modal-close-btn" id="closeConsultationModalBtn" aria-label="Close Modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Booking Form -->
+      <form id="consultationBookingForm">
+        <div style="margin-bottom: 24px;">
+          <div class="eyebrow-badge badge-cyan" style="margin-bottom: 8px;">
+            <span class="badge-dot"></span>
+            RCM Advisory
+          </div>
+          <h3 id="modalTitle" style="color: #FFFFFF; font-size: 1.5rem; font-weight: 700; margin-bottom: 6px;">
+            Request a Consultation & rannsCCR Demo
+          </h3>
+          <p style="font-size: 0.85rem; color: #94A3B8;">
+            Connect with a Senior Healthcare RCM Architect from INFOGNANA SOLUTIONS to evaluate your denial rate, chart
+            review speed, and reimbursement potential.
+          </p>
+        </div>
+
+        <div class="form-group">
+          <label for="formFullName" class="form-label">Full Name *</label>
+          <input type="text" id="formFullName" class="form-input" placeholder="e.g. Dr. Sarah Jenkins, MD" required>
+        </div>
+
+        <div class="form-group">
+          <label for="formWorkEmail" class="form-label">Work Email *</label>
+          <input type="email" id="formWorkEmail" class="form-input" placeholder="sjenkins@healthsystem.org" required>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div class="form-group">
+            <label for="formOrgType" class="form-label">Organization Type *</label>
+            <select id="formOrgType" class="form-select" required>
+              <option value="Hospital & Health System">Hospital & Health System</option>
+              <option value="Large Physician Practice">Large Physician Practice Group</option>
+              <option value="Specialty Clinic (Oncology/Cardio/Ortho)">Specialty Clinic</option>
+              <option value="Medical Billing Company">Medical Billing Company</option>
+              <option value="Ambulatory Surgical Center">Ambulatory Surgical Center</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="formVolume" class="form-label">Monthly Claims Volume</label>
+            <select id="formVolume" class="form-select">
+              <option value="5,000 - 15,000 Claims/Mo">5,000 - 15,000 Claims/Mo</option>
+              <option value="15,000 - 50,000 Claims/Mo" selected>15,000 - 50,000 Claims/Mo</option>
+              <option value="50,000 - 200,000+ Claims/Mo">50,000 - 200,000+ Claims/Mo</option>
+              <option value="Enterprise Multi-Hospital">Enterprise Multi-Hospital</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="formPrimaryGoal" class="form-label">Primary Objective</label>
+          <select id="formPrimaryGoal" class="form-select">
+            <option value="Deploy rannsCCR AI Chart Review">Deploy rannsCCR AI Chart Review</option>
+            <option value="Reduce Denials & A/R Days">Reduce Denials & Accelerate A/R</option>
+            <option value="Full Revenue Cycle Outsourcing">Full End-to-End RCM Outsourcing</option>
+            <option value="Coding & Charge Integrity Audit">Coding & Charge Integrity Audit</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary modal-submit-btn" style="width: 100%; margin-top: 12px;">
+          <span class="btn-glow-stream" aria-hidden="true"></span>
+          <span class="btn-text">Submit Consultation Request</span>
+          <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+
+        <div class="modal-privacy-notice">
+          🔒 Confidential. INFOGNANA SOLUTIONS adheres to strict HIPAA non-disclosure and privacy protocols.
+        </div>
+      </form>
+
+      <!-- Confirmation State Container -->
+      <div id="modalConfirmationView" style="display: none;"></div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript Application -->
+  <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

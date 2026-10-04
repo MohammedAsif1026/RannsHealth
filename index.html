@@ -28,7 +28,7 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/variables.css?v=2.1">
   <link rel="stylesheet" href="css/base.css?v=2.1">
-  <link rel="stylesheet" href="css/components.css?v=2.1">
+  <link rel="stylesheet" href="css/components.css?v=2.3">
   <link rel="stylesheet" href="css/animations.css?v=2.1">
 
   <!-- Guaranteed Inline Style for Submit Consultation Request Button Glow Effect -->
@@ -113,19 +113,154 @@
 <body>
 
   <!-- ======================================================================
+       RANNSHEALTH PRELOADER / LOADING SCREEN
+       Polished, lightweight loading screen with ECG heartbeat line,
+       workflow nodes, moving data particles, and gentle cyan/teal lighting.
+       Dismisses immediately when page finishes loading without forced delay.
+       ====================================================================== -->
+  <div id="rannshealthLoader" class="rannshealth-loader" role="status" aria-live="polite" aria-label="Loading RannsHealth">
+    <!-- Ambient Cyan & Teal Light Accents -->
+    <div class="loader-ambient-glow loader-ambient-cyan" aria-hidden="true"></div>
+    <div class="loader-ambient-glow loader-ambient-teal" aria-hidden="true"></div>
+
+    <!-- Background Moving Data Particles Canvas -->
+    <canvas id="loaderParticlesCanvas" class="loader-particles-canvas" aria-hidden="true"></canvas>
+
+    <!-- Central Loader Content -->
+    <div class="loader-content">
+      <!-- RannsHealth Logo with Brief Clean Fade & Ambient Glow Halo -->
+      <div class="loader-logo-wrapper">
+        <div class="loader-logo-card">
+          <img src="assets/rannshealth-logo.png" alt="RannsHealth — Powered by Rannsolve" class="loader-logo-img">
+        </div>
+        <div class="loader-logo-halo" aria-hidden="true"></div>
+      </div>
+
+      <!-- Cyan ECG Heartbeat Wave with Center Pulse and Workflow Nodes -->
+      <div class="loader-ecg-container" aria-hidden="true">
+        <svg class="loader-ecg-svg" viewBox="0 0 700 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="ecgGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#00F0FF" stop-opacity="0.2" />
+              <stop offset="25%" stop-color="#00F0FF" stop-opacity="0.85" />
+              <stop offset="50%" stop-color="#70F3FF" stop-opacity="1" />
+              <stop offset="75%" stop-color="#00D2B4" stop-opacity="0.85" />
+              <stop offset="100%" stop-color="#00D2B4" stop-opacity="0.2" />
+            </linearGradient>
+            <filter id="ecgGlow" x="-20%" y="-40%" width="140%" height="180%">
+              <feGaussianBlur stdDeviation="3.5" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+          </defs>
+
+          <!-- Dim Background Baseline Track -->
+          <path class="ecg-track-dim" d="M 20 60 L 120 60 L 180 60 Q 200 50 220 60 L 245 68 L 275 14 L 305 106 L 325 60 Q 345 48 365 60 L 390 60 L 550 60 L 680 60" />
+
+          <!-- Dynamic Cyan Animated Heartbeat Line -->
+          <path class="ecg-line-pulse" d="M 20 60 L 120 60 L 180 60 Q 200 50 220 60 L 245 68 L 275 14 L 305 106 L 325 60 Q 345 48 365 60 L 390 60 L 550 60 L 680 60" />
+
+          <!-- Soft Center Pulse as it passes center (Center at x=275, y=60) -->
+          <circle class="center-pulse-ring ring-1" cx="275" cy="60" r="28" />
+          <circle class="center-pulse-ring ring-2" cx="275" cy="60" r="28" />
+
+          <!-- Connected Workflow Node 1: Patient Care (x=120, y=60) -->
+          <g class="workflow-node node-patient" transform="translate(120, 60)">
+            <circle class="node-halo" r="14" />
+            <circle class="node-core" r="6" />
+            <circle class="node-center" r="2.5" />
+            <text class="node-label" y="34">Patient Care</text>
+          </g>
+
+          <!-- Connected Workflow Node 2: Claims (x=390, y=60) -->
+          <g class="workflow-node node-claims" transform="translate(390, 60)">
+            <circle class="node-halo" r="14" />
+            <circle class="node-core" r="6" />
+            <circle class="node-center" r="2.5" />
+            <text class="node-label" y="34">Claims</text>
+          </g>
+
+          <!-- Connected Workflow Node 3: Revenue Cycle (x=550, y=60) -->
+          <g class="workflow-node node-revenue" transform="translate(550, 60)">
+            <circle class="node-halo" r="14" />
+            <circle class="node-core" r="6" />
+            <circle class="node-center" r="2.5" />
+            <text class="node-label" y="34">Revenue Cycle</text>
+          </g>
+        </svg>
+      </div>
+
+      <!-- Exact Caption: “A healthier revenue cycle. A stronger practice.” -->
+      <h2 class="loader-caption">
+        <span class="loader-caption-primary">A healthier revenue cycle.</span>
+        <span class="loader-caption-accent">A stronger practice.</span>
+      </h2>
+    </div>
+  </div>
+
+  <!-- ======================================================================
        1. NAVIGATION & STICKY HEADER
        ====================================================================== -->
   <header class="header-nav" id="mainHeader">
     <div class="container nav-container">
-      <!-- Brand Logo with Authentic Official Logo -->
-      <a href="#" class="brand-logo" aria-label="INFOGNANA SOLUTIONS Home">
-        <img src="assets/logo.svg" alt="INFOGNANA SOLUTIONS" class="brand-logo-img">
+      <!-- Brand Logo -->
+      <a href="#" class="brand-logo" aria-label="RannsHealth — Powered by Rannsolve Home">
+        <img src="assets/rannshealth-logo.png" alt="RannsHealth — Powered by Rannsolve" class="brand-logo-img">
       </a>
 
       <!-- Desktop Navigation Menu -->
       <nav class="nav-menu" aria-label="Primary Navigation">
         <a href="#rcm-lifecycle" class="nav-link">RCM Lifecycle</a>
-        <a href="#rannsccr" class="nav-link">rannsCCR AI</a>
+        <div class="nav-item-dropdown" id="aiLabsDropdown">
+          <button type="button" class="nav-link nav-dropdown-trigger" id="aiLabsTrigger" aria-expanded="false" aria-haspopup="true" aria-controls="aiLabsMenu">
+            <span>AI Labs</span>
+            <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="nav-dropdown-menu" id="aiLabsMenu" role="menu" aria-labelledby="aiLabsTrigger">
+            <a href="rannscde.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">rannsCDE</span>
+            </a>
+            <a href="rannsccr.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">rannsCCR</span>
+            </a>
+            <a href="rannscpa.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">rannsCPA</span>
+            </a>
+            <a href="rcm-calculator.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">RCM Calculator</span>
+            </a>
+          </div>
+        </div>
+        <div class="nav-item-dropdown" id="specialtiesDropdown">
+          <button type="button" class="nav-link nav-dropdown-trigger" id="specialtiesTrigger" aria-expanded="false" aria-haspopup="true" aria-controls="specialtiesMenu">
+            <span>Specialties</span>
+            <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="nav-dropdown-menu" id="specialtiesMenu" role="menu" aria-labelledby="specialtiesTrigger">
+            <a href="organization-types.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">Organization Types</span>
+            </a>
+            <a href="medical-specialties.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">Medical Specialties</span>
+            </a>
+            <a href="behavioral-health.html" class="nav-dropdown-item" role="menuitem">
+              <span class="dropdown-item-bullet"></span>
+              <span class="dropdown-item-title">Behavioral Health</span>
+            </a>
+          </div>
+        </div>
         <a href="#transformation" class="nav-link">Outcomes</a>
         <a href="#dashboard" class="nav-link">Dashboard</a>
         <a href="#denials" class="nav-link">Denial Recovery</a>
@@ -135,7 +270,6 @@
 
       <!-- Action CTAs -->
       <div class="nav-actions">
-        <a href="#rannsccr" class="btn btn-secondary btn-sm">Explore rannsCCR</a>
         <button type="button" class="btn btn-primary btn-sm open-consultation-modal-btn">Request a Consultation</button>
         <button type="button" class="nav-mobile-toggle" aria-label="Toggle Mobile Menu" aria-expanded="false">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -153,23 +287,29 @@
          2. HERO SECTION WITH 3D RCM DATA-FLOW VISUALIZATION
          ====================================================================== -->
     <section class="hero-section" id="hero">
+      <!-- Full-Bleed Silent Hero Background Video -->
+      <div class="hero-video-container" id="heroVideoContainer" aria-hidden="true">
+        <video class="hero-video-bg" id="heroVideo" muted loop playsinline webkit-playsinline preload="none" poster="assets/hero-video-poster.jpg">
+          <source src="assets/rannshealth-hero-loop.webm" type="video/webm">
+        </video>
+        <div class="hero-video-overlay"></div>
+      </div>
+
       <!-- Interactive Abstract Ambient Background Canvas -->
       <canvas id="ambientBgCanvas" class="hero-ambient-canvas"></canvas>
 
       <div class="container" style="position: relative; z-index: 2;">
         <div class="hero-grid">
-          <!-- Left Column: Copy & Value Proposition -->
-          <div class="hero-content reveal-on-scroll">
+          <!-- Left Column: Copy & Value Proposition (Rendered Instantly Without Delay) -->
+          <div class="hero-content">
             <div class="eyebrow-badge badge-cyan">
               <span class="badge-dot"></span>
               Enterprise Healthcare Intelligence
             </div>
 
             <h1 class="hero-headline">
-              Your revenue cycle, <br>
-              <span class="hero-headline-highlight">
-                Built for <span id="heroRotatingText">Finally visible.</span><span class="typing-cursor"></span>
-              </span>
+              A healthier revenue cycle. <br>
+              <span class="hero-headline-highlight">A stronger practice.</span>
             </h1>
 
             <p class="hero-copy">
@@ -216,8 +356,8 @@
             </div>
           </div>
 
-          <!-- Right Column: Interactive 3D/Canvas Data-Flow Node Graph -->
-          <div class="hero-visual-card reveal-on-scroll delay-200">
+          <!-- Right Column: Interactive 3D/Canvas Data-Flow Node Graph (Rendered Instantly) -->
+          <div class="hero-visual-card">
             <div class="hero-visual-overlay-badge">
               <span class="live-signal-dot"></span>
               Interactive RCM Neural Flow
@@ -1242,12 +1382,19 @@
        12. ENTERPRISE FOOTER
        ====================================================================== -->
   <footer class="site-footer">
+    <!-- Subtle Flowing-Light Effect (Blurred Violet, Indigo, and Cyan Ribbons) -->
+    <div class="footer-flowing-light" aria-hidden="true">
+      <div class="flow-ribbon flow-ribbon-1"></div>
+      <div class="flow-ribbon flow-ribbon-2"></div>
+      <div class="flow-ribbon flow-ribbon-3"></div>
+    </div>
+
     <div class="container">
       <div class="footer-grid">
         <!-- Col 1: Brand & Bio -->
         <div class="footer-brand-col">
-          <a href="#" class="brand-logo" aria-label="INFOGNANA SOLUTIONS Home">
-            <img src="assets/logo.svg" alt="INFOGNANA SOLUTIONS" class="brand-logo-img-footer">
+          <a href="#" class="brand-logo" aria-label="RannsHealth — Powered by Rannsolve Home">
+            <img src="assets/rannshealth-logo.png" alt="RannsHealth — Powered by Rannsolve" class="brand-logo-img-footer">
           </a>
           <p class="footer-copy">
             Enterprise healthcare revenue cycle management, denial recovery intelligence, and AI-powered cognitive chart
@@ -1268,11 +1415,11 @@
         <div>
           <div class="footer-col-title">Solutions</div>
           <div class="footer-links-list">
-            <a href="#rannsccr" class="footer-link">rannsCCR AI Chart Reader</a>
+            <a href="rannsccr.html" class="footer-link">rannsCCR AI Chart Reader</a>
+            <a href="rannscde.html" class="footer-link">rannsCDE Document Extraction</a>
+            <a href="rannscpa.html" class="footer-link">rannsCPA Prior Auth Engine</a>
+            <a href="rcm-calculator.html" class="footer-link">RCM Calculator</a>
             <a href="#rcm-lifecycle" class="footer-link">End-to-End RCM</a>
-            <a href="#denials" class="footer-link">Denial Recovery Suite</a>
-            <a href="#services" class="footer-link">Charge Integrity & Coding</a>
-            <a href="#dashboard" class="footer-link">Executive Analytics</a>
           </div>
         </div>
 
@@ -1305,9 +1452,9 @@
           © 2026 INFOGNANA SOLUTIONS. All rights reserved. Built for Healthcare Excellence.
         </div>
         <div style="display: flex; gap: 20px;">
-          <a href="#" class="footer-link">Privacy Policy</a>
-          <a href="#" class="footer-link">Terms of Service</a>
-          <a href="#" class="footer-link">Security Architecture</a>
+          <a href="privacy-policy.html" class="footer-link">Privacy Policy</a>
+          <a href="terms-of-service.html" class="footer-link">Terms of Service</a>
+          <a href="security-architecture.html" class="footer-link">Security Architecture</a>
         </div>
       </div>
     </div>

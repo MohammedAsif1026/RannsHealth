@@ -27,6 +27,7 @@ while ($listener.IsListening) {
             ".css"  { $response.ContentType = "text/css; charset=utf-8" }
             ".js"   { $response.ContentType = "application/javascript; charset=utf-8" }
             ".json" { $response.ContentType = "application/json; charset=utf-8" }
+            ".ico"  { $response.ContentType = "image/x-icon" }
             ".png"  { $response.ContentType = "image/png" }
             ".jpg"  { $response.ContentType = "image/jpeg" }
             ".jpeg" { $response.ContentType = "image/jpeg" }

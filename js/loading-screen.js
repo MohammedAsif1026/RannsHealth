@@ -1,7 +1,8 @@
 /**
- * RANNSHEALTH - HIGH-PERFORMANCE PRELOADER CONTROLLER
+ * RANNSHEALTH - 4-SECOND PRELOADER & HERO ENTRANCE CONTROLLER
  * Lightweight, elegant ECG heartbeat wave, workflow nodes, and subtle data particle field.
- * Dismisses immediately when the page is ready with zero forced delays.
+ * Unconditionally closes after exactly 4 seconds, never blocking on assets or scripts,
+ * and reveals the hero section with a smooth entrance animation.
  */
 
 export function initLoadingScreen() {
@@ -10,15 +11,41 @@ export function initLoadingScreen() {
 
   const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
   const canvas = document.getElementById('loaderParticlesCanvas');
+  const hero = document.getElementById('hero');
   let animId = null;
   let isDismissed = false;
 
-  // Reduced motion support
+  // 1. In-page navigation & session check:
+  // If the user has already seen the intro loader during this session, dismiss immediately
+  let hasSeenLoader = false;
+  try {
+    hasSeenLoader = sessionStorage.getItem('rannshealth_loader_seen') === 'true';
+  } catch (e) {
+    hasSeenLoader = false;
+  }
+
+  if (hasSeenLoader) {
+    loader.style.display = 'none';
+    loader.style.pointerEvents = 'none';
+    if (loader.parentNode) loader.parentNode.removeChild(loader);
+    if (hero) {
+      hero.classList.add('hero-entrance-active');
+    }
+    return;
+  }
+
+  // Mark session as seen so in-page back/forward or navigation does not trigger it again
+  try {
+    sessionStorage.setItem('rannshealth_loader_seen', 'true');
+  } catch (e) {
+    // Ignore storage restrictions
+  }
+
+  // 2. Reduced motion support
   if (motionQuery.matches) {
     loader.classList.add('reduced-motion');
   }
 
-  // Listen for reduced motion preference changes
   if (motionQuery.addEventListener) {
     motionQuery.addEventListener('change', (e) => {
       if (e.matches) {
@@ -30,7 +57,7 @@ export function initLoadingScreen() {
     });
   }
 
-  // --- Background Moving Data Particles ---
+  // 3. Background Moving Data Particles
   if (canvas && !motionQuery.matches) {
     const ctx = canvas.getContext('2d');
     let width, height;
@@ -105,7 +132,7 @@ export function initLoadingScreen() {
     animId = requestAnimationFrame(renderParticles);
   }
 
-  // --- Instant Dismissal When Page Is Ready ---
+  // 4. Reliable Dismissal & Hero Reveal
   function dismiss() {
     if (isDismissed) return;
     isDismissed = true;
@@ -115,25 +142,38 @@ export function initLoadingScreen() {
       animId = null;
     }
 
-    loader.classList.add('loader-fade-out');
+    // Immediately make loader non-interactive so clicks pass through
+    loader.style.pointerEvents = 'none';
 
-    setTimeout(() => {
+    // Trigger smooth entrance animation on the hero
+    if (hero) {
+      hero.classList.add('hero-entrance-active');
+    }
+
+    if (motionQuery.matches) {
       loader.style.display = 'none';
       if (loader.parentNode) {
         loader.parentNode.removeChild(loader);
       }
-    }, 420);
+    } else {
+      loader.classList.add('loader-fade-out');
+      setTimeout(() => {
+        loader.style.display = 'none';
+        if (loader.parentNode) {
+          loader.parentNode.removeChild(loader);
+        }
+      }, 500);
+    }
   }
 
-  // Dismiss as soon as genuine page loading finishes (never force arbitrary multi-second delays)
-  if (document.readyState === 'complete') {
-    setTimeout(dismiss, 350);
-  } else {
-    window.addEventListener('load', () => {
-      setTimeout(dismiss, 300);
-    }, { once: true });
+  // 5. Unconditional 4-Second Timer:
+  // Starts immediately when loader appears and triggers after exactly 4 seconds (4000ms).
+  // Does not wait for video, images, fonts or network events to finish.
+  const TIMER_MS = motionQuery.matches ? 150 : 4000;
+  const dismissTimer = setTimeout(dismiss, TIMER_MS);
 
-    // Safety fallback: dismiss within 1.6s max if any heavy resource hangs
-    setTimeout(dismiss, 1600);
-  }
+  // Safety cleanup if page is unloaded or hidden
+  window.addEventListener('pagehide', () => {
+    clearTimeout(dismissTimer);
+  }, { once: true });
 }

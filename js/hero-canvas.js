@@ -2,6 +2,9 @@
  * INFOGNANA - INTERACTIVE 3D/CANVAS RCM DATA-FLOW VISUALIZATION
  * Renders an enterprise 3D perspective data-flow node graph:
  * Eligibility -> Authorization -> Claims -> Payment Posting -> Denial Resolution -> Analytics
+ * Responsive: Automatically reflows between a wide 6-stage perspective view on desktop
+ * and an elegant, spacious 2-column S-curve neural pipeline on mobile (320px–430px)
+ * with touch support, high-contrast readable labels, and zero clipping.
  */
 
 export function initHeroCanvas() {
@@ -10,11 +13,12 @@ export function initHeroCanvas() {
 
   const ctx = canvas.getContext('2d');
   const tooltip = document.getElementById('heroNodeTooltip');
+  const instructionEl = document.getElementById('heroVisualInstructionText');
   let animationFrameId;
   let width, height;
 
-  // Stages definition
-  const nodes = [
+  // Desktop stages definition (spacious horizontal perspective)
+  const desktopNodes = [
     { id: 'eligibility', name: 'Eligibility', subtitle: '270/271 Real-Time', stat: '99.8% Verified', desc: 'Instant insurance eligibility checks & coverage validation before patient encounters.', color: '#00F0FF', xRatio: 0.14, yRatio: 0.35, z: 0 },
     { id: 'authorization', name: 'Authorization', subtitle: 'AI Prior-Auth', stat: '96.4% Approval', desc: 'Automated clinical documentation checking & prior-auth validation.', color: '#00D2B4', xRatio: 0.30, yRatio: 0.65, z: 20 },
     { id: 'claims', name: 'Claims Submission', subtitle: 'Rules Engine', stat: '99.2% Clean Rate', desc: 'Pre-submission scrubbing with 2,500+ payer-specific LCD/NCD validation rules.', color: '#8B5CF6', xRatio: 0.50, yRatio: 0.30, z: 10 },
@@ -23,11 +27,21 @@ export function initHeroCanvas() {
     { id: 'analytics', name: 'AI & Analytics', subtitle: 'RCM Intelligence', stat: '4.8x ROI Impact', desc: 'End-to-end executive visibility, payer scorecards, and continuous revenue optimization.', color: '#10B981', xRatio: 0.50, yRatio: 0.85, z: 40 }
   ];
 
+  // Mobile stages definition (2-column staggered S-curve layout tailored for 320px–430px viewports)
+  const mobileNodes = [
+    { id: 'eligibility', name: 'Eligibility', mobileName: 'Eligibility', subtitle: '270/271 Real-Time', mobileSubtitle: 'Real-Time 270', stat: '99.8% Verified', desc: 'Instant insurance eligibility checks & coverage validation before patient encounters.', color: '#00F0FF', xRatio: 0.28, yRatio: 0.16, z: 0 },
+    { id: 'authorization', name: 'Authorization', mobileName: 'Prior-Auth', subtitle: 'AI Prior-Auth', mobileSubtitle: 'AI Validation', stat: '96.4% Approval', desc: 'Automated clinical documentation checking & prior-auth validation.', color: '#00D2B4', xRatio: 0.72, yRatio: 0.30, z: 10 },
+    { id: 'claims', name: 'Claims Submission', mobileName: 'Clean Claims', subtitle: 'Rules Engine', mobileSubtitle: 'Rules Engine', stat: '99.2% Clean Rate', desc: 'Pre-submission scrubbing with 2,500+ payer-specific LCD/NCD validation rules.', color: '#8B5CF6', xRatio: 0.28, yRatio: 0.45, z: 15 },
+    { id: 'payment', name: 'Payment Posting', mobileName: 'Payment Posting', subtitle: '835 ERA Auto-Post', mobileSubtitle: '835 ERA Auto', stat: '<2hr Auto-Post', desc: 'Automated EOB data capture, electronic posting, and write-off reconciliation.', color: '#00F0FF', xRatio: 0.72, yRatio: 0.60, z: 20 },
+    { id: 'denial', name: 'Denial Resolution', mobileName: 'Denial Recovery', subtitle: 'Root Cause AI', mobileSubtitle: 'Root Cause AI', stat: '84.7% Recovered', desc: 'Automated denial classification, smart routing, and rapid appeal package generation.', color: '#F59E0B', xRatio: 0.28, yRatio: 0.74, z: 10 },
+    { id: 'analytics', name: 'AI & Analytics', mobileName: 'AI Analytics', subtitle: 'RCM Intelligence', mobileSubtitle: 'RCM Insights', stat: '4.8x ROI Impact', desc: 'End-to-end executive visibility, payer scorecards, and continuous revenue optimization.', color: '#10B981', xRatio: 0.72, yRatio: 0.88, z: 25 }
+  ];
+
   // Animated Particles flowing along paths
   const particles = [];
-  const particleCount = 42;
+  const particleCount = 36;
 
-  // Mouse tilt tracking
+  // Mouse & Touch tracking
   let mouse = { x: 0, y: 0, targetX: 0, targetY: 0, hoveredNode: null };
 
   function resize() {
@@ -38,16 +52,22 @@ export function initHeroCanvas() {
     canvas.width = width * dpr;
     canvas.height = height * dpr;
     ctx.scale(dpr, dpr);
+
+    if (instructionEl) {
+      instructionEl.textContent = (width < 640)
+        ? '✦ Tap nodes to inspect real-time metrics'
+        : '✦ Hover over stages to inspect real-time metrics';
+    }
   }
 
   // Initialize particles
   for (let i = 0; i < particleCount; i++) {
     particles.push({
-      pathIndex: Math.floor(Math.random() * (nodes.length - 1)),
+      pathIndex: Math.floor(Math.random() * 5),
       progress: Math.random(),
-      speed: 0.003 + Math.random() * 0.004,
-      size: 1.8 + Math.random() * 2,
-      opacity: 0.4 + Math.random() * 0.6
+      speed: 0.003 + Math.random() * 0.0035,
+      size: 1.6 + Math.random() * 1.8,
+      opacity: 0.4 + Math.random() * 0.55
     });
   }
 
@@ -69,20 +89,25 @@ export function initHeroCanvas() {
   function draw() {
     ctx.clearRect(0, 0, width, height);
 
-    // Smooth mouse parallax
-    mouse.x += (mouse.targetX - mouse.x) * 0.08;
-    mouse.y += (mouse.targetY - mouse.y) * 0.08;
+    const isMobile = width < 640;
+    const isVeryNarrow = width < 360;
+    const activeNodes = isMobile ? mobileNodes : desktopNodes;
 
-    const calculatedNodes = nodes.map(node => {
+    // Smooth tilt/parallax (gentler on mobile)
+    const tiltMultiplier = isMobile ? 0.04 : 0.08;
+    mouse.x += (mouse.targetX - mouse.x) * tiltMultiplier;
+    mouse.y += (mouse.targetY - mouse.y) * tiltMultiplier;
+
+    const calculatedNodes = activeNodes.map(node => {
       const baseNodeX = node.xRatio * width;
       const baseNodeY = node.yRatio * height;
-      const tiltX = (mouse.x - width / 2) * (node.z / 600);
-      const tiltY = (mouse.y - height / 2) * (node.z / 600);
+      const zScale = isMobile ? 900 : 600;
+      const tiltX = (mouse.x - width / 2) * (node.z / zScale);
+      const tiltY = (mouse.y - height / 2) * (node.z / zScale);
       return {
         ...node,
         x: baseNodeX + tiltX,
-        y: baseNodeY + tiltY,
-        radius: 20
+        y: baseNodeY + tiltY
       };
     });
 
@@ -91,15 +116,23 @@ export function initHeroCanvas() {
       const start = calculatedNodes[i];
       const end = calculatedNodes[i + 1];
 
-      const cp1 = { x: start.x + (end.x - start.x) * 0.5, y: start.y };
-      const cp2 = { x: start.x + (end.x - start.x) * 0.5, y: end.y };
+      let cp1, cp2;
+      if (isMobile) {
+        const dx = end.x - start.x;
+        const dy = end.y - start.y;
+        cp1 = { x: start.x + dx * 0.55, y: start.y + dy * 0.12 };
+        cp2 = { x: start.x + dx * 0.45, y: end.y - dy * 0.12 };
+      } else {
+        cp1 = { x: start.x + (end.x - start.x) * 0.5, y: start.y };
+        cp2 = { x: start.x + (end.x - start.x) * 0.5, y: end.y };
+      }
 
       // Base glowing line
       ctx.beginPath();
       ctx.moveTo(start.x, start.y);
       ctx.bezierCurveTo(cp1.x, cp1.y, cp2.x, cp2.y, end.x, end.y);
-      ctx.strokeStyle = 'rgba(0, 240, 255, 0.12)';
-      ctx.lineWidth = 3;
+      ctx.strokeStyle = 'rgba(0, 240, 255, 0.14)';
+      ctx.lineWidth = isMobile ? 2.2 : 3;
       ctx.stroke();
 
       // Outer glow line
@@ -107,18 +140,24 @@ export function initHeroCanvas() {
       ctx.moveTo(start.x, start.y);
       ctx.bezierCurveTo(cp1.x, cp1.y, cp2.x, cp2.y, end.x, end.y);
       ctx.strokeStyle = 'rgba(0, 240, 255, 0.04)';
-      ctx.lineWidth = 10;
+      ctx.lineWidth = isMobile ? 7 : 10;
       ctx.stroke();
     }
 
-    // Connect last node to first to close analytics loop
+    // Connect last node to first to close the feedback/analytics loop
     const firstNode = calculatedNodes[0];
     const analyticsNode = calculatedNodes[calculatedNodes.length - 1];
     ctx.beginPath();
     ctx.moveTo(analyticsNode.x, analyticsNode.y);
-    ctx.bezierCurveTo(analyticsNode.x - 100, analyticsNode.y, firstNode.x, analyticsNode.y + 40, firstNode.x, firstNode.y);
-    ctx.strokeStyle = 'rgba(16, 185, 129, 0.12)';
-    ctx.lineWidth = 2;
+    if (isMobile) {
+      const leftEdge = Math.max(12, width * 0.08);
+      ctx.bezierCurveTo(width * 0.92, height * 0.98, leftEdge, height * 0.85, leftEdge, height * 0.5);
+      ctx.bezierCurveTo(leftEdge, height * 0.22, firstNode.x - 30, firstNode.y, firstNode.x, firstNode.y);
+    } else {
+      ctx.bezierCurveTo(analyticsNode.x - 100, analyticsNode.y, firstNode.x, analyticsNode.y + 40, firstNode.x, firstNode.y);
+    }
+    ctx.strokeStyle = 'rgba(16, 185, 129, 0.14)';
+    ctx.lineWidth = 1.75;
     ctx.setLineDash([4, 4]);
     ctx.stroke();
     ctx.setLineDash([]);
@@ -133,8 +172,16 @@ export function initHeroCanvas() {
 
       const start = calculatedNodes[p.pathIndex];
       const end = calculatedNodes[p.pathIndex + 1];
-      const cp1 = { x: start.x + (end.x - start.x) * 0.5, y: start.y };
-      const cp2 = { x: start.x + (end.x - start.x) * 0.5, y: end.y };
+      let cp1, cp2;
+      if (isMobile) {
+        const dx = end.x - start.x;
+        const dy = end.y - start.y;
+        cp1 = { x: start.x + dx * 0.55, y: start.y + dy * 0.12 };
+        cp2 = { x: start.x + dx * 0.45, y: end.y - dy * 0.12 };
+      } else {
+        cp1 = { x: start.x + (end.x - start.x) * 0.5, y: start.y };
+        cp2 = { x: start.x + (end.x - start.x) * 0.5, y: end.y };
+      }
 
       const pos = getCurvePoint(start, cp1, cp2, end, p.progress);
 
@@ -142,19 +189,20 @@ export function initHeroCanvas() {
       ctx.arc(pos.x, pos.y, p.size, 0, Math.PI * 2);
       ctx.fillStyle = `rgba(0, 240, 255, ${p.opacity})`;
       ctx.shadowColor = '#00F0FF';
-      ctx.shadowBlur = 10;
+      ctx.shadowBlur = isMobile ? 6 : 10;
       ctx.fill();
       ctx.shadowBlur = 0;
     });
 
-    // Draw Nodes
-    calculatedNodes.forEach((node, index) => {
+    // Draw Nodes & Typography
+    calculatedNodes.forEach((node) => {
       const isHovered = mouse.hoveredNode && mouse.hoveredNode.id === node.id;
-      const nodeRadius = isHovered ? 26 : 20;
+      const baseRadius = isMobile ? (isVeryNarrow ? 14 : 16) : 20;
+      const nodeRadius = isHovered ? (baseRadius + 5) : baseRadius;
 
       // Outer ripple ring
       ctx.beginPath();
-      ctx.arc(node.x, node.y, nodeRadius + 10, 0, Math.PI * 2);
+      ctx.arc(node.x, node.y, nodeRadius + (isMobile ? 7 : 10), 0, Math.PI * 2);
       ctx.strokeStyle = isHovered ? node.color : 'rgba(255, 255, 255, 0.08)';
       ctx.lineWidth = 1;
       ctx.stroke();
@@ -167,7 +215,7 @@ export function initHeroCanvas() {
       gradient.addColorStop(1, '#070D1E');
       ctx.fillStyle = gradient;
       ctx.shadowColor = node.color;
-      ctx.shadowBlur = isHovered ? 25 : 12;
+      ctx.shadowBlur = isHovered ? (isMobile ? 18 : 25) : (isMobile ? 8 : 12);
       ctx.fill();
       ctx.shadowBlur = 0;
 
@@ -178,22 +226,55 @@ export function initHeroCanvas() {
 
       // Inner pulsating core
       ctx.beginPath();
-      ctx.arc(node.x, node.y, 6, 0, Math.PI * 2);
+      ctx.arc(node.x, node.y, isMobile ? 4.5 : 6, 0, Math.PI * 2);
       ctx.fillStyle = node.color;
       ctx.fill();
 
-      // Node Labels
-      ctx.font = '600 12px "Plus Jakarta Sans", sans-serif';
+      // Primary Node Label
+      const nameFontSize = isMobile ? (isVeryNarrow ? '10px' : '11px') : '12px';
+      ctx.font = `600 ${nameFontSize} "Plus Jakarta Sans", sans-serif`;
       ctx.fillStyle = '#FFFFFF';
       ctx.textAlign = 'center';
-      ctx.fillText(node.name, node.x, node.y + nodeRadius + 18);
+      const displayName = isMobile ? (node.mobileName || node.name) : node.name;
+      ctx.fillText(displayName, node.x, node.y + nodeRadius + (isMobile ? 14 : 18));
 
-      ctx.font = '500 10px "Plus Jakarta Sans", sans-serif';
+      // Secondary Subtitle
+      const subFontSize = isMobile ? (isVeryNarrow ? '8.5px' : '9.5px') : '10px';
+      ctx.font = `500 ${subFontSize} "Plus Jakarta Sans", sans-serif`;
       ctx.fillStyle = node.color;
-      ctx.fillText(node.subtitle, node.x, node.y + nodeRadius + 32);
+      const displaySubtitle = isMobile ? (node.mobileSubtitle || node.subtitle) : node.subtitle;
+      ctx.fillText(displaySubtitle, node.x, node.y + nodeRadius + (isMobile ? 26 : 32));
     });
 
     animationFrameId = requestAnimationFrame(draw);
+  }
+
+  function showTooltip(node, clientX, clientY) {
+    if (!tooltip) return;
+    tooltip.querySelector('.hero-node-tooltip-title').textContent = node.name;
+    tooltip.querySelector('.hero-node-tooltip-desc').textContent = node.desc;
+    tooltip.querySelector('.hero-node-tooltip-stat').textContent = `Metric: ${node.stat}`;
+
+    const isMobile = width < 640;
+    const tooltipWidth = isMobile ? 210 : 240;
+    const tooltipX = Math.min(width - tooltipWidth - 10, Math.max(10, clientX - tooltipWidth / 2));
+
+    let tooltipY;
+    if (clientY > height * 0.45) {
+      tooltipY = Math.max(10, clientY - 120);
+    } else {
+      tooltipY = Math.min(height - 110, clientY + 30);
+    }
+
+    tooltip.style.left = `${tooltipX}px`;
+    tooltip.style.top = `${tooltipY}px`;
+    tooltip.classList.add('active');
+    canvas.style.cursor = 'pointer';
+  }
+
+  function hideTooltip() {
+    if (tooltip) tooltip.classList.remove('active');
+    canvas.style.cursor = 'default';
   }
 
   function handleMouseMove(e) {
@@ -201,41 +282,28 @@ export function initHeroCanvas() {
     mouse.targetX = e.clientX - rect.left;
     mouse.targetY = e.clientY - rect.top;
 
-    // Check node hover
-    const dpr = window.devicePixelRatio || 1;
-    const mouseCanvasX = mouse.targetX;
-    const mouseCanvasY = mouse.targetY;
-
+    const isMobile = width < 640;
+    const activeNodes = isMobile ? mobileNodes : desktopNodes;
     let foundNode = null;
-    nodes.forEach(node => {
+
+    activeNodes.forEach(node => {
       const baseNodeX = node.xRatio * width;
       const baseNodeY = node.yRatio * height;
-      const dx = mouseCanvasX - baseNodeX;
-      const dy = mouseCanvasY - baseNodeY;
+      const dx = mouse.targetX - baseNodeX;
+      const dy = mouse.targetY - baseNodeY;
       const dist = Math.sqrt(dx * dx + dy * dy);
 
-      if (dist < 32) {
+      if (dist < (isMobile ? 36 : 32)) {
         foundNode = node;
       }
     });
 
     mouse.hoveredNode = foundNode;
 
-    if (foundNode && tooltip) {
-      tooltip.querySelector('.hero-node-tooltip-title').textContent = foundNode.name;
-      tooltip.querySelector('.hero-node-tooltip-desc').textContent = foundNode.desc;
-      tooltip.querySelector('.hero-node-tooltip-stat').textContent = `Metric: ${foundNode.stat}`;
-
-      const tooltipX = Math.min(width - 230, Math.max(10, mouse.targetX - 110));
-      const tooltipY = Math.max(10, mouse.targetY - 120);
-
-      tooltip.style.left = `${tooltipX}px`;
-      tooltip.style.top = `${tooltipY}px`;
-      tooltip.classList.add('active');
-      canvas.style.cursor = 'pointer';
-    } else if (tooltip) {
-      tooltip.classList.remove('active');
-      canvas.style.cursor = 'default';
+    if (foundNode) {
+      showTooltip(foundNode, mouse.targetX, mouse.targetY);
+    } else {
+      hideTooltip();
     }
   }
 
@@ -243,12 +311,57 @@ export function initHeroCanvas() {
     mouse.targetX = width / 2;
     mouse.targetY = height / 2;
     mouse.hoveredNode = null;
-    if (tooltip) tooltip.classList.remove('active');
+    hideTooltip();
+  }
+
+  function handleTouch(e) {
+    if (!e.touches || e.touches.length === 0) return;
+    const touch = e.touches[0];
+    const rect = canvas.getBoundingClientRect();
+    const touchX = touch.clientX - rect.left;
+    const touchY = touch.clientY - rect.top;
+
+    mouse.targetX = touchX;
+    mouse.targetY = touchY;
+
+    const isMobile = width < 640;
+    const activeNodes = isMobile ? mobileNodes : desktopNodes;
+    let foundNode = null;
+
+    activeNodes.forEach(node => {
+      const baseNodeX = node.xRatio * width;
+      const baseNodeY = node.yRatio * height;
+      const dx = touchX - baseNodeX;
+      const dy = touchY - baseNodeY;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+
+      if (dist < 38) {
+        foundNode = node;
+      }
+    });
+
+    mouse.hoveredNode = foundNode;
+
+    if (foundNode) {
+      showTooltip(foundNode, touchX, touchY);
+      if (e.cancelable) e.preventDefault();
+    } else {
+      hideTooltip();
+    }
   }
 
   window.addEventListener('resize', resize);
   canvas.addEventListener('mousemove', handleMouseMove);
   canvas.addEventListener('mouseleave', handleMouseLeave);
+  canvas.addEventListener('touchstart', handleTouch, { passive: false });
+  canvas.addEventListener('touchmove', handleTouch, { passive: false });
+
+  document.addEventListener('touchstart', (e) => {
+    if (!canvas.contains(e.target)) {
+      mouse.hoveredNode = null;
+      hideTooltip();
+    }
+  }, { passive: true });
 
   resize();
   mouse.x = width / 2;

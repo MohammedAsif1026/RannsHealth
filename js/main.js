@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initAnalyticsDashboard();
   initDenialWorkflow();
   initConsultationModal();
+  initFooterBackground();
 });
 
 function initNavigation() {
@@ -54,6 +55,21 @@ function initNavigation() {
   const mobileToggle = document.querySelector('.nav-mobile-toggle');
   const navMenu = document.querySelector('.nav-menu');
   const dropdownContainers = document.querySelectorAll('.nav-item-dropdown');
+
+  // Helper functions to safely control and query all dropdown containers
+  function closeAllDropdowns() {
+    if (!dropdownContainers || dropdownContainers.length === 0) return;
+    dropdownContainers.forEach((container) => {
+      container.classList.remove('open');
+      const trigger = container.querySelector('.nav-dropdown-trigger');
+      if (trigger) trigger.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  function isAnyDropdownOpen() {
+    if (!dropdownContainers || dropdownContainers.length === 0) return false;
+    return Array.from(dropdownContainers).some((c) => c.classList.contains('open'));
+  }
 
   // --- 1. Multi-Dropdown State Management (AI Labs, Specialties, etc.) ---
   dropdownContainers.forEach((dropdownContainer) => {
@@ -201,7 +217,7 @@ function initNavigation() {
     // B. Guard: Do not hide if user is interacting with dropdown, mobile menu, or has keyboard focus inside header
     const hasFocus = header.contains(document.activeElement);
     const isMobileOpen = navMenu && navMenu.classList.contains('mobile-open');
-    const isDropdownOpen = dropdownContainer && dropdownContainer.classList.contains('open');
+    const isDropdownOpen = isAnyDropdownOpen();
 
     if (hasFocus || isMobileOpen || isDropdownOpen) {
       if (isHeaderHidden) {
@@ -228,7 +244,7 @@ function initNavigation() {
           if (!isHeaderHidden) {
             header.classList.add('header-hidden');
             isHeaderHidden = true;
-            closeDropdown();
+            closeAllDropdowns();
           }
         } else if (diff < 0) {
           // User is scrolling UP -> Reappear smoothly
@@ -280,7 +296,7 @@ function initNavigation() {
       const isOpen = navMenu.classList.toggle('mobile-open');
       mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       if (!isOpen) {
-        closeDropdown();
+        closeAllDropdowns();
       }
     });
 
@@ -290,8 +306,18 @@ function initNavigation() {
       link.addEventListener('click', () => {
         navMenu.classList.remove('mobile-open');
         mobileToggle.setAttribute('aria-expanded', 'false');
-        closeDropdown();
+        closeAllDropdowns();
       });
+    });
+
+    // Close mobile menu on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMenu.classList.contains('mobile-open')) {
+        navMenu.classList.remove('mobile-open');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        closeAllDropdowns();
+        mobileToggle.focus();
+      }
     });
   }
 }
@@ -396,3 +422,100 @@ function initHeroBackgroundVideo() {
     setTimeout(evaluatePlayback, 60);
   }
 }
+
+function initFooterBackground() {
+  const canvas = document.getElementById('footerParticlesCanvas');
+  const footer = document.querySelector('.site-footer');
+  if (!canvas || !footer) return;
+
+  const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (motionQuery.matches) return;
+
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return;
+
+  let width, height;
+  let animId = null;
+  let isVisible = false;
+  const particles = [];
+  const particleCount = 22;
+
+  function resize() {
+    if (!canvas || !footer) return;
+    width = canvas.width = footer.clientWidth || window.innerWidth;
+    height = canvas.height = footer.clientHeight || 450;
+  }
+
+  window.addEventListener('resize', resize, { passive: true });
+  resize();
+
+  for (let i = 0; i < particleCount; i++) {
+    particles.push({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      vx: (Math.random() - 0.5) * 0.25,
+      vy: (Math.random() - 0.5) * 0.25,
+      radius: Math.random() * 1.3 + 0.8,
+      alpha: Math.random() * 0.25 + 0.1
+    });
+  }
+
+  function render() {
+    if (!isVisible) return;
+    ctx.clearRect(0, 0, width, height);
+
+    for (let i = 0; i < particles.length; i++) {
+      const p = particles[i];
+      p.x += p.vx;
+      p.y += p.vy;
+
+      if (p.x < 0) p.x = width;
+      if (p.x > width) p.x = 0;
+      if (p.y < 0) p.y = height;
+      if (p.y > height) p.y = 0;
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(0, 240, 255, ${p.alpha})`;
+      ctx.shadowColor = 'rgba(0, 240, 255, 0.4)';
+      ctx.shadowBlur = 4;
+      ctx.fill();
+      ctx.shadowBlur = 0;
+    }
+
+    animId = requestAnimationFrame(render);
+  }
+
+  // Optimize execution: only animate when footer is scrolled into view
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          isVisible = true;
+          if (!animId) animId = requestAnimationFrame(render);
+        } else {
+          isVisible = false;
+          if (animId) {
+            cancelAnimationFrame(animId);
+            animId = null;
+          }
+        }
+      });
+    }, { threshold: 0.05 });
+    observer.observe(footer);
+  } else {
+    isVisible = true;
+    animId = requestAnimationFrame(render);
+  }
+
+  if (motionQuery.addEventListener) {
+    motionQuery.addEventListener('change', (e) => {
+      if (e.matches) {
+        isVisible = false;
+        if (animId) cancelAnimationFrame(animId);
+        ctx.clearRect(0, 0, width, height);
+      }
+    });
+  }
+}
+

@@ -8,9 +8,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
   <link rel="stylesheet" href="css/variables.css?v=2.2">
-  <link rel="stylesheet" href="css/base.css?v=2.2">
-  <link rel="stylesheet" href="css/components.css?v=2.3">
+  <link rel="stylesheet" href="css/base.css?v=2.3">
+  <link rel="stylesheet" href="css/components.css?v=2.5">
   <link rel="stylesheet" href="css/animations.css?v=2.2">
   <style>
     body {
@@ -187,6 +193,29 @@
       }
       render();
     }
+
+    // 4-Second Automatic Dismissal Timer
+    const loaderEl = document.getElementById('rannshealthLoader');
+    let timerId = setTimeout(dismissLoader, 4000);
+
+    function dismissLoader() {
+      if (!loaderEl) return;
+      loaderEl.style.pointerEvents = 'none';
+      loaderEl.classList.add('loader-fade-out');
+      setTimeout(() => {
+        loaderEl.style.display = 'none';
+      }, 500);
+    }
+
+    function replayLoader() {
+      if (!loaderEl) return;
+      clearTimeout(timerId);
+      loaderEl.style.display = 'flex';
+      loaderEl.style.pointerEvents = 'auto';
+      loaderEl.classList.remove('loader-fade-out');
+      timerId = setTimeout(dismissLoader, 4000);
+    }
   </script>
 </body>
 </html>
+

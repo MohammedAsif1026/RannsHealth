@@ -380,3 +380,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     margin: 0 auto var(--space-10);
   }
 }
+
+/* Responsive canvas/base guardrails */
+html { overflow-x: clip; }
+.container { min-width: 0; }

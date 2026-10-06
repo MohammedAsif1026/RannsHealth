@@ -4661,6 +4661,7 @@
 .loader-caption-accent {
   background: linear-gradient(90deg, #00F0FF 0%, #00D2B4 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(0 2px 12px rgba(0, 240, 255, 0.38));
   font-weight: 800;

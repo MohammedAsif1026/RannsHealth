@@ -113,6 +113,231 @@
       80% { opacity: 0.85; }
       100% { transform: translateX(120%); opacity: 0; }
     }
+
+    /* =========================================================================
+       HOMEPAGE RESPONSIVE LAYOUT SYSTEM
+       Ensures rannsCCR metric cards, surrounding footnote, transformation heading,
+       and header adapt cleanly across Mobile (320-767px), Tablet (768-1199px),
+       and Desktop (1200px+).
+       ========================================================================= */
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    /* Base rannsCCR Performance Highlights Grid */
+    .rannsccr-outcomes-grid {
+      display: grid;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      min-width: 0;
+    }
+
+    .rannsccr-outcomes-grid .outcome-stat-card {
+      min-width: 0;
+      box-sizing: border-box;
+      transition: all var(--transition-base, 0.25s ease);
+    }
+
+    /* 1. Desktop Breakpoint: 1200px and wider */
+    @media (min-width: 1200px) {
+      .rannsccr-outcomes-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: var(--space-4, 16px) !important;
+        margin-top: var(--space-8, 32px) !important;
+      }
+      .rannsccr-outcomes-grid .outcome-stat-card {
+        grid-column: span 1 !important;
+      }
+    }
+
+    /* 2. Tablet Breakpoint: 768px – 1199px */
+    @media (min-width: 768px) and (max-width: 1199px) {
+      .rannsccr-outcomes-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: clamp(16px, 2.5vw, 24px) !important;
+        margin-top: var(--space-8, 32px) !important;
+      }
+      .rannsccr-outcomes-grid .outcome-stat-card:last-child {
+        grid-column: 1 / -1 !important;
+      }
+    }
+
+    /* 3. Mobile Phones: 320px – 767px */
+    @media (max-width: 767px) {
+      /* Stack the three metric cards in 1 column */
+      .rannsccr-outcomes-grid {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: clamp(12px, 3.5vw, 16px) !important;
+        margin-top: clamp(20px, 5vw, 28px) !important;
+        width: 100% !important;
+      }
+
+      .rannsccr-outcomes-grid .outcome-stat-card {
+        grid-column: 1 / -1 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: clamp(16px, 4.5vw, 22px) clamp(14px, 4vw, 20px) !important;
+        text-align: center;
+        box-sizing: border-box;
+      }
+
+      .rannsccr-outcomes-grid .outcome-val {
+        font-size: clamp(1.85rem, 7vw, 2.35rem) !important;
+        font-weight: 800;
+        line-height: 1.15;
+        margin-bottom: 4px;
+        color: var(--color-cyan, #00F0FF);
+      }
+
+      .rannsccr-outcomes-grid .outcome-label {
+        font-size: clamp(0.72rem, 2.6vw, 0.82rem) !important;
+        line-height: 1.4;
+        color: var(--text-secondary, #94A3B8);
+      }
+
+      /* Footnote below cards: prevent overlap, clipping, or horizontal overflow */
+      .rannsccr-outcomes-grid + .footnote-label {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        margin-top: clamp(14px, 3vw, 20px) !important;
+        padding-inline: 4px !important;
+        text-align: center !important;
+        font-size: clamp(0.68rem, 2.2vw, 0.78rem) !important;
+        line-height: 1.5 !important;
+        overflow-wrap: break-word !important;
+      }
+
+      /* Following Section (#transformation) Header Protection */
+      #transformation {
+        clear: both;
+        overflow: visible;
+      }
+
+      #transformation .section-header {
+        margin-top: 0 !important;
+        margin-bottom: clamp(24px, 6vw, 36px) !important;
+        max-width: 100% !important;
+        padding-inline: 0 !important;
+      }
+
+      #transformation .section-title {
+        font-size: clamp(1.7rem, 6.5vw, 2.35rem) !important;
+        line-height: 1.2 !important;
+        overflow-wrap: break-word !important;
+      }
+
+      #transformation .section-subtitle {
+        font-size: clamp(0.88rem, 3vw, 1rem) !important;
+        line-height: 1.6 !important;
+        overflow-wrap: break-word !important;
+      }
+
+      /* Header and Navigation on Phones */
+      .header-nav {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      .header-nav .nav-container {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        padding-left: clamp(8px, 2.5vw, 16px) !important;
+        padding-right: clamp(8px, 2.5vw, 16px) !important;
+        gap: clamp(6px, 1.8vw, 10px) !important;
+      }
+
+      .header-nav .brand-logo {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex-shrink: 0 !important;
+        height: clamp(30px, 7vw, 36px) !important;
+        padding: 2px clamp(4px, 1.2vw, 8px) !important;
+        background: #FFFFFF !important;
+        border-radius: var(--radius-sm, 6px) !important;
+        margin-right: 0 !important;
+        box-sizing: border-box !important;
+      }
+
+      .header-nav .brand-logo-img {
+        height: clamp(22px, 5.5vw, 28px) !important;
+        width: auto !important;
+        max-width: clamp(96px, 28vw, 130px) !important;
+        object-fit: contain !important;
+        display: block !important;
+      }
+
+      .header-nav .nav-actions {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        gap: clamp(6px, 1.6vw, 10px) !important;
+        flex-shrink: 0 !important;
+        min-width: 0 !important;
+      }
+
+      .header-nav .nav-actions .open-consultation-modal-btn {
+        padding: clamp(6px, 1.5vw, 8px) clamp(8px, 2vw, 14px) !important;
+        font-size: clamp(0.68rem, 2.1vw, 0.78rem) !important;
+        white-space: nowrap !important;
+        letter-spacing: -0.01em !important;
+        flex-shrink: 1 !important;
+        min-width: 0 !important;
+      }
+
+      .header-nav .nav-mobile-toggle {
+        min-width: clamp(38px, 9vw, 44px) !important;
+        min-height: clamp(38px, 9vw, 44px) !important;
+        width: clamp(38px, 9vw, 44px) !important;
+        height: clamp(38px, 9vw, 44px) !important;
+        padding: 6px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex-shrink: 0 !important;
+        cursor: pointer !important;
+      }
+    }
+
+    /* Extra Narrow Screen Optimizations (320px – 360px) */
+    @media (max-width: 360px) {
+      .header-nav .nav-container {
+        padding-left: 6px !important;
+        padding-right: 6px !important;
+        gap: 6px !important;
+      }
+      .header-nav .brand-logo {
+        height: 30px !important;
+        padding: 2px 4px !important;
+      }
+      .header-nav .brand-logo-img {
+        height: 22px !important;
+        max-width: 92px !important;
+      }
+      .header-nav .nav-actions {
+        gap: 5px !important;
+      }
+      .header-nav .nav-actions .open-consultation-modal-btn {
+        padding: 5px 7px !important;
+        font-size: 0.65rem !important;
+      }
+      .header-nav .nav-mobile-toggle {
+        min-width: 36px !important;
+        min-height: 36px !important;
+        width: 36px !important;
+        height: 36px !important;
+        padding: 4px !important;
+      }
+    }
   </style>
 </head>
 

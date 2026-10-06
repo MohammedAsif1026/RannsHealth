@@ -37,7 +37,7 @@
 }
 
 :root {
-  --nav-item-gap: clamp(10px, 1.15vw, 22px);
+  --nav-item-gap: clamp(18px, 1.5vw, 26px);
 }
 
 .nav-container {
@@ -100,7 +100,7 @@
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: var(--nav-item-gap);
+  gap: clamp(18px, 1.6vw, 28px);
   list-style: none;
   margin: 0;
   padding: 0;
@@ -109,7 +109,7 @@
 
 .nav-link {
   font-family: var(--font-main);
-  font-size: clamp(0.78rem, 0.85vw, 0.86rem);
+  font-size: clamp(0.9rem, 0.95vw, 0.98rem);
   font-weight: 500;
   letter-spacing: -0.01em;
   color: var(--text-secondary);
@@ -120,11 +120,12 @@
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
   background: transparent;
   border: none;
   cursor: pointer;
   outline: none;
+  line-height: 1.2;
 }
 
 /* Subtle, Tech-Inspired Hover Animation: Smooth Color Shift & Understated Ambient Glow */
@@ -274,12 +275,14 @@
   align-items: center;
   gap: var(--nav-item-gap);
   flex-shrink: 0;
-  margin: 0;
+  margin-left: clamp(14px, 1.4vw, 24px);
 }
 
 .nav-actions .btn-sm {
-  padding: 8px 16px;
-  font-size: 0.82rem;
+  padding: 9px 20px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
   white-space: nowrap;
 }
 
